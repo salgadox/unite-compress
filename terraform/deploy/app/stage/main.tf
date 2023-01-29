@@ -9,7 +9,7 @@ data "terraform_remote_state" "base" {
 }
 
 module "app" {
-  source = "github.com/salgadox/unite-compress//terraform/modules/app"
+  source = "github.com/salgadox/unite-compress//terraform/modules/app?ref=stage"
   env    = "stage"
 
   resource_prefix = var.resource_prefix
