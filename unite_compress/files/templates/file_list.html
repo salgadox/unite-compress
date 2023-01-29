@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}File List{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>File List</h1>
+	<p><a href="{% url 'files:upload' %}" class="btn btn-primary" role="button">Upload new file</a></p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>File Type</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for file in files %}
+                    <tr>
+                        <td><a href="{% url 'files:detail' file_name=file.file_name %}">{{ file.file_name }}</a></td>
+                        <td>{{ file.file_type }}</td>
+                        <td>{{ file.created_at }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
