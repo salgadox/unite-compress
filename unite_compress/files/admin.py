@@ -2,7 +2,7 @@ from django.contrib import admin, messages
 from django.core.exceptions import ValidationError
 
 from unite_compress.files.forms import FileForm
-from unite_compress.files.models import File
+from unite_compress.files.models import ConvertingCommand, File
 from unite_compress.files.services import FileStandardUploadService
 
 
@@ -65,3 +65,8 @@ class FileAdmin(admin.ModelAdmin):
                 service.create()
         except ValidationError as exc:
             self.message_user(request, str(exc), messages.ERROR)
+
+
+@admin.register(ConvertingCommand)
+class ConvertingCommandAdmin(admin.ModelAdmin):
+    pass
