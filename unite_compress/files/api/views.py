@@ -6,14 +6,15 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from unite_compress.files.api.serializers import FileSerializer
+from unite_compress.files.api.serializers import AsyncResultSerializer, FileSerializer
 from unite_compress.files.client import s3_generate_presigned_get
 from unite_compress.files.mixins import ApiAuthMixin
-from unite_compress.files.models import File
+from unite_compress.files.models import ConvertingCommand, File
 from unite_compress.files.services import (
     FileDirectUploadService,
     FileStandardUploadService,
 )
+from unite_compress.files.tasks import convert_file
 
 
 class FileViewSet(
@@ -42,6 +43,46 @@ class FileViewSet(
             url = file.url
 
         return Response({"url": url}, status=status.HTTP_200_OK)
+
+    @action(detail=True, methods=["GET"])
+    def tasks(self, request, pk):
+        # Check if there are any existing tasks for the new model instance
+        existing_tasks = convert_file.AsyncResult(str(pk))
+        serializer = AsyncResultSerializer(existing_tasks)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @action(detail=True, methods=["POST"])
+    def convert(self, request, pk):
+        command_id = ConvertingCommand.objects.first().id
+
+        # Check if there are any existing tasks for the new model instance
+        # task = convert_video.AsyncResult(str(pk))
+        file = self.queryset.get(pk=pk)
+
+        if file.convert_status == "pending":
+            # If no task exists, create a new task and return it
+            task = convert_file.delay(command_id, pk)
+            serializer = AsyncResultSerializer(task)
+            return Response(
+                {"task": serializer.data, "message": "Task created"},
+                status=status.HTTP_201_CREATED,
+            )
+        else:
+            if file.convert_status == "started":
+                # Task exists, return message and status
+                message = "File conversion in progress"
+                _status = status.HTTP_204_NO_CONTENT
+            if file.convert_status == "converted":
+                # File has been converted, return message and status
+                message = "File has been converted"
+                _status = status.HTTP_204_NO_CONTENT
+            else:
+                message = "File conversion error"
+                _status = status.HTTP_500_INTERNAL_SERVER_ERROR
+            return Response(
+                {"message": message},
+                status=_status,
+            )
 
 
 class FileStandardUploadApi(ApiAuthMixin, APIView):

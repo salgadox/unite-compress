@@ -1,0 +1,13 @@
+[
+    {
+        "model": "files.convertingcommand",
+        "pk": 1,
+        "fields": {
+            "title": "Standard",
+            "match_by": "name",
+            "match_regex": ".*",
+            "is_enabled": true,
+            "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 25 -threads 0 -strict -2 %(output_file)s"
+        }
+    }
+]

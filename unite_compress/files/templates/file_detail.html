@@ -17,18 +17,51 @@
                 <tr>
                     <td><strong>Created At:</strong> {{ file.created_at }}</td>
                 </tr>
+                <tr>
+                    <td><strong>Convert status:</strong> {{ file.convert_status }}</td>
+                </tr>
+                {% if file.convert_status == "converted" %}
+                    <tr>
+                        <td><strong>Converted at:</strong> {{ file.converted_at }}</td>
+                    </tr>
+                {% endif %}
             </tbody>
         </table>
-        <button id="download-button" class="btn btn-primary" type="button">Download</button>
+        {% if file.convert_status == "converted" %}
+            <button id="download-button" class="btn btn-primary" type="button">Download</button>
+        {% else %}
+            <button id="convert-button" class="btn btn-primary" type="button">Convert</button>
+        {% endif %}
     </div>
+    <div id="message"></div>
+{% endblock %}
 
+{% block inline_javascript %}
 <script>
-    var downloadButton = $('#download-button');
-    downloadButton.on('click', function() {
-        $.getJSON("{% url 'api:file-generate-url' pk=file.id %}", function(data){
-            var win = window.open(data.url, "_blank");
-            win.focus();
+    {% if file.convert_status == "converted" %}
+        var downloadButton = $('#download-button');
+        downloadButton.on('click', function() {
+            $.getJSON("{% url 'api:file-generate-url' pk=file.id %}", function(data){
+                var win = window.open(data.url, "_blank");
+                win.focus();
+            });
         });
-    });
+    {% else %}
+        var convertButton = $('#convert-button');
+        var message = $('#message');
+        convertButton.on('click', function() {
+            message.html('Your file is converting.');
+            $.ajax({
+				url: "{% url 'api:file-convert' pk=file.id %}",
+				method: "POST",
+                data: {},
+                headers: {"X-CSRFToken": "{{ csrf_token }}"},
+                success: function() {
+					message.html('File conversion completed!');
+                    window.location.replace("{% url 'files:file-converting' %}");
+				},
+            });
+        });
+    {% endif %}
 </script>
 {% endblock %}
