@@ -125,12 +125,6 @@ class File(BaseModel):
         return self.file.url
 
 
-CONVERTING_COMMAND_MATCH_CHOICES = (
-    ("extension", "Extension"),
-    ("name", "File name"),
-)
-
-
 class ConvertingCommand(models.Model):
     """
     System commands for convertion videos to desired format
@@ -142,15 +136,9 @@ class ConvertingCommand(models.Model):
         null=True,
         blank=True,
     )
-    match_by = models.CharField(
+    mime_regex = models.CharField(
         max_length=50,
-        verbose_name="Match by",
-        choices=CONVERTING_COMMAND_MATCH_CHOICES,
-        default="extension",
-    )
-    match_regex = models.CharField(
-        max_length=200,
-        verbose_name="RegExp to match video file",
+        verbose_name="Regex to match mime types",
     )
     is_enabled = models.BooleanField(
         verbose_name="Enabled?",
