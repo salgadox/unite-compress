@@ -19,7 +19,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   # ffmpeg
   ffmpeg \
   # ghostscript
-  ghostscript
+  ghostscript \
+   # libmagic
+  libmagic-dev
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements .
@@ -53,6 +55,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   ffmpeg \
   # ghostscript
   ghostscript \
+  # libmagic
+  libmagic-dev \
   # Translations dependencies
   gettext \
   # cleaning up unused files

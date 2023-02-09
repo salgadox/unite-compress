@@ -60,6 +60,10 @@
 					message.html('File conversion completed!');
                     window.location.replace("{% url 'files:file-converting' %}");
 				},
+                error: function(data) {
+                    console.log(CSSStyleDeclaration)
+					message.html(data.responseJSON.message);
+				},
             });
         });
     {% endif %}

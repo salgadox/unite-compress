@@ -82,10 +82,10 @@ class FileViewSet(
             else:
                 message = "File conversion error"
                 _status = status.HTTP_500_INTERNAL_SERVER_ERROR
-            return Response(
-                {"message": message},
-                status=_status,
-            )
+        return Response(
+            {"message": message},
+            status=_status,
+        )
 
 
 class FileStandardUploadApi(ApiAuthMixin, APIView):

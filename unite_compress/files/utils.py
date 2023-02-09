@@ -104,7 +104,8 @@ class Converter:
             # return the stdout
             return out
 
-    def choose_convert_command(self, file):
+    @staticmethod
+    def choose_convert_command(file):
         """Command for file converting by matching with file name"""
         mime_type = magic.from_file(file.filepath, mime=True)
         commands = ConvertingCommand.objects.filter(is_enabled=True)
