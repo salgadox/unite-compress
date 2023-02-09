@@ -15,7 +15,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   # psycopg2 dependencies
   libpq-dev \
   # ffmpeg
-  ffmpeg
+  ffmpeg \
+  # ghostscript
+  ghostscript
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements .
@@ -43,6 +45,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   libpq-dev \
   # ffmpeg
   ffmpeg \
+  # ghostscript
+  ghostscript \
   # Translations dependencies
   gettext \
   # cleaning up unused files
