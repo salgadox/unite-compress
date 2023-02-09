@@ -6,6 +6,7 @@ import subprocess
 import tempfile
 from os import path
 
+import magic
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from pytz import timezone
@@ -105,18 +106,12 @@ class Converter:
 
     def choose_convert_command(self, file):
         """Command for file converting by matching with file name"""
-        filename = file.filepath.split("/")[-1]
-        file_info = {
-            "name": filename,
-            "extension": filename.split(".")[-1],
-        }
-        cmds = ConvertingCommand.objects.filter(is_enabled=True)
-        for c in cmds:
-            match_by = file_info.get(c.match_by)
-            if not match_by:
-                continue
-            if re.match(c.match_regex, match_by):
-                return c
+        mime_type = magic.from_file(file.filepath, mime=True)
+        commands = ConvertingCommand.objects.filter(is_enabled=True)
+        for command in commands:
+            if re.match(command.mime_regex, mime_type):
+                return command
+        return
 
     def convert_file(self, cmd, file):
         file.convert_status = "started"

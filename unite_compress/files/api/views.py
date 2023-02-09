@@ -9,12 +9,13 @@ from rest_framework.views import APIView
 from unite_compress.files.api.serializers import AsyncResultSerializer, FileSerializer
 from unite_compress.files.client import s3_generate_presigned_get
 from unite_compress.files.mixins import ApiAuthMixin
-from unite_compress.files.models import ConvertingCommand, File
+from unite_compress.files.models import File
 from unite_compress.files.services import (
     FileDirectUploadService,
     FileStandardUploadService,
 )
 from unite_compress.files.tasks import convert_file
+from unite_compress.files.utils import Converter
 
 
 class FileViewSet(
@@ -53,20 +54,22 @@ class FileViewSet(
 
     @action(detail=True, methods=["POST"])
     def convert(self, request, pk):
-        command_id = ConvertingCommand.objects.first().id
-
-        # Check if there are any existing tasks for the new model instance
-        # task = convert_video.AsyncResult(str(pk))
         file = self.queryset.get(pk=pk)
-
+        # Check if there are any existing tasks for the new model instance
         if file.convert_status == "pending":
             # If no task exists, create a new task and return it
-            task = convert_file.delay(command_id, pk)
-            serializer = AsyncResultSerializer(task)
-            return Response(
-                {"task": serializer.data, "message": "Task created"},
-                status=status.HTTP_201_CREATED,
-            )
+            try:
+                command_id = Converter.choose_convert_command(file).id
+            except AttributeError:
+                message = "cannot convert: file type not supported"
+                _status = status.HTTP_400_BAD_REQUEST
+            else:
+                task = convert_file.delay(command_id, pk)
+                serializer = AsyncResultSerializer(task)
+                return Response(
+                    {"task": serializer.data, "message": "Task created"},
+                    status=status.HTTP_201_CREATED,
+                )
         else:
             if file.convert_status == "started":
                 # Task exists, return message and status
