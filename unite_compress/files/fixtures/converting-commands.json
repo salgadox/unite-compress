@@ -3,11 +3,22 @@
         "model": "files.convertingcommand",
         "pk": 1,
         "fields": {
-            "title": "Standard",
+            "title": "video standard",
             "match_by": "name",
             "match_regex": ".*",
             "is_enabled": true,
             "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 25 -threads 0 -strict -2 %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 2,
+        "fields": {
+            "title": "pdf standar",
+            "match_by": "name",
+            "match_regex": ".*",
+            "is_enabled": true,
+            "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
         }
     }
 ]
