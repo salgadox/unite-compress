@@ -7,13 +7,13 @@ from django.db import transaction
 from django.utils import timezone
 
 from unite_compress.files.client import s3_generate_presigned_post
-from unite_compress.files.models import (
-    File,
+from unite_compress.files.models import File
+from unite_compress.files.utils import (
+    bytes_to_mib,
     file_generate_local_upload_url,
     file_generate_name,
     file_generate_upload_path,
 )
-from unite_compress.files.utils import bytes_to_mib
 
 
 def _validate_file_size(file_obj):
