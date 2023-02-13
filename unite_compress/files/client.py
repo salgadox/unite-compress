@@ -89,6 +89,11 @@ def s3_generate_presigned_post(*, file_path: str, file_type: str) -> dict[str, A
     presigned_data = s3_client.generate_presigned_post(
         Bucket=credentials.bucket_name,
         Key=file_path,
+        Fields={"Content-Type": file_type},
+        Conditions=[
+            {"Content-Type": file_type},
+            ["content-length-range", 1, credentials.max_size],
+        ],
         ExpiresIn=expires_in,
     )
 
