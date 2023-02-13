@@ -1,12 +1,12 @@
 import datetime
 import logging
+import mimetypes
 import os
 import re
 import subprocess
 import tempfile
 from os import path
 
-import magic
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from pytz import timezone
@@ -107,10 +107,10 @@ class Converter:
     @staticmethod
     def choose_convert_command(file):
         """Command for file converting by matching with file name"""
-        mime_type = magic.from_file(file.filepath, mime=True)
+        guessed_file_type, encoding = mimetypes.guess_type(file.filepath)
         commands = ConvertingCommand.objects.filter(is_enabled=True)
         for command in commands:
-            if re.match(command.mime_regex, mime_type):
+            if re.match(command.mime_regex, guessed_file_type):
                 return command
         return
 
