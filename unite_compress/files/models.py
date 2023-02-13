@@ -1,34 +1,8 @@
-import pathlib
-from uuid import uuid4
-
 from django.conf import settings
 from django.db import models
-from django.urls import reverse
 from django.utils import timezone
 
-from unite_compress.files.settings import CONV_DIR, ORIG_DIR
-
-
-def file_generate_name(original_file_name):
-    extension = pathlib.Path(original_file_name).suffix
-
-    return f"{uuid4().hex}{extension}"
-
-
-def file_generate_upload_path(instance, filename):
-    return f"files/{ORIG_DIR}/{instance.file_name}"
-
-
-def file_generate_local_upload_url(*, file_id: str):
-    url = reverse("api:file-upload:upload:direct:local", kwargs={"file_id": file_id})
-
-    return url  # f"{settings.ALLOWED_HOSTS[0]}{url}"
-
-
-def convert_path(path):
-    path = path.replace(ORIG_DIR, CONV_DIR)
-    # return re.sub(r"[^\.]{1,10}$", ext, path)
-    return path
+from unite_compress.files.utils import convert_path, file_generate_upload_path
 
 
 class BaseModel(models.Model):
