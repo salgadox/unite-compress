@@ -15,7 +15,7 @@ from unite_compress.files.services import (
     FileStandardUploadService,
 )
 from unite_compress.files.tasks import convert_file
-from unite_compress.files.utils import Converter
+from unite_compress.files.utils import Converter, convert_path
 
 
 class FileViewSet(
@@ -39,7 +39,8 @@ class FileViewSet(
         file = self.queryset.get(pk=pk)
         # TODO Fix: Hardecoded media
         if "S3" in settings.DEFAULT_FILE_STORAGE:
-            url = s3_generate_presigned_get(file_path="media/" + file.file.name)
+            file_path = convert_path("media/" + file.file.name)
+            url = s3_generate_presigned_get(file_path=file_path)
         else:
             url = file.url
 

@@ -2,16 +2,19 @@ import datetime
 import logging
 import mimetypes
 import os
+import pathlib
 import re
 import subprocess
 import tempfile
 from os import path
+from uuid import uuid4
 
+from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
+from django.urls import reverse
 from pytz import timezone
 
-from unite_compress.files.models import ConvertingCommand
 from unite_compress.files.settings import CONV_DIR, ORIG_DIR
 
 logger = logging.getLogger(__name__)
@@ -20,6 +23,28 @@ logger = logging.getLogger(__name__)
 def bytes_to_mib(value: int) -> float:
     # 1 bytes = 9.5367431640625E-7 mebibytes
     return value * 9.5367431640625e-7
+
+
+def convert_path(path):
+    path = path.replace(ORIG_DIR, CONV_DIR)
+    # return re.sub(r"[^\.]{1,10}$", ext, path)
+    return path
+
+
+def file_generate_name(original_file_name):
+    extension = pathlib.Path(original_file_name).suffix
+
+    return f"{uuid4().hex}{extension}"
+
+
+def file_generate_upload_path(instance, filename):
+    return f"files/{ORIG_DIR}/{instance.file_name}"
+
+
+def file_generate_local_upload_url(*, file_id: str):
+    url = reverse("api:file-upload:upload:direct:local", kwargs={"file_id": file_id})
+
+    return url  # f"{settings.ALLOWED_HOSTS[0]}{url}"
 
 
 def assert_settings(required_settings, error_message_prefix=""):
@@ -108,6 +133,7 @@ class Converter:
     def choose_convert_command(file):
         """Command for file converting by matching with file name"""
         guessed_file_type, encoding = mimetypes.guess_type(file.filepath)
+        ConvertingCommand = apps.get_model("files", "ConvertingCommand")
         commands = ConvertingCommand.objects.filter(is_enabled=True)
         for command in commands:
             if re.match(command.mime_regex, guessed_file_type):
