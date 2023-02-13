@@ -92,7 +92,7 @@ def s3_generate_presigned_post(*, file_path: str, file_type: str) -> dict[str, A
         Fields={"Content-Type": file_type},
         Conditions=[
             {"Content-Type": file_type},
-            ["content-length-range", 1, credentials.max_size],
+            # ["content-length-range", 1, credentials.max_size],
         ],
         ExpiresIn=expires_in,
     )
