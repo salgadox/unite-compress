@@ -18,5 +18,15 @@
             "is_enabled": true,
             "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
         }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 3,
+        "fields": {
+            "title": "image standard",
+            "mime_regex": "image/*",
+            "is_enabled": true,
+            "command": "convert %(input_file)s -quality 60  %(output_file)s"
+        }
     }
 ]
