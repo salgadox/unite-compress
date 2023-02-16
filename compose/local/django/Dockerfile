@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   ffmpeg \
   # ghostscript
   ghostscript \
+   # imagemagick
+  imagemagick  \
   # libmagic
   libmagic-dev
 
@@ -49,6 +51,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   ffmpeg \
   # ghostscript
   ghostscript \
+   # imagemagick
+  imagemagick  \
   # libmagic
   libmagic-dev \
   # Translations dependencies
