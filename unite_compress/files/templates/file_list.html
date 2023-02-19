@@ -18,7 +18,7 @@
             <tbody>
                 {% for file in files %}
                     <tr>
-                        <td><a href="{% url 'files:detail' file_name=file.file_name %}">{{ file.file_name }}</a></td>
+                        <td><a href="{% url 'files:detail' file_name=file.file_name %}">{{ file.original_file_name }}</a></td>
                         <td>{{ file.file_type }}</td>
                         <td>{{ file.created_at }}</td>
                         <td>{{ file.convert_status }}</td>

@@ -1,3 +1,5 @@
+from os import path
+
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from rest_framework import mixins, serializers, status, viewsets
@@ -44,7 +46,14 @@ class FileViewSet(
         else:
             url = file.url
 
-        return Response({"url": url}, status=status.HTTP_200_OK)
+        response = Response({"url": url}, status=status.HTTP_200_OK)
+        dst_ext = path.splitext(file.converted_path)[1]
+        dst_file_name = (
+            f"{path.splitext(file.original_file_name)[0]}_compressed.{dst_ext}"
+        )
+        response["Content-Disposition"] = f'attachement; filename="{dst_file_name}"'
+
+        return response
 
     @action(detail=True, methods=["GET"])
     def tasks(self, request, pk):
