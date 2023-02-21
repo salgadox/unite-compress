@@ -23,7 +23,10 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   # imagemagick
   imagemagick  \
    # libmagic
-  libmagic-dev
+  libmagic-dev \
+  #pptx, ppt conversion
+  libreoffice \
+  unoconv
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements .
@@ -61,6 +64,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   imagemagick  \
   # libmagic
   libmagic-dev \
+  #pptx, ppt conversion
+  libreoffice \
+  unoconv \
   # Translations dependencies
   gettext \
   # cleaning up unused files
