@@ -34,7 +34,7 @@
         "pk": 4,
         "fields": {
             "title": "pptx, ppt standard",
-            "mime_regex": "(application/vnd\.ms-powerpoint|application/vnd\.openxmlformats-officedocument\.presentationml\.presentation)"
+            "mime_regex": "(application/vnd\\.ms-powerpoint|application/vnd\\.openxmlformats-officedocument\\.presentationml\\.presentation)",
             "is_enabled": true,
             "command": "unoconv -f pdf %(input_file)s"
         }
