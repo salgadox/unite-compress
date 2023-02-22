@@ -111,7 +111,7 @@ class ConvertingCommand(models.Model):
         blank=True,
     )
     mime_regex = models.CharField(
-        max_length=50,
+        max_length=255,
         verbose_name="Regex to match mime types",
     )
     is_enabled = models.BooleanField(
