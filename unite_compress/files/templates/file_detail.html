@@ -30,6 +30,12 @@
         {% if file.convert_status == "converted" %}
             <button id="download-button" class="btn btn-primary" type="button">Download</button>
         {% else %}
+            <label for="compression">Compression level:</label>
+            <select id="compression-rate" name="compression_rate">
+                <option value="low">low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
             <button id="convert-button" class="btn btn-primary" type="button">Convert</button>
         {% endif %}
     </div>
@@ -49,10 +55,11 @@
     {% else %}
         var convertButton = $('#convert-button');
         var message = $('#message');
+        var compressionRate = $('#compression-rate').val();
         convertButton.on('click', function() {
             message.html('Your file is converting.');
             $.ajax({
-				url: "{% url 'api:file-convert' pk=file.id %}",
+				url: "{% url 'api:file-convert' pk=file.id %}?compression_rate="+compressionRate,
 				method: "POST",
                 data: {},
                 headers: {"X-CSRFToken": "{{ csrf_token }}"},

@@ -20,6 +20,12 @@ CONVERSION_STATUS_CHOICES = (
     ("error", "Not converted due to error"),
 )
 
+COMPRESSION_RATES = (
+    ("low", "Low compression rate"),
+    ("medium", "Medium compression rate"),
+    ("high", "High compression rate"),
+)
+
 
 class File(BaseModel):
     file = models.FileField(upload_to=file_generate_upload_path, blank=True, null=True)
@@ -120,4 +126,11 @@ class ConvertingCommand(models.Model):
     )
     command = models.TextField(
         verbose_name="System command to convert video",
+    )
+
+    compression_rate = models.CharField(
+        max_length=16,
+        verbose_name="compression rate",
+        choices=COMPRESSION_RATES,
+        default="medium",
     )
