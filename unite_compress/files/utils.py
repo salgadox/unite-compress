@@ -130,11 +130,13 @@ class Converter:
             return out
 
     @staticmethod
-    def choose_convert_command(file):
+    def choose_convert_command(file, compression_rate):
         """Command for file converting by matching with file name"""
         guessed_file_type, encoding = mimetypes.guess_type(file.filepath)
         ConvertingCommand = apps.get_model("files", "ConvertingCommand")
-        commands = ConvertingCommand.objects.filter(is_enabled=True)
+        commands = ConvertingCommand.objects.filter(
+            is_enabled=True, compression_rate=compression_rate
+        )
         for command in commands:
             if re.match(command.mime_regex, guessed_file_type):
                 return command

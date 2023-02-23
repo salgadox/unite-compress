@@ -68,8 +68,9 @@ class FileViewSet(
         # Check if there are any existing tasks for the new model instance
         if file.convert_status == "pending":
             # If no task exists, create a new task and return it
+            compression_rate = request.query_params.get("compression_rate")
             try:
-                command_id = Converter.choose_convert_command(file).id
+                command_id = Converter.choose_convert_command(file, compression_rate).id
             except AttributeError:
                 message = "cannot convert: file type not supported"
                 _status = status.HTTP_400_BAD_REQUEST
