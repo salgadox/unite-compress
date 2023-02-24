@@ -18,7 +18,7 @@
             "mime_regex": "application/pdf",
             "is_enabled": true,
             "compression_rate": "medium",
-            "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
+            "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
         }
     },
     {
@@ -62,7 +62,7 @@
             "mime_regex": "application/pdf",
             "is_enabled": true,
             "compression_rate": "low",
-            "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
+            "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
         }
     },
     {

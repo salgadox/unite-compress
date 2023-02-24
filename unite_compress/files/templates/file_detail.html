@@ -55,9 +55,9 @@
     {% else %}
         var convertButton = $('#convert-button');
         var message = $('#message');
-        var compressionRate = $('#compression-rate').val();
         convertButton.on('click', function() {
-            message.html('Your file is converting.');
+            var compressionRate = $('#compression-rate').val();
+            message.html('Your file is converting.', compressionRate);
             $.ajax({
 				url: "{% url 'api:file-convert' pk=file.id %}?compression_rate="+compressionRate,
 				method: "POST",
