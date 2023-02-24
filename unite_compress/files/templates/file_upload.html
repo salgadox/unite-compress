@@ -7,11 +7,31 @@
 {% endblock %}
 
 {% block content %}
+<style>
+	#input {
+	  border: 2px dashed #ccc;
+	  padding: 20px;
+	  text-align: center;
+	  font-size: 18px;
+	  color: #aaa;
+	  align-items: center;
+      display: flex;
+      justify-content: center;
+	}
+
+	#drop-area.drag-over {
+	  background-color: #eee;
+	}
+</style>
+
     <div>
 	<h1>File upload</h1>
-	<div>Select file to upload:</div>
+	<div></div>
+	<div id="drop-area"> Select or drop your file here to upload: </div>
 	<input id="input" type="file" />
+
 	<button id="submit-button" class="btn btn-primary" type="button">Upload</button>
+
 	<div id="message"></div>
     </div>
 
@@ -59,20 +79,39 @@
 						 window.location.href="{% url 'files:latest-file' %}";
 					 },
 					 error: function() {
-					     message.html('File upload failed!');
+					     message.html('1File upload failed!');
 					 }
 				     });
 				 },
 				 error: function() {
-				     message.html('File upload failed!');
+				     message.html('2File upload failed!');
 				 }
 			     });
 			 },
 			 error: function() {
-			     message.html('File upload failed!');
+			     message.html('3File upload failed!');
 			 }
 		     });
 		 }
 	     });
     </script>
+<script>
+	var dropArea = $('#drop-area');
+
+	dropArea.on('dragover', function(event) {
+	  event.preventDefault();
+	  dropArea.addClass('drag-over');
+	});
+
+	dropArea.on('dragleave', function(event) {
+	  event.preventDefault();
+	  dropArea.removeClass('drag-over');
+	});
+
+	dropArea.on('drop', function(event) {
+	  event.preventDefault();
+	  dropArea.removeClass('drag-over');
+	  fileInput[0].files = event.originalEvent.dataTransfer.files;
+	});
+	</script>
 {% endblock %}
