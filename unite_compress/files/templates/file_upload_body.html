@@ -1,0 +1,43 @@
+{% load static %}
+<style>
+	#input {
+	  border: 2px dashed #ccc;
+	  padding: 20px;
+	  text-align: center;
+	  font-size: 18px;
+	  color: #aaa;
+	  align-items: center;
+      display: flex;
+      justify-content: center;
+	}
+
+	#drop-area.drag-over {
+	  background-color: #eee;
+	}
+
+	#uploading-spinner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+	}
+
+	#uploading-spinner.hidden {
+   	  display: none;
+	}
+</style>
+
+    <div>
+	<h1>File upload</h1>
+	<div></div>
+	<div id="drop-area"> Select or drop your file here to upload: </div>
+	<input id="input" type="file" />
+
+	<button id="submit-button" class="btn btn-primary" type="button">Upload</button>
+
+	<div id="message"></div>
+	<div id="uploading-spinner" class="hidden">
+        <img src="{% static 'images/spinner.gif' %}" alt="Uploading...">
+        <span>Uploading...</span>
+    </div>
+    </div>
