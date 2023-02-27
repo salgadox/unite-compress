@@ -1,1 +1,28 @@
 {% extends "base.html" %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <head>
+    <title>File Compression Tool</title>
+  </head>
+  <body>
+    <h1>File Compression Tool</h1>
+    <p>Welcome to our file compression tool! With this tool, you can compress images, videos, PDFs, and soon PowerPoint presentations. Here's how to use it:</p>
+    <ol>
+      <li>Select or drag the file you want to compress by clicking on the "Choose File" button.</li>
+      <li>Select the compression level you want to use. Higher compression levels result in smaller files, but can take longer to compress and decompress.</li>
+      <li>Click on the "Compress File" button to start the compression process.</li>
+      <li>Once the compression is complete, you can download the compressed file by clicking on the "Download" button.</li>
+    </ol>
+    <p>Note: For PowerPoint presentations, the tool will first convert them to PDF format and then compress them.</p>
+  </div>
+{% include "file_upload_body.html" %}
+{% endblock %}
+{% block inline_javascript %}
+{% include "file_upload_js.html" %}
+{% endblock %}
