@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}File Upload{% endblock %}
 
 {% block javascript %}
@@ -22,6 +24,17 @@
 	#drop-area.drag-over {
 	  background-color: #eee;
 	}
+
+	#uploading-spinner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+	}
+
+	#uploading-spinner.hidden {
+   	  display: none;
+	}
 </style>
 
     <div>
@@ -33,8 +46,11 @@
 	<button id="submit-button" class="btn btn-primary" type="button">Upload</button>
 
 	<div id="message"></div>
+	<div id="uploading-spinner" class="hidden">
+        <img src="{% static 'images/spinner.gif' %}" alt="Uploading...">
+        <span>Uploading...</span>
     </div>
-
+    </div>
 {% endblock %}
 
 {% block inline_javascript %}
@@ -42,11 +58,13 @@
 	 var fileInput = $('#input');
 	 var message = $('#message');
 	 var submitButton = $('#submit-button');
+	 var spinner = $('#uploading-spinner');
 
 	 submitButton.on('click', function() {
 		 var file = fileInput[0].files[0];
 
 		 if (file) {
+			 spinner.removeClass('hidden'); // display the spinner
 		     var fileName = file.name;
 		     var fileType = file.type;
 
@@ -55,7 +73,7 @@
 			 method: "POST",
 			 data: { file_name: fileName, file_type: fileType },
 			 success: function(response) {
-			     // var data = response.data;
+			     //var data = response.data;
 			     var postData = new FormData();
 				 var fields = response.fields;
 				 for (var key in fields){
@@ -77,19 +95,23 @@
 					 success: function() {
 					     message.html('File upload completed!');
 						 window.location.href="{% url 'files:latest-file' %}";
+						 spinner.addClass('hidden'); // hide the spinner
 					 },
 					 error: function() {
 					     message.html('1File upload failed!');
+						 spinner.addClass('hidden');
 					 }
 				     });
 				 },
 				 error: function() {
 				     message.html('2File upload failed!');
+					  spinner.addClass('hidden');
 				 }
 			     });
 			 },
 			 error: function() {
 			     message.html('3File upload failed!');
+				 spinner.addClass('hidden');
 			 }
 		     });
 		 }
