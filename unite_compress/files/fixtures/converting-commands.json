@@ -51,7 +51,7 @@
             "mime_regex": "video/*",
             "is_enabled": true,
             "compression_rate": "low",
-            "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 25 -threads 0 -strict -2 %(output_file)s"
+            "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 30 -preset slower -threads 0 -strict -2 %(output_file)s"
         }
     },
     {
@@ -95,7 +95,7 @@
             "mime_regex": "video/*",
             "is_enabled": true,
             "compression_rate": "high",
-            "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 25 -threads 0 -strict -2 %(output_file)s"
+            "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 20 -preset faster -threads 0 -strict -2 %(output_file)s"
         }
     },
     {
