@@ -7,6 +7,13 @@
 {% endblock %}
 
 {% block content %}
+<style>
+th.active-filter a {
+    text-decoration: solid underline blue 4px;
+}
+</style>
+
+
     <div class="container">
         <h1>File List</h1>
 	<p><a href="{% url 'files:upload' %}" class="btn btn-primary" role="button">Upload new file</a></p>
@@ -41,6 +48,8 @@
             var order = $(this).hasClass('asc') ? 'desc' : 'asc';
             $('th a').removeClass('asc desc');
             $(this).addClass(order);
+            $('th').removeClass('active-filter');
+            $(this).parent().addClass('active-filter');
             sortTable(column, order);
         });
     });
