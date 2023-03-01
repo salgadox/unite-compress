@@ -23,7 +23,7 @@ from unite_compress.files.utils import Converter, convert_path
 class FileViewSet(
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
-    # mixins.DestroyModelMixin,
+    mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
     permission_classes = (IsAuthenticated,)
@@ -54,6 +54,13 @@ class FileViewSet(
         response["Content-Disposition"] = f'attachement; filename="{dst_file_name}"'
 
         return response
+
+    def perform_destroy(self, instance):
+        if instance.is_local:
+            instance.file.storage.delete(instance.file.path)
+        else:
+            instance.file.storage.delete(instance.file.name)
+        instance.delete()
 
     @action(detail=True, methods=["GET"])
     def tasks(self, request, pk):
@@ -86,7 +93,7 @@ class FileViewSet(
                 # Task exists, return message and status
                 message = "File conversion in progress"
                 _status = status.HTTP_204_NO_CONTENT
-            if file.convert_status == "converted":
+            elif file.convert_status == "converted":
                 # File has been converted, return message and status
                 message = "File has been converted"
                 _status = status.HTTP_204_NO_CONTENT

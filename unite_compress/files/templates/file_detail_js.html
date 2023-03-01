@@ -34,6 +34,7 @@
             $.ajax({
                url: "{% url 'api:file-detail' pk=file.id %}",
                type: "DELETE",
+               headers: {"X-CSRFToken": "{{ csrf_token }}"},
                success: function(data){
                 message.html('Successfully deleted');
                 window.location.replace("{% url 'files:list' %}");
