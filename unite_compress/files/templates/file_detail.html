@@ -27,52 +27,27 @@
                 {% endif %}
             </tbody>
         </table>
+
         {% if file.convert_status == "converted" %}
-            <button id="download-button" class="btn btn-primary" type="button">Download</button>
+        <button id="download-button" class="btn btn-primary" type="button">Download</button>
         {% else %}
+        <button id="convert-button" class="btn btn-primary" type="button">Convert</button>
+        <button id="advanced-options-button" class="btn btn-secondary" type="button">Advanced options</button>
+        <div id="advanced-options" style="display: none;">
             <label for="compression">Compression level:</label>
             <select id="compression-rate" name="compression_rate">
                 <option value="low">low</option>
                 <option value="medium" selected>Medium</option>
                 <option value="high">High</option>
             </select>
-            <button id="convert-button" class="btn btn-primary" type="button">Convert</button>
-        {% endif %}
-    </div>
-    <div id="message"></div>
+        </div>
+
+    {% endif %}
+    <!--<button id="delete-button" class="btn btn-danger" type="submit">Delete</button>-->
+</div>
+<div id="message"></div>
 {% endblock %}
 
 {% block inline_javascript %}
-<script>
-    {% if file.convert_status == "converted" %}
-        var downloadButton = $('#download-button');
-        downloadButton.on('click', function() {
-            $.getJSON("{% url 'api:file-generate-url' pk=file.id %}", function(data){
-                var win = window.open(data.url, "_blank");
-                win.focus();
-            });
-        });
-    {% else %}
-        var convertButton = $('#convert-button');
-        var message = $('#message');
-        convertButton.on('click', function() {
-            var compressionRate = $('#compression-rate').val();
-            message.html('Your file is converting.', compressionRate);
-            $.ajax({
-				url: "{% url 'api:file-convert' pk=file.id %}?compression_rate="+compressionRate,
-				method: "POST",
-                data: {},
-                headers: {"X-CSRFToken": "{{ csrf_token }}"},
-                success: function() {
-					message.html('File conversion completed!');
-                    window.location.replace("{% url 'files:file-converting' %}");
-				},
-                error: function(data) {
-                    console.log(CSSStyleDeclaration)
-					message.html(data.responseJSON.message);
-				},
-            });
-        });
-    {% endif %}
-</script>
+    {% include "file_detail_js.html" %}
 {% endblock %}
