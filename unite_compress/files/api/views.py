@@ -57,9 +57,14 @@ class FileViewSet(
 
     def perform_destroy(self, instance):
         if instance.is_local:
-            instance.file.storage.delete(instance.file.path)
+            orig_file_path = instance.file.path
         else:
-            instance.file.storage.delete(instance.file.name)
+            orig_file_path = instance.file.name
+        instance.file.storage.delete(orig_file_path)
+        if instance.convert_status == "converted":
+            conv_file_path = convert_path(orig_file_path)
+            instance.file.storage.delete(conv_file_path)
+
         instance.delete()
 
     @action(detail=True, methods=["GET"])
