@@ -130,5 +130,38 @@
             "compression_rate": "high",
             "command": "unoconv -f pdf %(input_file)s"
         }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 13,
+        "fields": {
+            "title": "audio standard",
+            "mime_regex": "audio/*",
+            "is_enabled": true,
+            "compression_rate": "low",
+            "command": "ffmpeg -i %(input_file)s  -c:a aac -b:a 192k %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 14,
+        "fields": {
+            "title": "audio standard",
+            "mime_regex": "audio/*",
+            "is_enabled": true,
+            "compression_rate": "medium",
+            "command": "ffmpeg -i %(input_file)s  -c:a aac -b:a 96k %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 15,
+        "fields": {
+            "title": "image standard",
+            "mime_regex": "image/*",
+            "is_enabled": true,
+            "compression_rate": "high",
+            "command": "ffmpeg -i %(input_file)s  -c:a aac -b:a 64k %(output_file)s"
+        }
     }
 ]
