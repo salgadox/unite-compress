@@ -1,4 +1,5 @@
 <script>
+    var message = $('#message');
     {% if file.convert_status == "converted" %}
         var downloadButton = $('#download-button');
         downloadButton.on('click', function() {
@@ -9,7 +10,6 @@
         });
     {% else %}
         var convertButton = $('#convert-button');
-        var message = $('#message');
         convertButton.on('click', function() {
             var compressionRate = $('#compression-rate').val();
             message.html('Your file is converting.', compressionRate);
