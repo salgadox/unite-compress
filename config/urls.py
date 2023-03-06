@@ -17,6 +17,7 @@ urlpatterns = [
     # User management
     path("users/", include("unite_compress.users.urls", namespace="users")),
     path("files/", include("unite_compress.files.urls", namespace="files")),
+    path("courses/", include("unite_compress.courses.urls", namespace="courses")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

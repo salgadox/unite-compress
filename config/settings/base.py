@@ -80,6 +80,7 @@ LOCAL_APPS = [
     "unite_compress.users",
     # Your stuff: custom apps go here
     "unite_compress.files.apps.FilesConfig",
+    "unite_compress.courses.apps.CoursesConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
