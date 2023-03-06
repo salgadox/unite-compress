@@ -1,5 +1,4 @@
 from dal import autocomplete
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Count
 from django.http import Http404
 from django.urls import reverse_lazy
@@ -8,7 +7,7 @@ from django.views.generic import CreateView, DeleteView, DetailView, ListView
 from unite_compress.courses.models import Course
 
 
-class CourseAutocomplete(LoginRequiredMixin, autocomplete.Select2QuerySetView):
+class CourseAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         qs = Course.objects.filter(created_by=self.request.user)
         if self.q:
