@@ -1,7 +1,9 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, FormView, ListView
 
+from unite_compress.courses.models import Course
+from unite_compress.files.forms import FileForm
 from unite_compress.files.models import File
 
 
@@ -12,6 +14,11 @@ class FileListView(ListView):
 
     def get_queryset(self):
         return File.objects.filter(uploaded_by=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["courses"] = Course.objects.filter(created_by=self.request.user)
+        return context
 
 
 class FileDetailView(DetailView):
@@ -31,3 +38,8 @@ def latest_file_view(request):
 def file_converting_view(request):
     messages.success(request, "Your file is being converted.")
     return redirect("files:list")
+
+
+class FileUploadView(FormView):
+    template_name = "files/file_upload.html"
+    form_class = FileForm

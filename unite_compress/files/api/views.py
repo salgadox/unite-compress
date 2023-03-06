@@ -8,6 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from unite_compress.courses.models import Course
 from unite_compress.files.api.serializers import AsyncResultSerializer, FileSerializer
 from unite_compress.files.client import s3_generate_presigned_get
 from unite_compress.files.mixins import ApiAuthMixin
@@ -123,8 +124,18 @@ class FileStandardUploadApi(ApiAuthMixin, APIView):
 
 class FileDirectUploadStartApi(ApiAuthMixin, APIView):
     class InputSerializer(serializers.Serializer):
+        class UserFilteredPrimaryKeyRelatedField(serializers.PrimaryKeyRelatedField):
+            def get_queryset(self):
+                request = self.context.get("request", None)
+                queryset = super().get_queryset()
+                if not request or not queryset:
+                    return None
+                return queryset.filter(user=request.user)
+
         file_name = serializers.CharField()
         file_type = serializers.CharField()
+        course = UserFilteredPrimaryKeyRelatedField(queryset=Course.objects.all())
+        # course = serializers.PrimaryKeyRelatedField(queryset=Course.objects.all())
 
     def post(self, request, *args, **kwargs):
         serializer = self.InputSerializer(data=request.data)
@@ -139,7 +150,6 @@ class FileDirectUploadStartApi(ApiAuthMixin, APIView):
 class FileDirectUploadLocalApi(ApiAuthMixin, APIView):
     def post(self, request, file_id):
         file = get_object_or_404(File, id=file_id)
-
         file_obj = request.FILES["file"]
 
         service = FileDirectUploadService(request.user)

@@ -1,0 +1,8 @@
+<!-- templates/widgets/drag_and_drop_file_input.html -->
+
+<div id="{{ widget.attrs.id }}-container" class="drag-and-drop-container">
+    <span>Select or drop your file here to upload:</span>
+    <input type="{{ widget.type }}" name="{{ widget.name }}" id="{{ widget.attrs.id }}-input" class="drag-and-drop-input"
+	   {% if widget.attrs.required %}required{% endif %}
+	   {% if widget.attrs.accept %}accept="{{ widget.attrs.accept }}"{% endif %}>
+</div>
