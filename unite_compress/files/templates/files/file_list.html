@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}File List{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link href="{% static 'css/tables.css' %}" rel="stylesheet">
+{% endblock css %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <h1>File List</h1>
+    <p><a href="{% url 'files:upload' %}" class="btn btn-primary" role="button">Upload new file</a></p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th><a href="#" data-sortby="name">File Name</a></th>
+                <th><a href="#" data-sortby="type">File Type</a></th>
+                <th><a href="#" data-sortby="course">Course</a></th>
+                <th><a href="#" data-sortby="created">Created At</a></th>
+                <th><a href="#" data-sortby="status">Convert Status</a></th>
+            </tr>
+        </thead>
+        <tbody id="fileTable">
+            {% for file in files %}
+                <tr class="file-row" data-course="{{ file.course.id }}">
+                    <td><a href="{% url 'files:detail' file_name=file.file_name %}">{{ file.original_file_name }}</a></td>
+                    <td>{{ file.file_type }}</td>
+                    <td>
+			{% if file.course %}
+			    <a href="{% url 'courses:detail' course_slug=file.course.slug %}">{{ file.course }}</a>
+			{% else %}
+			       -
+			{% endif %}
+		    </td>
+		    <td>{{ file.created_at }}</td>
+                    <td>{{ file.convert_status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+{% block inline_javascript %}
+    <script>
+	 $(document).ready(function() {
+             $('th a').click(function(e) {
+		 e.preventDefault();
+		 var column = $(this).data('sortby');
+		 var order = $(this).hasClass('asc') ? 'desc' : 'asc';
+		 $('th a').removeClass('asc desc');
+		 $(this).addClass(order);
+		 $('th').removeClass('active-filter');
+		 $(this).parent().addClass('active-filter');
+		 sortTable(column, order);
+             });
+	 });
+
+
+	     $('#courseSelect').on('change', function() {
+		 var courseId = $(this).val();
+		 if (courseId === 'all') {
+		     $('#fileTable tr').show();
+		 } else {
+		     $('#fileTable tr').hide();
+		     $('#fileTable tr[data-course="' + courseId + '"]').show();
+		 }
+	     });
+
+
+	     function sortTable(column, order) {
+		 var table = $('#fileTable');
+		 var rows = table.find('tr').toArray();
+		 rows.sort(function(a, b) {
+		     var x = $(a).find('td:eq(' + getColumnIndex(column) + ')').text().toLowerCase();
+		     var y = $(b).find('td:eq(' + getColumnIndex(column) + ')').text().toLowerCase();
+		     if (x < y) { return order == 'asc' ? -1 : 1; }
+		     if (x > y) { return order == 'asc' ? 1 : -1; }
+		     return 0;
+		 });
+		 $.each(rows, function(index, row) {
+		     table.append(row);
+		 });
+	     }
+
+
+	     function getColumnIndex(column) {
+		 switch (column) {
+		     case 'name': return 0;
+		     case 'type': return 1;
+		     case 'course': return 2;
+		     case 'created': return 3;
+		     case 'status': return 4;
+		 }
+	     }
+
+    </script>
+{% endblock %}

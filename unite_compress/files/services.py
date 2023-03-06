@@ -109,13 +109,14 @@ class FileDirectUploadService:
         self.user = user
 
     @transaction.atomic
-    def start(self, *, file_name: str, file_type: str) -> dict[str, Any]:
+    def start(self, *, file_name: str, file_type: str, course: int) -> dict[str, Any]:
         file = File(
             original_file_name=file_name,
             file_name=file_generate_name(file_name),
             file_type=file_type,
             uploaded_by=self.user,
             file=None,
+            course=course,
         )
         file.full_clean()
         file.save()
@@ -153,6 +154,8 @@ class FileDirectUploadService:
 
     @transaction.atomic
     def upload_local(self, *, file: File, file_obj) -> File:
+        print("hej")
+        print(file)
         _validate_file_size(file_obj)
 
         # Potentially, check against user

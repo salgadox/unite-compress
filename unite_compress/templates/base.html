@@ -54,7 +54,10 @@
               </li>
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'files:list'  %}">My Files</a>
+                    <a class="nav-link" href="{% url 'courses:list'  %}">My Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'files:list'  %}">My Files</a>
                 </li>
                 <li class="nav-item">
                   {# URL provided by django-allauth/account/urls.py #}
