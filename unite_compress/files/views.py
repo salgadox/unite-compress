@@ -7,7 +7,7 @@ from unite_compress.files.models import File
 
 class FileListView(ListView):
     model = File
-    template_name = "file_list.html"
+    template_name = "files/file_list.html"
     context_object_name = "files"
 
     def get_queryset(self):
@@ -16,7 +16,7 @@ class FileListView(ListView):
 
 class FileDetailView(DetailView):
     model = File
-    template_name = "file_detail.html"
+    template_name = "files/file_detail.html"
     context_object_name = "file"
     slug_url_kwarg = "file_name"
     slug_field = "file_name"
@@ -25,7 +25,7 @@ class FileDetailView(DetailView):
 def latest_file_view(request):
     latest_file = File.objects.filter(uploaded_by=request.user).last()
     messages.success(request, "Your file has been uploaded successfully.")
-    return render(request, "file_detail.html", {"file": latest_file})
+    return render(request, "files/file_detail.html", {"file": latest_file})
 
 
 def file_converting_view(request):

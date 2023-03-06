@@ -12,7 +12,9 @@ app_name = "files"
 urlpatterns = [
     path("", FileListView.as_view(), name="list"),
     path(
-        "upload/", TemplateView.as_view(template_name="file_upload.html"), name="upload"
+        "upload/",
+        TemplateView.as_view(template_name="files/file_upload.html"),
+        name="upload",
     ),
     path("<str:file_name>/", FileDetailView.as_view(), name="detail"),
     path("latest-file", latest_file_view, name="latest-file"),

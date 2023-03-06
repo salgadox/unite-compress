@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}File List{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<style>
+th.active-filter a {
+    text-decoration: solid underline blue 4px;
+}
+</style>
+
+
+<div class="container">
+    <h1>File List</h1>
+    <p><a href="{% url 'files:upload' %}" class="btn btn-primary" role="button">Upload new file</a></p>
+
+    <label for="course-select">Filter by Course:</label>
+    <select id="course-select">
+        <option value="all" selected>All Files</option>
+        {% for course in courses %}
+            <option value="{{ course.id }}">{{ course.course_name }}</option>
+        {% endfor %}
+    </select>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th><a href="#" data-sortby="name">File Name</a></th>
+                <th><a href="#" data-sortby="type">File Type</a></th>
+                <th><a href="#" data-sortby="created">Created At</a></th>
+                <th><a href="#" data-sortby="status">Convert Status</a></th>
+            </tr>
+        </thead>
+        <tbody id="fileTable">
+            {% for file in files %}
+                <tr class="file-row" data-course="{{ file.course.id }}">
+                    <td><a href="{% url 'files:detail' file_name=file.file_name %}">{{ file.original_file_name }}</a></td>
+                    <td>{{ file.file_type }}</td>
+                    <td>{{ file.created_at }}</td>
+                    <td>{{ file.convert_status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+{% block inline_javascript %}
+    {% include "files/file_list_js.html" %}
+{% endblock %}

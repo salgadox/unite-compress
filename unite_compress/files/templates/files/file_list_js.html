@@ -1,0 +1,52 @@
+<script>
+    $(document).ready(function() {
+        $('th a').click(function(e) {
+            e.preventDefault();
+            var column = $(this).data('sortby');
+            var order = $(this).hasClass('asc') ? 'desc' : 'asc';
+            $('th a').removeClass('asc desc');
+            $(this).addClass(order);
+            $('th').removeClass('active-filter');
+            $(this).parent().addClass('active-filter');
+            sortTable(column, order);
+        });
+    });
+
+
+    $('#courseSelect').on('change', function() {
+      var courseId = $(this).val();
+      if (courseId === 'all') {
+        $('#fileTable tr').show();
+      } else {
+        $('#fileTable tr').hide();
+        $('#fileTable tr[data-course="' + courseId + '"]').show();
+      }
+    });
+
+
+    function sortTable(column, order) {
+        var table = $('#fileTable');
+        var rows = table.find('tr').toArray();
+        rows.sort(function(a, b) {
+            var x = $(a).find('td:eq(' + getColumnIndex(column) + ')').text().toLowerCase();
+            var y = $(b).find('td:eq(' + getColumnIndex(column) + ')').text().toLowerCase();
+            if (x < y) { return order == 'asc' ? -1 : 1; }
+            if (x > y) { return order == 'asc' ? 1 : -1; }
+            return 0;
+        });
+        $.each(rows, function(index, row) {
+            table.append(row);
+        });
+    }
+
+
+    function getColumnIndex(column) {
+        switch (column) {
+            case 'name': return 0;
+            case 'type': return 1;
+            case 'created': return 2;
+            case 'status': return 3;
+        }
+    }
+
+</script>
