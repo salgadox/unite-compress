@@ -7,18 +7,35 @@
 
 {% block content %}
     <div class="container">
-	<head>
-	    <title>File Compression Tool</title>
-	</head>
-	<body>
-	    <h1>File Compression Tool</h1>
-	    <p>Welcome to our file compression tool! With this tool, you can compress images, videos, PDFs, and soon PowerPoint presentations. Here's how to use it:</p>
-	    <ol>
-		<li>Select or drag the file you want to compress by clicking on the "Choose File" button.</li>
-		<li>Select the compression level you want to use. Higher compression levels result in smaller files, but can take longer to compress and decompress.</li>
-		<li>Click on the "Compress File" button to start the compression process.</li>
-		<li>Once the compression is complete, you can download the compressed file by clicking on the "Download" button.</li>
-	    </ol>
-	    <p>Note: For PowerPoint presentations, the tool will first convert them to PDF format and then compress them.</p>
+		<header>
+			<h2>Welcome to our file compression and course management system!</h2>
+			<p>Here you can compress your files and organize them into courses.</p>
+		</header>
+		<section>
+			<div class="buttons">
+				<a href="{% url 'files:upload'  %}" class="btn btn-secondary " role="button" aria-disabled="true">Upload a file</a>
+				<a href="{% url 'courses:create' %}" class="btn btn-secondary" role="button" aria-disabled="true">Create a course</a>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<h2>How it works</h2>
+			<ol>
+				<li>Create a course: Go to the <a href="{% url 'courses:create' %}">Create Course</a> page and enter a name and a description for your course.</li>
+				<li>Upload a file: Go to the <a href="{% url 'files:upload'  %}">Upload File</a> page and select the file you want to upload. You can choose to add it to an existing course or create a new one.</li>
+				<li>Compress the file: Go to the file detail page by clicking on its name in the <a href="{% url 'files:list'  %}"> file list </a>  and click on the "compress" button.  You can choose to compress the file with the default "medium" compression level or click on the "Advanced options" button to choose from three different compression levels.</li>
+			 </ol>
+		</section>
+
+
+		<section>
+			<h3>Files</h3>
+			<p>To see a list of all your files, go to <a href="{% url 'files:list'  %}">My Files</a> page.</p>
+		</section>
+
+		<section>
+			<h3>Courses</h3>
+			<p>To see a list of all your courses, go to the <a href="{% url 'courses:list'  %}">My Courses</a> page.</p>
+		</section>
     </div>
 {% endblock %}
