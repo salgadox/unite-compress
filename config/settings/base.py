@@ -60,6 +60,9 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
+    # dal needs to go before admin
+    "dal",
+    "dal_select2",
     "django.contrib.admin",
     "django.forms",
 ]
@@ -80,6 +83,7 @@ LOCAL_APPS = [
     "unite_compress.users",
     # Your stuff: custom apps go here
     "unite_compress.files.apps.FilesConfig",
+    "unite_compress.courses.apps.CoursesConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -134,6 +138,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "login_required.middleware.LoginRequiredMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -332,3 +337,13 @@ SPECTACULAR_SETTINGS = {
 # Your stuff...
 # ------------------------------------------------------------------------------
 FILE_MAX_SIZE = 3e8
+
+# django login required middleware
+LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [
+    "home",
+    "about",
+    "account_login",
+    "account_signup",
+    "admin:index",
+    "admin:login",
+]

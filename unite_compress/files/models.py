@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+from unite_compress.courses.models import Course
 from unite_compress.files.utils import convert_path, file_generate_upload_path
 
 
@@ -29,7 +30,9 @@ COMPRESSION_RATES = (
 
 class File(BaseModel):
     file = models.FileField(upload_to=file_generate_upload_path, blank=True, null=True)
-
+    course = models.ForeignKey(
+        Course, on_delete=models.CASCADE, related_name="files", blank=True, null=True
+    )
     original_file_name = models.TextField()
 
     file_name = models.CharField(max_length=255, unique=True)
