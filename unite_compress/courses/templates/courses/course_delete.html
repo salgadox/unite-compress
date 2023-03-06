@@ -14,8 +14,8 @@
   {% endif %}
 
   <form method="post">
-    {% csrf_token %}
-    <input type="submit" value="Delete">
+      {% csrf_token %}
+      <input class="btn btn-danger" type="submit" value="Delete">
     <a href="{% url 'courses:detail' course_slug=course.slug %}">Cancel</a>
   </form>
 {% endblock %}
