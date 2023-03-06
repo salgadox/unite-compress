@@ -22,7 +22,7 @@ th.active-filter a {
     <select id="course-select">
         <option value="all" selected>All Files</option>
         {% for course in courses %}
-            <option value="{{ course.id }}">{{ course.course_name }}</option>
+            <option value="{{ course.id }}">{{ course.name }}</option>
         {% endfor %}
     </select>
 

@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Delete Course</h1>
-  <p>Are you sure you want to delete "{{ course.course_name }}"?</p>
+  <p>Are you sure you want to delete "{{ course.name }}"?</p>
 
   {% if course.files.all %}
     <h2>Associated Files ({{ course.files.count }})</h2>

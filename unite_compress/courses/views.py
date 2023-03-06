@@ -11,7 +11,7 @@ class CourseAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         qs = Course.objects.filter(created_by=self.request.user)
         if self.q:
-            qs = qs.filter(course_name__istartswith=self.q)
+            qs = qs.filter(name__istartswith=self.q)
         return qs
 
 
@@ -36,7 +36,7 @@ class CourseDetailView(DetailView):
 
 class CourseCreateView(CreateView):
     model = Course
-    fields = ["course_name", "description"]
+    fields = ["name", "description"]
     template_name = "courses/course_create.html"
     success_url = reverse_lazy("courses:list")
 

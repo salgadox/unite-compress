@@ -29,7 +29,7 @@ th.active-filter a {
         <tbody id="courseTable">
             {% for course in courses %}
                 <tr class="course-row" >
-                    <td><a href="{% url 'courses:detail' course_slug=course.slug %}">{{ course.course_name }}</a></td>
+                    <td><a href="{% url 'courses:detail' course_slug=course.slug %}">{{ course.name }}</a></td>
                     <td>{{ course.created_at }}</td>
                     <td>{{ course.description }}</td>
                 </tr>

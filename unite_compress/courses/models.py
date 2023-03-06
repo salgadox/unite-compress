@@ -5,7 +5,7 @@ from django.utils.text import slugify
 
 
 class Course(models.Model):
-    course_name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255, unique=True)
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(db_index=True, default=timezone.now)
 
@@ -15,8 +15,8 @@ class Course(models.Model):
     slug = models.SlugField(unique=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.course_name)
+        self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.course_name
+        return self.name
