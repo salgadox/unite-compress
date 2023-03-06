@@ -126,19 +126,21 @@ class FileDirectUploadStartApi(ApiAuthMixin, APIView):
     class InputSerializer(serializers.Serializer):
         class UserFilteredPrimaryKeyRelatedField(serializers.PrimaryKeyRelatedField):
             def get_queryset(self):
-                request = self.context.get("request", None)
+                user = self.context["request"].user
                 queryset = super().get_queryset()
-                if not request or not queryset:
-                    return None
-                return queryset.filter(user=request.user)
+                return queryset.filter(created_by=user)
 
         file_name = serializers.CharField()
         file_type = serializers.CharField()
-        course = UserFilteredPrimaryKeyRelatedField(queryset=Course.objects.all())
+        course = UserFilteredPrimaryKeyRelatedField(
+            queryset=Course.objects.all(), allow_null=True
+        )
         # course = serializers.PrimaryKeyRelatedField(queryset=Course.objects.all())
 
     def post(self, request, *args, **kwargs):
-        serializer = self.InputSerializer(data=request.data)
+        serializer = self.InputSerializer(
+            data=request.data, context={"request": request}
+        )
         serializer.is_valid(raise_exception=True)
 
         service = FileDirectUploadService(request.user)

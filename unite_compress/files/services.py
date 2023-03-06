@@ -154,8 +154,6 @@ class FileDirectUploadService:
 
     @transaction.atomic
     def upload_local(self, *, file: File, file_obj) -> File:
-        print("hej")
-        print(file)
         _validate_file_size(file_obj)
 
         # Potentially, check against user
