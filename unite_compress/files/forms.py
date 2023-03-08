@@ -11,6 +11,6 @@ class FileForm(autocomplete.FutureModelForm):
         widgets = {
             "file": DragAndDropFileInput(),
             "course": autocomplete.ModelSelect2(
-                url="courses:autocomplete", attrs={"data-minimum-input-length": 3}
+                url="courses:autocomplete", attrs={"data-minimum-input-length": 0}
             ),
         }
