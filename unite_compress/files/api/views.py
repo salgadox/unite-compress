@@ -47,7 +47,11 @@ class FileViewSet(
         else:
             url = file.url
 
-        response = Response({"url": url}, status=status.HTTP_200_OK)
+        response = Response(
+            {"url": url},
+            status=status.HTTP_200_OK,
+            content_type="application/x-download",
+        )
         dst_ext = path.splitext(file.converted_path)[1]
         dst_file_name = (
             f"{path.splitext(file.original_file_name)[0]}_compressed.{dst_ext}"
