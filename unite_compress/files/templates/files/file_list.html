@@ -28,7 +28,7 @@
                 <th><a href="#" data-sortby="course">Course</a></th>
                 <th><a href="#" data-sortby="created">Created At</a></th>
                 <th><a href="#" data-sortby="status">Convert Status</a></th>
-				<th><a > size </a></th>
+				<th><a href="#" data-sortby="size">Size</a></th>
             </tr>
         </thead>
         <tbody id="fileTable">
@@ -44,7 +44,7 @@
 			{% endif %}
 		    </td>
 		    <td>{{ file.created_at }}</td>
-                    <td>{{ file.convert_status }}</td>
+            <td>{{ file.convert_status }}</td>
 			<td> {{ file.file.size }} </td>
 		</tr>
             {% endfor %}
@@ -103,6 +103,7 @@
 		     case 'course': return 2;
 		     case 'created': return 3;
 		     case 'status': return 4;
+			 case 'size': return 4;
 		 }
 	     }
 
