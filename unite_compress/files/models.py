@@ -65,6 +65,11 @@ class File(BaseModel):
     )
 
     @property
+    def converted_file_size(self):
+        file_size = self.file.storage.size(self.converted_filepath)
+        return file_size
+
+    @property
     def is_valid(self):
         """
         We consider a file "valid" if the the datetime flag has value.

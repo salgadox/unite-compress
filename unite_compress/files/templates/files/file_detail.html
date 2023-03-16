@@ -18,9 +18,15 @@
                     <td><strong>Created At:</strong> {{ file.created_at }}</td>
                 </tr>
                 <tr>
+                    <td><strong>Size:</strong> {{ file.file.size }}</td>
+                </tr>
+                <tr>
                     <td><strong>Convert status:</strong> {{ file.convert_status }}</td>
                 </tr>
                 {% if file.convert_status == "converted" %}
+                    <tr>
+                        <td> <strong>Size after compression: </strong> {{ file.converted_file_size }}</td>
+                    </tr>
                     <tr>
                         <td><strong>Converted at:</strong> {{ file.converted_at }}</td>
                     </tr>
