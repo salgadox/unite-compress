@@ -66,7 +66,7 @@ class File(BaseModel):
 
     @property
     def converted_file_size(self):
-        file_size = self.file.storage.size(self.converted_path)
+        file_size = self.file.storage.size("media/" + self.file.name)
         return file_size
 
     @property
