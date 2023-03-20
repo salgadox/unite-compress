@@ -45,7 +45,7 @@
 		    </td>
 		    <td>{{ file.created_at }}</td>
             <td>{{ file.convert_status }}</td>
-			<td> {{ file.file.size }} </td>
+			<td> {{ file.file.size | filesizeformat }} </td>
 		</tr>
             {% endfor %}
         </tbody>
