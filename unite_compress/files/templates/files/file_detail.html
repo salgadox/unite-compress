@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load files_tags %}
 {% block title %}File Detail{% endblock %}
 
 {% block javascript %}
@@ -7,6 +8,7 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="container">
         <h1>{{ file.original_file_name }}</h1>
         <table class="table">
@@ -22,7 +24,7 @@
                 </tr>
                 {% if file.convert_status == "converted" %}
                     <tr>
-                        <td> <strong>Size after compression: </strong> {{ file.converted_file_size | filesizeformat }} ({% widthratio file.converted_file_size file.file.size 100 %} % reduction)</td>
+                        <td> <strong>Size after compression: </strong> {{ file.converted_file_size | filesizeformat }} ({% percent_reduction file.file.size file.converted_file_size %}% reduction)</td>
                     </tr>
                     <tr>
                         <td><strong>Converted At:</strong> {{ file.converted_at }}</td>
