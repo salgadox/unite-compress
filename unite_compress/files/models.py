@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 from unite_compress.courses.models import Course
+from unite_compress.files.client import s3_get_file_size
 from unite_compress.files.utils import convert_path, file_generate_upload_path
 
 
@@ -65,11 +66,6 @@ class File(BaseModel):
     )
 
     @property
-    def converted_file_size(self):
-        file_size = self.file.storage.size("media/" + self.file.name)
-        return file_size
-
-    @property
     def is_valid(self):
         """
         We consider a file "valid" if the the datetime flag has value.
@@ -103,6 +99,11 @@ class File(BaseModel):
         except AttributeError:
             self._converted_path = convert_path(self.filepath)
             return self._converted_path
+
+    @property
+    def converted_file_size(self):
+        file_size = s3_get_file_size("media/" + self.file.name)
+        return file_size
 
     @property
     def url(self):
