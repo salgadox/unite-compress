@@ -102,7 +102,7 @@ class File(BaseModel):
 
     @property
     def converted_file_size(self):
-        file_size = s3_get_file_size("media/" + self.file.name)
+        file_size = s3_get_file_size(file_path="media/" + self.file.name)
         return file_size
 
     @property
