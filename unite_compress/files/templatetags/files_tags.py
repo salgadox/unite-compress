@@ -5,4 +5,5 @@ register = template.Library()
 
 @register.simple_tag(name="percent_reduction")
 def percent_reduction(original_size, converted_size):
-    return 100 * (original_size - converted_size) / original_size
+    percent_reduction = 100 * (original_size - converted_size) / original_size
+    return f"{percent_reduction:.2f}"
