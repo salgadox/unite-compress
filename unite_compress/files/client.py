@@ -112,3 +112,12 @@ def s3_generate_presigned_get(*, file_path: str) -> str:
         ExpiresIn=expires_in,
     )
     return presigned_url
+
+
+def s3_get_file_size(*, file_path: str) -> str:
+    # credentials = s3_get_credentials()
+    s3_client = s3_get_client()
+
+    response = s3_client.head_object(Bucket="bucketname", Key=file_path)
+    size = response["ContentLength"]
+    return size
