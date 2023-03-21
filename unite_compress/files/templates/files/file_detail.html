@@ -22,7 +22,7 @@
                 <tr>
                     <td><strong> Original Size:</strong> {{ file.file.size | filesizeformat }}</td>
                 </tr>
-                {% if file.convert_status == "converted" %}
+                {% if file.convert_status == "converted" and file.converted_file_size >= 1%}
                     <tr>
                         <td> <strong>Size after compression: </strong> {{ file.converted_file_size | filesizeformat }} ({% percent_reduction file.file.size file.converted_file_size %}% reduction)</td>
                     </tr>
