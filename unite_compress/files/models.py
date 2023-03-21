@@ -1,3 +1,4 @@
+from botocore.exceptions import ClientError
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
@@ -102,7 +103,12 @@ class File(BaseModel):
 
     @property
     def converted_file_size(self):
-        file_size = s3_get_file_size(file_path=convert_path("media/" + self.file.name))
+        try:
+            file_size = s3_get_file_size(
+                file_path=convert_path("media/" + self.file.name)
+            )
+        except ClientError:
+            file_size = 0
         return file_size
 
     @property
