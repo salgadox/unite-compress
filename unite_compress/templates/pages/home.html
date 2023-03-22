@@ -9,7 +9,7 @@
     <div class="container">
 		<header>
 			<h2>Welcome to our file compression and course management system!</h2>
-			<p>Here you can compress your files and organize them into courses.</p>
+			<p> Here you can compress your files and organize them into courses.</p>
 		</header>
 		<section>
 			<div class="buttons">
@@ -21,21 +21,26 @@
 		<section>
 			<h2>How it works</h2>
 			<ol>
-				<li>Create a course: Go to the <a href="{% url 'courses:create' %}">Create Course</a> page and enter a name and a description for your course.</li>
-				<li>Upload a file: Go to the <a href="{% url 'files:upload'  %}">Upload File</a> page and select the file you want to upload. You can choose to add it to an existing course or create a new one.</li>
+				<li>Create a Folder: Go to the <a href="{% url 'courses:create' %}">Create Folder</a> page and enter a name and a description for your folder.</li>
+				<li>Upload a file: Go to the <a href="{% url 'files:upload'  %}">Upload File</a> page and select the file you want to upload. You can choose to add it to an existing folder or create a new one.</li>
 				<li>Compress the file: Go to the file detail page by clicking on its name in the <a href="{% url 'files:list'  %}"> file list </a>  and click on the "compress" button.  You can choose to compress the file with the default "medium" compression level or click on the "Advanced options" button to choose from three different compression levels.</li>
 			 </ol>
+
+			<p> The platform supports the following mime types : </p>
+			<ul>
+				<li> “application/pdf" </li>
+				<li> "images/*" </li>
+				<li> “video/*” </li>
+			</ul>
 		</section>
 
 
 		<section>
 			<h3>Files</h3>
 			<p>To see a list of all your files, go to <a href="{% url 'files:list'  %}">My Files</a> page.</p>
-		</section>
 
-		<section>
-			<h3>Courses</h3>
-			<p>To see a list of all your courses, go to the <a href="{% url 'courses:list'  %}">My Courses</a> page.</p>
+			<h3>Folder</h3>
+			<p>To see a list of all your Folders, go to the <a href="{% url 'courses:list'  %}">My Folders</a> page.</p>
 		</section>
     </div>
 {% endblock %}

@@ -49,12 +49,15 @@
               <li class="nav-item active">
                 <a class="nav-link" href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'good-practices'  %}">Good Practices</a>
+              </li>
             <!--   <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
+                <a class="nav-link" href="{# url 'about' #}">About</a>
               </li> -->
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'courses:list'  %}">My Courses</a>
+                    <a class="nav-link" href="{% url 'courses:list'  %}">My Folders</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'files:list'  %}">My Files</a>
