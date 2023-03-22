@@ -9,8 +9,13 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    # path(
+    #     "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
+    # ),
     path(
-        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
+        "good-practices/",
+        TemplateView.as_view(template_name="pages/good-practices.html"),
+        name="good-practices",
     ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
