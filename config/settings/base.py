@@ -341,6 +341,7 @@ FILE_MAX_SIZE = 3e8
 # django login required middleware
 LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [
     "home",
+    "good-practices",
     "about",
     "account_login",
     "account_signup",
