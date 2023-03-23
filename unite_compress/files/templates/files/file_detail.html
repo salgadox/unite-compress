@@ -19,9 +19,15 @@
                 <tr>
                     <td><strong>Created At:</strong> {{ file.created_at }}</td>
                 </tr>
+                {% if file.original_file_size > 0 %}
                 <tr>
-                    <td><strong> Original Size:</strong> {{ file.file.size | filesizeformat }}</td>
+                    <td><strong> Original Size:</strong> {{ file.original_file_size | filesizeformat }}</td>
                 </tr>
+                {% else %}
+                <tr>
+                    <td> File still uploading... </td>
+                </tr>
+                {% endif %}
                 {% if file.convert_status == "converted" and file.converted_file_size >= 1%}
                     <tr>
                         <td> <strong>Size after compression: </strong> {{ file.converted_file_size | filesizeformat }} ({% percent_reduction file.file.size file.converted_file_size %}% reduction)</td>
