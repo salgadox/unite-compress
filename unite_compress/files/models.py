@@ -102,6 +102,14 @@ class File(BaseModel):
             return self._converted_path
 
     @property
+    def original_file_size(self):
+        try:
+            file_size = self.file.size
+        except ClientError:
+            file_size = 0
+        return file_size
+
+    @property
     def converted_file_size(self):
         try:
             file_size = s3_get_file_size(
