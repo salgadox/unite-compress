@@ -1,1 +1,46 @@
 {% extends "base.html" %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+		<header>
+			<h2>Welcome to our file compression and course management system!</h2>
+			<p> Here you can compress your files and organize them into courses.</p>
+		</header>
+		<section>
+			<div class="buttons">
+				<a href="{% url 'files:upload'  %}" class="btn btn-secondary " role="button" aria-disabled="true">Upload a file</a>
+				<a href="{% url 'courses:create' %}" class="btn btn-secondary" role="button" aria-disabled="true">Create a course</a>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<h2>How it works</h2>
+			<ol>
+				<li>Create a Folder: Go to the <a href="{% url 'courses:create' %}">Create Folder</a> page and enter a name and a description for your folder.</li>
+				<li>Upload a file: Go to the <a href="{% url 'files:upload'  %}">Upload File</a> page and select the file you want to upload. You can choose to add it to an existing folder or create a new one.</li>
+				<li>Compress the file: Go to the file detail page by clicking on its name in the <a href="{% url 'files:list'  %}"> file list </a>  and click on the "compress" button.  You can choose to compress the file with the default "medium" compression level or click on the "Advanced options" button to choose from three different compression levels.</li>
+			 </ol>
+
+			<p> The platform supports the following mime types : </p>
+			<ul>
+				<li> “application/pdf" </li>
+				<li> "images/*" </li>
+				<li> “video/*” </li>
+			</ul>
+		</section>
+
+
+		<section>
+			<h3>Files</h3>
+			<p>To see a list of all your files, go to <a href="{% url 'files:list'  %}">My Files</a> page.</p>
+
+			<h3>Folder</h3>
+			<p>To see a list of all your Folders, go to the <a href="{% url 'courses:list'  %}">My Folders</a> page.</p>
+		</section>
+    </div>
+{% endblock %}

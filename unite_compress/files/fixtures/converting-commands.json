@@ -1,0 +1,167 @@
+[
+    {
+        "model": "files.convertingcommand",
+        "pk": 1,
+        "fields": {
+            "title": "video standard",
+            "mime_regex": "video/*",
+            "is_enabled": true,
+            "compression_rate": "medium",
+            "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 25 -threads 0 -strict -2 %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 2,
+        "fields": {
+            "title": "pdf standard",
+            "mime_regex": "application/pdf",
+            "is_enabled": true,
+            "compression_rate": "medium",
+            "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 3,
+        "fields": {
+            "title": "image standard",
+            "mime_regex": "image/*",
+            "is_enabled": true,
+            "compression_rate": "medium",
+            "command": "convert %(input_file)s -quality 60  %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 4,
+        "fields": {
+            "title": "pptx, ppt standard",
+            "mime_regex": "(application/vnd\\.ms-powerpoint|application/vnd\\.openxmlformats-officedocument\\.presentationml\\.presentation)",
+            "is_enabled": true,
+            "compression_rate": "medium",
+            "command": "unoconv -f pdf %(input_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 5,
+        "fields": {
+            "title": "video standard",
+            "mime_regex": "video/*",
+            "is_enabled": true,
+            "compression_rate": "low",
+            "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 30 -preset slower -threads 0 -strict -2 %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 6,
+        "fields": {
+            "title": "pdf standard",
+            "mime_regex": "application/pdf",
+            "is_enabled": true,
+            "compression_rate": "low",
+            "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 7,
+        "fields": {
+            "title": "image standard",
+            "mime_regex": "image/*",
+            "is_enabled": true,
+            "compression_rate": "low",
+            "command": "convert %(input_file)s -quality 80  %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 8,
+        "fields": {
+            "title": "pptx, ppt standard",
+            "mime_regex": "(application/vnd\\.ms-powerpoint|application/vnd\\.openxmlformats-officedocument\\.presentationml\\.presentation)",
+            "is_enabled": true,
+            "compression_rate": "low",
+            "command": "unoconv -f pdf %(input_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 9,
+        "fields": {
+            "title": "video standard",
+            "mime_regex": "video/*",
+            "is_enabled": true,
+            "compression_rate": "high",
+            "command": "ffmpeg -y -hide_banner -nostats -i %(input_file)s -vcodec libx264 -crf 20 -preset faster -threads 0 -strict -2 %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 10,
+        "fields": {
+            "title": "pdf standard",
+            "mime_regex": "application/pdf",
+            "is_enabled": true,
+            "compression_rate": "high",
+            "command": "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=%(output_file)s %(input_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 11,
+        "fields": {
+            "title": "image standard",
+            "mime_regex": "image/*",
+            "is_enabled": true,
+            "compression_rate": "high",
+            "command": "convert %(input_file)s -quality 40  %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 12,
+        "fields": {
+            "title": "pptx, ppt standard",
+            "mime_regex": "(application/vnd\\.ms-powerpoint|application/vnd\\.openxmlformats-officedocument\\.presentationml\\.presentation)",
+            "is_enabled": true,
+            "compression_rate": "high",
+            "command": "unoconv -f pdf %(input_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 13,
+        "fields": {
+            "title": "audio standard",
+            "mime_regex": "audio/*",
+            "is_enabled": true,
+            "compression_rate": "low",
+            "command": "ffmpeg -i %(input_file)s  -map 0:a:0 -b:a 192k %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 14,
+        "fields": {
+            "title": "audio standard",
+            "mime_regex": "audio/*",
+            "is_enabled": true,
+            "compression_rate": "medium",
+            "command": "ffmpeg -i %(input_file)s  -map 0:a:0 -b:a 96k %(output_file)s"
+        }
+    },
+    {
+        "model": "files.convertingcommand",
+        "pk": 15,
+        "fields": {
+            "title": "audio standard",
+            "mime_regex": "audio/*",
+            "is_enabled": true,
+            "compression_rate": "high",
+            "command": "ffmpeg -i %(input_file)s  -map 0:a:0 -b:a 64k %(output_file)s"
+        }
+    }
+]

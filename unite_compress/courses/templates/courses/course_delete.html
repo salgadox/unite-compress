@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Delete CFolder</h1>
+  <p>Are you sure you want to delete "{{ course.name }}"?</p>
+
+  {% if course.files.all %}
+    <h2>Associated Files ({{ course.files.count }})</h2>
+    <ul>
+      {% for file in course.files.all %}
+        <li>{{ file.original_file_name }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="post">
+      {% csrf_token %}
+      <input class="btn btn-danger" type="submit" value="Delete">
+    <a href="{% url 'courses:detail' course_slug=course.slug %}">Cancel</a>
+  </form>
+{% endblock %}

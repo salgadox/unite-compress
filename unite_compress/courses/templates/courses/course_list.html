@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}File List{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<style>
+th.active-filter a {
+    text-decoration: solid underline blue 4px;
+}
+</style>
+
+
+<div class="container">
+    <h1>Folder List</h1>
+    <p><a href="{% url 'courses:create' %}" class="btn btn-primary" role="button">Create new folder</a></p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th><a href="#" data-sortby="name">Folder Name: </a></th>
+                <th><a href="#" data-sortby="created">Created At: </a></th>
+                <th><a href="#" data-sortby="file_number">Files: </a></th>
+            </tr>
+        </thead>
+        <tbody id="courseTable">
+            {% for course in courses %}
+                <tr class="course-row" >
+                    <td><a href="{% url 'courses:detail' course_slug=course.slug %}">{{ course.name }}</a></td>
+                    <td>{{ course.created_at }}</td>
+                    <td>{{ course.description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+{% block inline_javascript %}
+
+{% endblock %}

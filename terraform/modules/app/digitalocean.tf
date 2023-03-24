@@ -20,8 +20,8 @@ resource "digitalocean_spaces_bucket" "bucket" {
   region = var.do_region
 
   cors_rule {
-    allowed_methods = ["GET"]
-    allowed_origins = [data.digitalocean_domain.domain.name]
+    allowed_methods = ["GET", "POST", "DELETE"]
+    allowed_origins = ["*.${var.domain_name}"]
   }
 }
 

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}File Upload{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link href="{% static 'css/spinner.css' %}" rel="stylesheet">
+{% endblock css %}
+
+{% block content %}
+    <form id="file-upload-form" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input class="btn btn-primary" type="submit" value="Save" />
+    </form>
+    <div id="messages"></div>
+    <div id="uploading-spinner" class="uploading-spinner hidden">
+	<img src="{% static 'images/spinner.gif' %}" alt="Uploading...">
+	<span>Uploading...</span>
+    </div>
+{% endblock content %}
+
+{% block inline_javascript %}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    {{ form.media }}
+    <script>
+     $(document).ready(function() {
+	 var form = $('#file-upload-form');
+	 var messages = $('#messages');
+	 var spinner = $('#uploading-spinner');
+	 $(form).on("submit", function(event) {
+	     event.preventDefault();
+	     var file = form.find("input[type=file]").get(0).files[0];
+
+             if (file) {
+		 spinner.removeClass('hidden'); // display the spinner
+		 var fileName = file.name;
+		 var fileType = file.type;
+		 var courseId = form.find("select[name=course]").find(":selected").val();
+
+		 $.ajax({
+		     url: "{% url 'api:file-upload:upload:direct:start' %}",
+		     method: "POST",
+		     data: { file_name: fileName, file_type: fileType, course: courseId },
+		     success: function(response) {
+			 //var data = response.data;
+			 var postData = new FormData();
+			 var fields = response.fields;
+			 for (var key in fields){
+			     postData.append(key, fields[key]);
+			 }
+			 postData.append('file', file);
+			 messages.html('File is uploading');
+			 $.ajax({
+			     url: response.url,
+			     method: 'POST',
+			     data: postData,
+			     processData: false,
+			     contentType: false,
+			     success: function() {
+				 $.ajax({
+				     url: "{% url 'api:file-upload:upload:direct:finish' %}",
+				     method: 'POST',
+				     data: { file_id: response.id },
+				     success: function() {
+					 messages.html('File upload completed!');
+					 window.location.href="{% url 'files:latest-file' %}";
+					 spinner.addClass('hidden'); // hide the spinner
+				     },
+				     error: function() {
+					 messages.html('1File upload failed!');
+					 spinner.addClass('hidden');
+				     }
+				 });
+			     },
+			     error: function() {
+				 messages.html('2File upload failed!');
+				 spinner.addClass('hidden');
+			     }
+			 });
+		     },
+		     error: function() {
+			 messages.html('3File upload failed!');
+			 spinner.addClass('hidden');
+		     }
+		 });
+	     }
+	 });
+     });
+    </script>
+{% endblock inline_javascript %}

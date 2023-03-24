@@ -15,7 +15,18 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
   build-essential \
   # psycopg2 dependencies
-  libpq-dev
+  libpq-dev \
+  # ffmpeg
+  ffmpeg \
+  # ghostscript
+  ghostscript \
+  # imagemagick
+  imagemagick  \
+   # libmagic
+  libmagic-dev \
+  #pptx, ppt conversion
+  libreoffice \
+  unoconv
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements .
@@ -44,12 +55,27 @@ RUN addgroup --system django \
 # Install required system dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y \
   # psycopg2 dependencies
-  libpq-dev \
+  libpq-dev  \
+  # ffmpeg
+  ffmpeg \
+  # ghostscript
+  ghostscript \
+   # imagemagick
+  imagemagick  \
+  # libmagic
+  libmagic-dev \
+  #pptx, ppt conversion
+  libreoffice \
+  unoconv \
   # Translations dependencies
   gettext \
   # cleaning up unused files
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
+
+
+# https://github.com/unoconv/unoconv/issues/49
+RUN sed -i 's|#!/usr/bin/env python3|#!/usr/bin/python3|' /usr/bin/unoconv
 
 # All absolute dir copies ignore workdir instruction. All relative dir copies are wrt to the workdir instruction
 # copy python dependency wheels from python-build-stage

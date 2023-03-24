@@ -1,0 +1,14 @@
+.drag-and-drop-input {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #aaa;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.drag-and-drop-container.drag-over {
+    background-color: #eee;
+}
