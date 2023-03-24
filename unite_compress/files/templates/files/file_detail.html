@@ -17,7 +17,7 @@
                     <td><strong>File Type:</strong> {{ file.file_type }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Created At:</strong> {{ file.created_at }}</td>
+                    <td><strong>Created At:</strong> {{ file.created_at  | date:"d/m/Y G:i" }}</td>
                 </tr>
                 {% if file.original_file_size > 0 %}
                 <tr>
