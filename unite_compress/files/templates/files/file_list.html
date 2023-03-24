@@ -43,7 +43,7 @@
 			       -
 			{% endif %}
 		    </td>
-		    <td>{{ file.created_at }}</td>
+		    <td>{{ file.created_at  | date:"d/m/Y G:i"  }}</td>
             <td>{{ file.convert_status }}</td>
 			<td> {{ file.original_file_size | filesizeformat }} </td>
 		</tr>
