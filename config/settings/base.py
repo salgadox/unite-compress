@@ -4,6 +4,7 @@ Base settings to build other settings files upon.
 from pathlib import Path
 
 import environ
+from django.utils.translation import gettext_lazy as _
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # unite_compress/
@@ -32,6 +33,13 @@ SITE_ID = 1
 USE_I18N = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#languages
+LANGUAGES = [
+    ("en", _("English")),
+    ("fr", _("French")),
+]
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
 LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 
@@ -347,4 +355,5 @@ LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [
     "account_signup",
     "admin:index",
     "admin:login",
+    "set_language",
 ]

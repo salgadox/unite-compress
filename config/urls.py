@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
@@ -8,6 +9,14 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
+    # Translate
+    path("i18n/", include("django.conf.urls.i18n")),
+    # Django Admin, use {% url 'admin:index' %}
+    path(settings.ADMIN_URL, admin.site.urls),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += i18n_patterns(
+    # User management
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     # path(
     #     "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
@@ -17,15 +26,12 @@ urlpatterns = [
         TemplateView.as_view(template_name="pages/good-practices.html"),
         name="good-practices",
     ),
-    # Django Admin, use {% url 'admin:index' %}
-    path(settings.ADMIN_URL, admin.site.urls),
-    # User management
     path("users/", include("unite_compress.users.urls", namespace="users")),
     path("files/", include("unite_compress.files.urls", namespace="files")),
     path("courses/", include("unite_compress.courses.urls", namespace="courses")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)
 
 # API URLS
 urlpatterns += [

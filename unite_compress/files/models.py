@@ -2,6 +2,7 @@ from botocore.exceptions import ClientError
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 from unite_compress.courses.models import Course
 from unite_compress.files.client import s3_get_file_size
@@ -17,23 +18,33 @@ class BaseModel(models.Model):
 
 
 CONVERSION_STATUS_CHOICES = (
-    ("pending", "Convert pending"),
-    ("started", "Convert started"),
-    ("converted", "Converted"),
-    ("error", "Not converted due to error"),
+    ("pending", _("Convert pending")),
+    ("started", _("Convert started")),
+    ("converted", _("Converted")),
+    ("error", _("Not converted due to error")),
 )
 
 COMPRESSION_RATES = (
-    ("low", "Low compression rate"),
-    ("medium", "Medium compression rate"),
-    ("high", "High compression rate"),
+    ("low", _("Low compression rate")),
+    ("medium", _("Medium compression rate")),
+    ("high", _("High compression rate")),
 )
 
 
 class File(BaseModel):
-    file = models.FileField(upload_to=file_generate_upload_path, blank=True, null=True)
+    file = models.FileField(
+        upload_to=file_generate_upload_path,
+        blank=True,
+        null=True,
+        verbose_name=_("File"),
+    )
     course = models.ForeignKey(
-        Course, on_delete=models.CASCADE, related_name="files", blank=True, null=True
+        Course,
+        on_delete=models.CASCADE,
+        related_name="files",
+        blank=True,
+        null=True,
+        verbose_name=_("Folder"),
     )
     original_file_name = models.TextField()
 
@@ -52,18 +63,18 @@ class File(BaseModel):
     # conversion attributes
     convert_status = models.CharField(
         max_length=16,
-        verbose_name="Conversion status",
+        verbose_name=_("Conversion status"),
         choices=CONVERSION_STATUS_CHOICES,
         default="pending",
     )
     converted_at = models.DateTimeField(
-        verbose_name="Convert time",
+        verbose_name=_("Convert time"),
         editable=False,
         null=True,
         blank=True,
     )
     last_convert_msg = models.TextField(
-        verbose_name="Message from last converting command", blank=True, default=""
+        verbose_name=_("Message from last converting command"), blank=True, default=""
     )
 
     @property
@@ -135,25 +146,25 @@ class ConvertingCommand(models.Model):
 
     title = models.CharField(
         max_length=64,
-        verbose_name="Title",
+        verbose_name=_("Title"),
         null=True,
         blank=True,
     )
     mime_regex = models.CharField(
         max_length=255,
-        verbose_name="Regex to match mime types",
+        verbose_name=_("Regex to match mime types"),
     )
     is_enabled = models.BooleanField(
-        verbose_name="Enabled?",
+        verbose_name=_("Enabled?"),
         default=True,
     )
     command = models.TextField(
-        verbose_name="System command to convert video",
+        verbose_name=_("System command to convert video"),
     )
 
     compression_rate = models.CharField(
         max_length=16,
-        verbose_name="compression rate",
+        verbose_name=_("compression rate"),
         choices=COMPRESSION_RATES,
         default="medium",
     )

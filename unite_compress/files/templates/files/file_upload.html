@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block title %}File Upload{% endblock %}
+{% load i18n %}
+{% block title %} {% translate "File Upload" %} {% endblock %}
 
 {% block css %}
     {{ block.super }}
@@ -17,7 +17,7 @@
     <div id="messages"></div>
     <div id="uploading-spinner" class="uploading-spinner hidden">
 	<img src="{% static 'images/spinner.gif' %}" alt="Uploading...">
-	<span>Uploading...</span>
+	<span> {% translate "Uploading..." %} </span>
     </div>
 {% endblock content %}
 
