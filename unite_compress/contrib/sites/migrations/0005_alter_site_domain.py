@@ -17,7 +17,7 @@ def alter_site_backward(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("sites", "0003_set_site_domain_and_name"),
+        ("sites", "0004_alter_options_ordering_domain"),
     ]
 
     operations = [
