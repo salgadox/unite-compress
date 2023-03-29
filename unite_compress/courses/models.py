@@ -2,11 +2,12 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 
 
 class Course(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    description = models.TextField(blank=True)
+    name = models.CharField(max_length=255, unique=True, verbose_name=_("name"))
+    description = models.TextField(blank=True, verbose_name=_("description"))
     created_at = models.DateTimeField(db_index=True, default=timezone.now)
 
     created_by = models.ForeignKey(

@@ -42,25 +42,25 @@
           <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'home' %}">Unite Compress</a>
+          <a class="navbar-brand" href="{% url 'home' %}"> {% translate "Compress 4 e-learning" %} </a>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
+                <a class="nav-link" href="{% url 'home' %}">{% translate "Home" %} <span class="visually-hidden">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'good-practices'  %}">Good Practices</a>
+                <a class="nav-link" href="{% url 'good-practices'  %}"> {% translate "Good Practices" %}</a>
               </li>
             <!--   <li class="nav-item">
                 <a class="nav-link" href="{# url 'about' #}">About</a>
               </li> -->
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'courses:list'  %}">My Folders</a>
+                    <a class="nav-link" href="{% url 'courses:list'  %}"> {% translate "My Folders" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'files:list'  %}">My Files</a>
+                    <a class="nav-link" href="{% url 'files:list'  %}"> {% translate "My Files" %}</a>
                 </li>
                 <li class="nav-item">
                   {# URL provided by django-allauth/account/urls.py #}
@@ -82,6 +82,23 @@
                   <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% translate "Sign In" %}</a>
                 </li>
               {% endif %}
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% translate "Language" %}</a>
+                <form method="post" action="{% url 'set_language' %}" id="change-language-form">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    <ul class="dropdown-menu">
+                        {% get_current_language as current_language_code %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <li class="dropdown-item">
+                                <button type="submit" name="language" value="{{ language.code }}" class="{% if language.code == LANGUAGE_CODE %}font-weight-bold{% endif %} dropdown-item">{{ language.name_local | title }}</button>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </form>
+            </li>
             </ul>
           </div>
         </div>

@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
-{% block title %}Folder Detail{% endblock %}
-
+{% block title %} Folder Detail {% endblock %}
+{% load i18n %}
 {% block content %}
     <div class="container">
         <h1>{{ course.name }}</h1>
         <table class="table">
             <tbody>
                 <tr>
-                    <td><strong>Created At:</strong> {{ course.created_at }}</td>
+                    <td><strong> {% translate "Created At" %}</strong> {{ course.created_at }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Description:</strong> {{ course.description }}</td>
+                    <td><strong> {% translate "Description:" %} </strong> {{ course.description }}</td>
                 </tr>
             </tbody>
         </table>
         {% if course.files.all %}
-        <h2>Associated Files ({{ course.files.count }})</h2>
+        <h2> {% translate "Associated Files" %} ({{ course.files.count }})</h2>
             <ul>
             {% for file in course.files.all %}
 		<li><a href="{% url 'files:detail' file_name=file.file_name %}">{{ file.original_file_name }}</a></li>
@@ -23,6 +23,6 @@
             </ul>
         {% endif %}
 
-        <a class="btn btn-danger" href="{% url 'courses:delete' course_slug=course.slug %}">Delete</a>
+        <a class="btn btn-danger" href="{% url 'courses:delete' course_slug=course.slug %}"> {% translate "Delete" %}</a>
     </div>
 {% endblock %}
