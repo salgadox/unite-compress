@@ -1,0 +1,759 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-29 14:37+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: config/settings/base.py:39
+msgid "English"
+msgstr "Anglais"
+
+#: config/settings/base.py:40
+msgid "French"
+msgstr "Français"
+
+#: unite_compress/courses/models.py:8
+msgid "name"
+msgstr "nom"
+
+#: unite_compress/courses/models.py:9
+#, fuzzy
+#| msgid "Description:"
+msgid "description"
+msgstr "Description"
+
+#: unite_compress/courses/templates/courses/course_create.html:5
+#: unite_compress/templates/pages/home.html:24
+msgid "Create Folder"
+msgstr "Créer le dossier"
+
+#: unite_compress/courses/templates/courses/course_create.html:9
+msgid "Create"
+msgstr "Créer"
+
+#: unite_compress/courses/templates/courses/course_delete.html:4
+msgid "Delete Folder"
+msgstr "Supprimer le dossier"
+
+#: unite_compress/courses/templates/courses/course_delete.html:5
+msgid "Are you sure you want to delete"
+msgstr "Etes-vous sûr que vous voulez supprimer"
+
+#: unite_compress/courses/templates/courses/course_delete.html:8
+#: unite_compress/courses/templates/courses/course_detail.html:18
+msgid "Associated Files"
+msgstr "Fichiers associés"
+
+#: unite_compress/courses/templates/courses/course_delete.html:19
+msgid "Cancel"
+msgstr "Annuler"
+
+#: unite_compress/courses/templates/courses/course_detail.html:10
+#: unite_compress/files/templates/files/file_list.html:29
+msgid "Created At"
+msgstr "Créé à"
+
+#: unite_compress/courses/templates/courses/course_detail.html:13
+msgid "Description:"
+msgstr "Description:"
+
+#: unite_compress/courses/templates/courses/course_detail.html:26
+#: unite_compress/files/templates/files/file_detail.html:62
+msgid "Delete"
+msgstr "Supprimer"
+
+#: unite_compress/courses/templates/courses/course_list.html:18
+msgid "Folder List"
+msgstr "Liste des dossiers"
+
+#: unite_compress/courses/templates/courses/course_list.html:19
+msgid "Create new folder"
+msgstr "Créer un nouveau dossier"
+
+#: unite_compress/courses/templates/courses/course_list.html:24
+msgid "Folder Name:"
+msgstr "Nom de dossier:"
+
+#: unite_compress/courses/templates/courses/course_list.html:25
+#: unite_compress/files/templates/files/file_detail.html:21
+msgid "Created At:"
+msgstr "Créé à:"
+
+#: unite_compress/courses/templates/courses/course_list.html:26
+msgid "Files:"
+msgstr "Fichiers:"
+
+#: unite_compress/files/models.py:21
+#, fuzzy
+#| msgid "Converted At:"
+msgid "Convert pending"
+msgstr "Converti à:"
+
+#: unite_compress/files/models.py:22
+#, fuzzy
+#| msgid "Convert Status"
+msgid "Convert started"
+msgstr "Compression comencée"
+
+#: unite_compress/files/models.py:23
+#, fuzzy
+#| msgid "Convert"
+msgid "Converted"
+msgstr "Converti"
+
+#: unite_compress/files/models.py:24
+msgid "Not converted due to error"
+msgstr "Non converti en raison d'une erreur"
+
+#: unite_compress/files/models.py:28
+#, fuzzy
+#| msgid "Compression level"
+msgid "Low compression rate"
+msgstr "Niveau de compression bas"
+
+#: unite_compress/files/models.py:29
+#, fuzzy
+#| msgid "Compression level"
+msgid "Medium compression rate"
+msgstr "Niveau de compression moyen"
+
+#: unite_compress/files/models.py:30
+#, fuzzy
+#| msgid "Compression level"
+msgid "High compression rate"
+msgstr "Niveau de compression haut"
+
+#: unite_compress/files/models.py:35
+#, fuzzy
+#| msgid "Files"
+msgid "File"
+msgstr "Fichiers"
+
+#: unite_compress/files/models.py:37
+#: unite_compress/files/templates/files/file_list.html:28
+#: unite_compress/templates/pages/home.html:42
+msgid "Folder"
+msgstr "Dossier"
+
+#: unite_compress/files/models.py:55
+#, fuzzy
+#| msgid "Convert Status"
+msgid "Conversion status"
+msgstr "Statut de compression"
+
+#: unite_compress/files/models.py:60
+#, fuzzy
+#| msgid "Convert"
+msgid "Convert time"
+msgstr "temps de convertion"
+
+#: unite_compress/files/models.py:66
+msgid "Message from last converting command"
+msgstr "Message de la dernière commande de conversion"
+
+#: unite_compress/files/models.py:138
+msgid "Title"
+msgstr "Titre"
+
+#: unite_compress/files/models.py:144
+msgid "Regex to match mime types"
+msgstr "Regex pour correspondre aux types MIME"
+
+#: unite_compress/files/models.py:147
+msgid "Enabled?"
+msgstr "Active?"
+
+#: unite_compress/files/models.py:151
+msgid "System command to convert video"
+msgstr "Commande système pour convertir la vidéo"
+
+#: unite_compress/files/models.py:156
+#, fuzzy
+#| msgid "Compression level"
+msgid "compression rate"
+msgstr "Niveau de compression"
+
+#: unite_compress/files/templates/files/file_detail.html:4
+msgid "File Detail"
+msgstr "Détail du fichier"
+
+#: unite_compress/files/templates/files/file_detail.html:18
+msgid " File Type:"
+msgstr "Type de fichier"
+
+#: unite_compress/files/templates/files/file_detail.html:25
+msgid "Original Size:"
+msgstr "Taille d'origine"
+
+#: unite_compress/files/templates/files/file_detail.html:29
+msgid "File still uploading..."
+msgstr "Le fichier est en train de télécharger"
+
+#: unite_compress/files/templates/files/file_detail.html:34
+msgid "Size after compression:"
+msgstr "Taille après compression"
+
+#: unite_compress/files/templates/files/file_detail.html:37
+msgid "Converted At:"
+msgstr "Converti à:"
+
+#: unite_compress/files/templates/files/file_detail.html:41
+msgid "Convert Status:"
+msgstr "Statut de compression"
+
+#: unite_compress/files/templates/files/file_detail.html:48
+msgid "Download"
+msgstr "Télécharger"
+
+#: unite_compress/files/templates/files/file_detail.html:50
+msgid "Convert"
+msgstr "Convertir"
+
+#: unite_compress/files/templates/files/file_detail.html:51
+msgid "Advanced options"
+msgstr "Options avancées"
+
+#: unite_compress/files/templates/files/file_detail.html:53
+msgid "Compression level"
+msgstr "Niveau de compression"
+
+#: unite_compress/files/templates/files/file_detail.html:55
+msgid "low"
+msgstr "faible"
+
+#: unite_compress/files/templates/files/file_detail.html:56
+msgid "Medium"
+msgstr "Moyen"
+
+#: unite_compress/files/templates/files/file_detail.html:57
+msgid "High"
+msgstr "Haut"
+
+#: unite_compress/files/templates/files/file_list.html:20
+msgid "File List"
+msgstr "Liste de fichiers"
+
+#: unite_compress/files/templates/files/file_list.html:26
+msgid "File Name"
+msgstr "Nom de fichier"
+
+#: unite_compress/files/templates/files/file_list.html:27
+msgid "File Type"
+msgstr "Type de fichier"
+
+#: unite_compress/files/templates/files/file_list.html:30
+msgid "Convert Status"
+msgstr "Statut de compression"
+
+#: unite_compress/files/templates/files/file_list.html:31
+msgid "Size"
+msgstr "Taille"
+
+#: unite_compress/files/templates/files/file_upload.html:4
+msgid "File Upload"
+msgstr "Téléchargement de fichiers"
+
+#: unite_compress/files/templates/files/file_upload.html:20
+msgid "Uploading..."
+msgstr "Téléchargement..."
+
+#: unite_compress/files/views.py:35
+msgid "Your file has been uploaded successfully."
+msgstr ""
+
+#: unite_compress/files/views.py:40
+msgid "Your file is being converted."
+msgstr "Votre fichier a été téléchargé avec succès."
+
+#: unite_compress/templates/account/account_inactive.html:5
+#: unite_compress/templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr "Compte inactif"
+
+#: unite_compress/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Ce compte est inactif"
+
+#: unite_compress/templates/account/email.html:7
+msgid "Account"
+msgstr "Compte"
+
+#: unite_compress/templates/account/email.html:10
+msgid "E-mail Addresses"
+msgstr "Adresses e-mail"
+
+#: unite_compress/templates/account/email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "Les adresses e-mail suivantes sont associées à votre compte"
+
+#: unite_compress/templates/account/email.html:27
+msgid "Verified"
+msgstr "Vérifié"
+
+#: unite_compress/templates/account/email.html:29
+msgid "Unverified"
+msgstr "Non vérifié"
+
+#: unite_compress/templates/account/email.html:31
+msgid "Primary"
+msgstr "Primaire"
+
+#: unite_compress/templates/account/email.html:37
+msgid "Make Primary"
+msgstr "Rendre primaire"
+
+#: unite_compress/templates/account/email.html:38
+msgid "Re-send Verification"
+msgstr "Envoyé la verification à nouveau"
+
+#: unite_compress/templates/account/email.html:39
+msgid "Remove"
+msgstr "Supprimer"
+
+#: unite_compress/templates/account/email.html:46
+msgid "Warning:"
+msgstr "Avertissement"
+
+#: unite_compress/templates/account/email.html:46
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"Vous n'avez actuellement aucune adresse e-mail configurée. Vous devrez "
+"ajouter une adresse e-mail pour recevoir des notifications, réinitialiser "
+"votre mot de passe, etc."
+
+#: unite_compress/templates/account/email.html:51
+msgid "Add E-mail Address"
+msgstr "Ajouter une adresse e-mail"
+
+#: unite_compress/templates/account/email.html:56
+msgid "Add E-mail"
+msgstr "Ajouter un e-mail"
+
+#: unite_compress/templates/account/email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "Voulez-vous vraiment supprimer l'adresse e-mail sélectionnée?"
+
+#: unite_compress/templates/account/email_confirm.html:6
+#: unite_compress/templates/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr "Confirmez votre adresse email"
+
+#: unite_compress/templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Veuillez confirmer que <a href=\"mailto:%(email)s\">%(email)s</a> est un e-"
+"mail  valide de l'utilisateur %(user_display)s"
+
+#: unite_compress/templates/account/email_confirm.html:20
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: unite_compress/templates/account/email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"Ce lien de confirmation par e-mail a expiré ou n'est pas valide. S'il vous "
+"plaît <a href=\"%(email_url)s\"> émettre une nouvelle demande de "
+"confirmation par e-mail</a>"
+
+#: unite_compress/templates/account/login.html:7
+#: unite_compress/templates/account/login.html:11
+#: unite_compress/templates/account/login.html:56
+#: unite_compress/templates/base.html:82
+msgid "Sign In"
+msgstr "S'identifier"
+
+#: unite_compress/templates/account/login.html:17
+msgid "Please sign in with one of your existing third party accounts:"
+msgstr "Veuillez vous connecter avec l'un de vos comptes tiers existants"
+
+#: unite_compress/templates/account/login.html:19
+#, python-format
+msgid ""
+"Or, <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s account and "
+"sign in below:"
+msgstr ""
+"Ou, <a href=\"%(signup_url)s\">créez</a> un compte %(site_name)s et "
+"inscrivez-vous ci-dessous"
+
+#: unite_compress/templates/account/login.html:32
+msgid "or"
+msgstr "ou"
+
+#: unite_compress/templates/account/login.html:41
+#, python-format
+msgid ""
+"If you have not created an account yet, then please <a href=\"%(signup_url)s"
+"\">sign up</a> first."
+msgstr ""
+"Si vous n'avez pas encore créé de compte, veuillez <a href=\"%(signup_url)s"
+"\">inscrivez-vous</a> d'abord"
+
+#: unite_compress/templates/account/login.html:55
+msgid "Forgot Password?"
+msgstr "Mot de passe oublié?"
+
+#: unite_compress/templates/account/logout.html:5
+#: unite_compress/templates/account/logout.html:8
+#: unite_compress/templates/account/logout.html:17
+#: unite_compress/templates/base.html:71
+msgid "Sign Out"
+msgstr "Se déconnecter"
+
+#: unite_compress/templates/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr "Êtes-vous certain de vouloir vous déconnecter?"
+
+#: unite_compress/templates/account/password_change.html:6
+#: unite_compress/templates/account/password_change.html:9
+#: unite_compress/templates/account/password_change.html:14
+#: unite_compress/templates/account/password_reset_from_key.html:5
+#: unite_compress/templates/account/password_reset_from_key.html:8
+#: unite_compress/templates/account/password_reset_from_key_done.html:4
+#: unite_compress/templates/account/password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr "Changer le mot de passe"
+
+#: unite_compress/templates/account/password_reset.html:7
+#: unite_compress/templates/account/password_reset.html:11
+#: unite_compress/templates/account/password_reset_done.html:6
+#: unite_compress/templates/account/password_reset_done.html:9
+msgid "Password Reset"
+msgstr "Réinitialisation du mot de passe"
+
+#: unite_compress/templates/account/password_reset.html:16
+msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
+msgstr "Mot de passe oublié ? Entrez votre adresse e-mail ci-dessous, et nous vous enverrons un e-mail vous permettant de le réinitialiser."
+
+#: unite_compress/templates/account/password_reset.html:21
+msgid "Reset My Password"
+msgstr "réinitialiser votre mot de passe."
+
+
+#: unite_compress/templates/account/password_reset.html:24
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Veuillez nous contacter si vous rencontrez des difficultés pour "
+
+
+#: unite_compress/templates/account/password_reset_done.html:15
+msgid "We have sent you an e-mail. Please contact us if you do not receive it within a few minutes."
+msgstr "Nous vous avons envoyé un e-mail. Veuillez nous contacter si vous ne le recevez pas en quelques minutes."
+
+#: unite_compress/templates/account/password_reset_from_key.html:8
+msgid "Bad Token"
+msgstr "Mauvais Token"
+
+#: unite_compress/templates/account/password_reset_from_key.html:12
+#, python-format
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</a>."
+msgstr "Le lien de réinitialisation du mot de passe n'était pas valide, peut-être parce qu'il a déjà été utilisé. Veuillez demander une <a href="
+"\"%(passwd_reset_url)s\">réinitialisation du nouveau mot de passe</a>."
+
+#: unite_compress/templates/account/password_reset_from_key.html:18
+msgid "change password"
+msgstr "changer le mot de passe"
+
+#: unite_compress/templates/account/password_reset_from_key.html:21
+#: unite_compress/templates/account/password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr "Votre mot de passe est maintenant modifié"
+
+#: unite_compress/templates/account/password_set.html:6
+#: unite_compress/templates/account/password_set.html:9
+#: unite_compress/templates/account/password_set.html:14
+msgid "Set Password"
+msgstr "Définir le mot de passe"
+
+#: unite_compress/templates/account/signup.html:6
+msgid "Signup"
+msgstr "S'inscrire"
+
+#: unite_compress/templates/account/signup.html:9
+#: unite_compress/templates/account/signup.html:19
+#: unite_compress/templates/base.html:77
+msgid "Sign Up"
+msgstr "S'enregistrer"
+
+#: unite_compress/templates/account/signup.html:11
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"Vous avez déjà un compte? Alors veuillez <a href=\"%(login_url)s\">vous "
+"connecter"
+
+#: unite_compress/templates/account/signup_closed.html:5
+#: unite_compress/templates/account/signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr "Inscriptions closes"
+
+#: unite_compress/templates/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Nous sommes désolés, mais l'inscription est actuellement fermée"
+
+#: unite_compress/templates/account/verification_sent.html:5
+#: unite_compress/templates/account/verification_sent.html:8
+#: unite_compress/templates/account/verified_email_required.html:5
+#: unite_compress/templates/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr "Vérifiez votre adresse e-mail"
+
+#: unite_compress/templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Nous vous avons envoyé un e-mail pour vérification. Suivez le lien fourni "
+"pour finalisez le processus d'inscription. Veuillez nous contacter si vous "
+"ne le recevez pas en quelques minutes."
+
+#: unite_compress/templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"Cette partie du site nous oblige à vérifier que\n"
+"vous êtes qui vous prétendez être. À cette fin, nous vous demandons\n"
+"vérifier la propriété de votre adresse e-mail."
+
+#: unite_compress/templates/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"Nous vous avons envoyé un e-mail pour\n"
+"vérification. Veuillez cliquer sur le lien contenu dans cet e-mail. S'il "
+"vous plaît\n"
+"contactez-nous si vous ne le recevez pas dans quelques minutes."
+
+#: unite_compress/templates/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Remarque :</strong> vous pouvez toujours <a href=\"%(email_url)s"
+"\">modifier votre e-adresse e-mail</a>"
+
+#: unite_compress/templates/base.html:45
+msgid "Compress 4 e-learning"
+msgstr "Compress 4 e-learning"
+
+#: unite_compress/templates/base.html:50
+msgid "Home"
+msgstr "Accueil"
+
+#: unite_compress/templates/base.html:53
+msgid "Good Practices"
+msgstr "Bonnes practiques"
+
+#: unite_compress/templates/base.html:60
+msgid "My Folders"
+msgstr "Mes dossiers"
+
+#: unite_compress/templates/base.html:63
+#: unite_compress/templates/pages/home.html:40
+msgid "My Files"
+msgstr "Mes Fichiers"
+
+#: unite_compress/templates/base.html:67
+msgid "My Profile"
+msgstr "Mon profil"
+
+#: unite_compress/templates/pages/good-practices.html:6
+msgid "Moodle and MoodleBox Tutorial"
+msgstr "Tutoriel Moodle et MoodleBox"
+
+#: unite_compress/templates/pages/good-practices.html:7
+msgid ""
+"This tutorial aims to help you during the installation and configuration of "
+"your Raspbery Pi as well as to teach you the bases for creating a Moodle "
+"course inside the MoodleBox"
+msgstr ""
+"Ce tutoriel a pour but de vous aider lors de l'installation et de la "
+"configuration de votre Raspbery Pi ainsi que de vous apprendre les bases "
+"pour créer un Moodlecours à l'intérieur de la MoodleBox"
+
+#: unite_compress/templates/pages/good-practices.html:10
+msgid "Preparation"
+msgstr "Préparation"
+
+#: unite_compress/templates/pages/good-practices.html:12
+msgid " How to create a Raspberry Pi Imager"
+msgstr "Comment créer un imager Raspberry Pi"
+
+#: unite_compress/templates/pages/good-practices.html:17
+msgid "Essential configuration"
+msgstr "Configuration essentielle"
+
+#: unite_compress/templates/pages/good-practices.html:18
+msgid "How to create a course"
+msgstr "Comment créer un cours"
+
+#: unite_compress/templates/pages/home.html:11
+msgid "Welcome to our file compression and course management system!"
+msgstr ""
+"Bienvenue dans notre système de compression de fichiers et de gestion de "
+"cours !"
+
+#: unite_compress/templates/pages/home.html:12
+msgid "Here you can compress your files and organize them into courses."
+msgstr "Ici, vous pouvez compresser vos fichiers et les organiser en cours."
+
+#: unite_compress/templates/pages/home.html:16
+msgid "Upload a file"
+msgstr "Télécharger un fichier"
+
+#: unite_compress/templates/pages/home.html:17
+msgid "Create a course"
+msgstr "Créer un cours"
+
+#: unite_compress/templates/pages/home.html:22
+msgid "How it works"
+msgstr "Comment ça fonctionne"
+
+#: unite_compress/templates/pages/home.html:24
+msgid " Create a Folder: Go to the "
+msgstr "Créer un dossier : accédez à la"
+
+#: unite_compress/templates/pages/home.html:24
+msgid "page and enter a name and a description for your folder."
+msgstr "page et entrez un nom et une description pour votre dossier."
+
+#: unite_compress/templates/pages/home.html:25
+msgid "Upload a file: Go to the"
+msgstr "Téléchargez un fichier : accédez à la"
+
+#: unite_compress/templates/pages/home.html:25
+msgid " Upload File"
+msgstr "Téléverser un fichier"
+
+#: unite_compress/templates/pages/home.html:25
+msgid ""
+" page and select the file you want to upload. You can choose to add it to an "
+"existing folder or create a new one."
+msgstr ""
+"page et sélectionnez le fichier que vous souhaitez télécharger. Vous pouvez "
+"choisir de l'ajouter à un dossier existant ou créez-en un nouveau."
+
+#: unite_compress/templates/pages/home.html:26
+msgid ""
+"Compress the file: Go to the file detail page by clicking on its name in the "
+msgstr ""
+"Compressez le fichier : Accédez à la page de détail du fichier en cliquant "
+"sur son nom dans la"
+
+#: unite_compress/templates/pages/home.html:26
+msgid "file list"
+msgstr "liste de fichiers"
+
+#: unite_compress/templates/pages/home.html:26
+msgid ""
+"and click on the convert button.  You can choose to compress the file with "
+"the default 'medium' compression level or click on the 'Advanced options' "
+"button to choose from three different compression levels."
+msgstr "et cliquez sur le bouton convertir. Vous pouvez choisir de compresser le fichier avec "
+"le niveau de compression 'moyen' par défaut ou cliquez sur 'Options avancées'"
+"pour choisir parmi trois niveaux de compression différents."
+
+#: unite_compress/templates/pages/home.html:29
+msgid "The platform supports the following mime types :"
+msgstr "La plate-forme prend en charge les types mime suivants"
+
+#: unite_compress/templates/pages/home.html:31
+msgid "application/pdf"
+msgstr "application/pdf"
+
+#: unite_compress/templates/pages/home.html:32
+msgid "images"
+msgstr "images"
+
+#: unite_compress/templates/pages/home.html:33
+msgid "video"
+msgstr "vidéo"
+
+#: unite_compress/templates/pages/home.html:39
+msgid "Files"
+msgstr "Fichiers"
+
+#: unite_compress/templates/pages/home.html:40
+msgid "To see a list of all your files, go to"
+msgstr "Pour afficher une liste de tous vos fichiers, accédez à"
+
+#: unite_compress/templates/pages/home.html:40
+#, fuzzy
+#| msgid "page"
+msgid " page"
+msgstr "page"
+
+#: unite_compress/templates/pages/home.html:43
+msgid "To see a list of all your Folders, go to the"
+msgstr "Pour afficher une liste de tous vos dossiers, accédez à la"
+
+#: unite_compress/templates/pages/home.html:43
+#, fuzzy
+#| msgid "My Folders"
+msgid "My Folders "
+msgstr "Mes dossiers"
+
+#: unite_compress/templates/pages/home.html:43
+msgid "page"
+msgstr "page"
+
+#: unite_compress/users/admin.py:18
+msgid "Personal info"
+msgstr "Informations personnelles"
+
+#: unite_compress/users/admin.py:20
+msgid "Permissions"
+msgstr "Autorisations"
+
+#: unite_compress/users/admin.py:31
+msgid "Important dates"
+msgstr "Rendez-vous importants"
+
+#: unite_compress/users/apps.py:7
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: unite_compress/users/forms.py:25 unite_compress/users/tests/test_forms.py:36
+msgid "This username has already been taken."
+msgstr "Ce nom d'utilisateur a déjà été pris."
+
+#: unite_compress/users/models.py:15
+msgid "Name of User"
+msgstr "Nom de l'utilisateur"
+
+#: unite_compress/users/views.py:24
+msgid "Information successfully updated"
+msgstr "Informations mises à jour avec succès"
+
+#~ msgid "Folder Detail"
+#~ msgstr "Détail du dossier"
+
+#~ msgid "and click on the "
+#~ msgstr "et cliquez sur le"

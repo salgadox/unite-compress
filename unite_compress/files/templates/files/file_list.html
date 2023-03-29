@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block title %}File List{% endblock %}
 
 {% block css %}
@@ -17,18 +17,18 @@
 
 
 <div class="container">
-    <h1>File List</h1>
+    <h1> {% translate "File List" %} </h1>
     <p><a href="{% url 'files:upload' %}" class="btn btn-primary" role="button">Upload new file</a></p>
 
     <table class="table">
         <thead>
             <tr>
-                <th><a href="#" data-sortby="name">File Name</a></th>
-                <th><a href="#" data-sortby="type">File Type</a></th>
-                <th><a href="#" data-sortby="course">Folder</a></th>
-                <th><a href="#" data-sortby="created">Created At</a></th>
-                <th><a href="#" data-sortby="status">Convert Status</a></th>
-				<th><a href="#" data-sortby="size">Size</a></th>
+                <th><a href="#" data-sortby="name"> {% translate "File Name" %}</a></th>
+                <th><a href="#" data-sortby="type">{% translate "File Type" %}</a></th>
+                <th><a href="#" data-sortby="course">{% translate "Folder" %}</a></th>
+                <th><a href="#" data-sortby="created">{% translate "Created At" %}</a></th>
+                <th><a href="#" data-sortby="status">{% translate "Convert Status" %}</a></th>
+				<th><a href="#" data-sortby="size">{% translate "Size" %}</a></th>
             </tr>
         </thead>
         <tbody id="fileTable">

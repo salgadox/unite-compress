@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, FormView, ListView
 
 from unite_compress.courses.models import Course
@@ -31,12 +32,12 @@ class FileDetailView(DetailView):
 
 def latest_file_view(request):
     latest_file = File.objects.filter(uploaded_by=request.user).last()
-    messages.success(request, "Your file has been uploaded successfully.")
+    messages.success(request, _("Your file has been uploaded successfully."))
     return render(request, "files/file_detail.html", {"file": latest_file})
 
 
 def file_converting_view(request):
-    messages.success(request, "Your file is being converted.")
+    messages.success(request, _("Your file is being converted."))
     return redirect("files:list")
 
 
