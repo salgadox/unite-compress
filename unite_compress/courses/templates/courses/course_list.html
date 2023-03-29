@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}File List{% endblock %}
-
+{% block title %}  Folder List {% endblock %}
+{% load i18n %}
 {% block javascript %}
     {{ block.super }}
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -15,15 +15,15 @@ th.active-filter a {
 
 
 <div class="container">
-    <h1>Folder List</h1>
-    <p><a href="{% url 'courses:create' %}" class="btn btn-primary" role="button">Create new folder</a></p>
+    <h1>{% translate "Folder List" %}</h1>
+    <p><a href="{% url 'courses:create' %}" class="btn btn-primary" role="button"> {% translate "Create new folder" %} </a></p>
 
     <table class="table">
         <thead>
             <tr>
-                <th><a href="#" data-sortby="name">Folder Name: </a></th>
-                <th><a href="#" data-sortby="created">Created At: </a></th>
-                <th><a href="#" data-sortby="file_number">Files: </a></th>
+                <th><a href="#" data-sortby="name"> {% translate "Folder Name:" %} </a></th>
+                <th><a href="#" data-sortby="created"> {% translate "Created At:" %} </a></th>
+                <th><a href="#" data-sortby="file_number"> {% translate "Files:" %} </a></th>
             </tr>
         </thead>
         <tbody id="courseTable">
