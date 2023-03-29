@@ -493,7 +493,7 @@ msgstr "S'inscrire"
 #: unite_compress/templates/account/signup.html:19
 #: unite_compress/templates/base.html:77
 msgid "Sign Up"
-msgstr "S'identifier"
+msgstr "S'enregistrer"
 
 #: unite_compress/templates/account/signup.html:11
 #, python-format

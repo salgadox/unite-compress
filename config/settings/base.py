@@ -355,4 +355,5 @@ LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [
     "account_signup",
     "admin:index",
     "admin:login",
+    "set_language",
 ]
