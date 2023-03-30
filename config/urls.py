@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
@@ -13,9 +12,6 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += i18n_patterns(
     # User management
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     # path(
@@ -30,8 +26,7 @@ urlpatterns += i18n_patterns(
     path("files/", include("unite_compress.files.urls", namespace="files")),
     path("courses/", include("unite_compress.courses.urls", namespace="courses")),
     path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
-)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS
 urlpatterns += [
