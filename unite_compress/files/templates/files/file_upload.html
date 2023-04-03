@@ -51,7 +51,7 @@
 			     postData.append(key, fields[key]);
 			 }
 			 postData.append('file', file);
-			 messages.html('File is uploading');
+			 messages.html({% translate 'File is uploading' %});
 			 $.ajax({
 			     url: response.url,
 			     method: 'POST',
