@@ -12,14 +12,14 @@
         var convertButton = $('#convert-button');
         convertButton.on('click', function() {
             var compressionRate = $('#compression-rate').val();
-            message.html('Your file is converting.', compressionRate);
+            message.html({% translate 'Your file is converting.' %}, compressionRate);
             $.ajax({
 				url: "{% url 'api:file-convert' pk=file.id %}?compression_rate="+compressionRate,
 				method: "POST",
                 data: {},
                 headers: {"X-CSRFToken": "{{ csrf_token }}"},
                 success: function() {
-					message.html('File conversion completed!');
+					message.html({% translate 'File conversion completed!' %});
                     window.location.replace("{% url 'files:file-converting' %}");
 				},
                 error: function(data) {
@@ -36,7 +36,7 @@
                type: "DELETE",
                headers: {"X-CSRFToken": "{{ csrf_token }}"},
                success: function(data){
-                message.html('Successfully deleted');
+                message.html({% translate 'Successfully deleted' %});
                 window.location.replace("{% url 'files:list' %}");
             }});
         });
