@@ -1,0 +1,11 @@
+1) Connect to Moodlebox wirelless network
+
+	•	wifi name: Moodlebox
+	•	passeword: moodlebox
+	•
+
+2) Connect to your Moodlebox "website"
+
+	•	Visit http://moodlebox.home/
+	•	Username : moodlebox
+	•	password:  Moodlebox4$
