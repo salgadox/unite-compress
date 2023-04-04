@@ -17,7 +17,7 @@
     <div id="messages"></div>
     <div id="uploading-spinner" class="uploading-spinner hidden">
 	<img src="{% static 'images/spinner.gif' %}" alt="Uploading...">
-	<span> {% translate "Uploading..." %} </span>
+	<span>  "Uploading..." </span>
     </div>
 {% endblock content %}
 
@@ -51,7 +51,7 @@
 			     postData.append(key, fields[key]);
 			 }
 			 postData.append('file', file);
-			 messages.html({% translate 'File is uploading' %});
+			 messages.html('File is uploading');
 			 $.ajax({
 			     url: response.url,
 			     method: 'POST',

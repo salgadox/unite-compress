@@ -1,4 +1,3 @@
-{% load i18n %}
 <script>
     var message = $('#message');
     {% if file.convert_status == "converted" %}
@@ -13,14 +12,14 @@
         var convertButton = $('#convert-button');
         convertButton.on('click', function() {
             var compressionRate = $('#compression-rate').val();
-            message.html({% translate 'Your file is converting.' %}, compressionRate);
+            message.html( 'Your file is converting.', compressionRate);
             $.ajax({
 				url: "{% url 'api:file-convert' pk=file.id %}?compression_rate="+compressionRate,
 				method: "POST",
                 data: {},
                 headers: {"X-CSRFToken": "{{ csrf_token }}"},
                 success: function() {
-					message.html({% translate 'File conversion completed!' %});
+					message.html('File conversion completed!');
                     window.location.replace("{% url 'files:file-converting' %}");
 				},
                 error: function(data) {
@@ -37,7 +36,7 @@
                type: "DELETE",
                headers: {"X-CSRFToken": "{{ csrf_token }}"},
                success: function(data){
-                message.html({% translate 'Successfully deleted' %});
+                message.html('Successfully deleted');
                 window.location.replace("{% url 'files:list' %}");
             }});
         });
