@@ -48,7 +48,15 @@
         <button id="download-button" class="btn btn-primary" type="button"> {% translate "Download" %} </button>
         {% else %}
         <button id="convert-button" class="btn btn-primary" type="button"> {% translate "Convert" %} </button>
-        <button id="advanced-options-button" class="btn btn-secondary" type="button"> {% translate "Advanced options" %} </button>
+
+        <div>
+            <p>Compression rate : </p>
+            <input type="radio" id="compression-rate" name="compression_rate" value="medium" checked>
+            <label for="compression-rate-medium">{% translate "Medium" %}</label>
+            <input type="radio" id="compression-rate" name="compression_rate" value="high">
+            <label for="compression-rate-high">{% translate "High" %}</label>
+        </div>
+      <!--   <button id="advanced-options-button" class="btn btn-secondary" type="button"> {% translate "Advanced options" %} </button>
         <div id="advanced-options" style="display: none;">
             <label for="compression"> {% translate "Compression level" %}</label>
             <select id="compression-rate" name="compression_rate">
@@ -56,7 +64,7 @@
                 <option value="medium" selected> {% translate "Medium" %} </option>
                 <option value="high"> {% translate "High" %} </option>
             </select>
-        </div>
+        </div> -->
 
     {% endif %}
     <button id="delete-button" class="btn btn-danger" type="submit"> {% translate "Delete" %} </button>
