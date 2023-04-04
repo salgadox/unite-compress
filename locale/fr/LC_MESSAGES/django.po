@@ -542,7 +542,7 @@ msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
 msgstr ""
 "Vous avez déjà un compte? Alors veuillez <a href=\"%(login_url)s\">vous "
-"connecter"
+"connecter</a>"
 
 #: unite_compress/templates/account/signup_closed.html:5
 #: unite_compress/templates/account/signup_closed.html:8
