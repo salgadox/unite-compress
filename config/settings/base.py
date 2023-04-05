@@ -356,4 +356,5 @@ LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [
     "admin:index",
     "admin:login",
     "set_language",
+    "account_reset_password",
 ]
