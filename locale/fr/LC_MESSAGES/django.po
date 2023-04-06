@@ -1168,7 +1168,7 @@ msgstr "Créer un cours"
 
 #: unite_compress/templates/pages/home.html:22
 msgid "How it works"
-msgstr "Comment ça fonctionne"
+msgstr "Comment ça marche"
 
 #: unite_compress/templates/pages/home.html:24
 #, fuzzy
@@ -1243,7 +1243,7 @@ msgstr "Pour afficher la liste de tous vos fichiers, rendez-vous sur la page"
 #, fuzzy
 #| msgid "page"
 msgid " page"
-msgstr "page"
+msgstr " "
 
 #: unite_compress/templates/pages/home.html:43
 msgid "To see a list of all your Folders, go to the"
@@ -1251,13 +1251,12 @@ msgstr "Pour afficher la liste de tous vos dossiers, rendez-vous sur la page"
 
 #: unite_compress/templates/pages/home.html:43
 #, fuzzy
-#| msgid "My Folders"
 msgid "My Folders "
 msgstr "Mes Dossiers"
 
 #: unite_compress/templates/pages/home.html:43
 msgid "page"
-msgstr "page"
+msgstr " "
 
 #: unite_compress/templates/users/user_detail.html:24
 msgid "My Info"
