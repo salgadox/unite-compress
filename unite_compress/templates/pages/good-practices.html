@@ -51,6 +51,13 @@
         th {
             text-align: center;
         }
+        .video-section {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            padding-left: 10%;
+        }
+
 
         </style>
         <header>
@@ -312,107 +319,134 @@
                                     <li> {% translate " How to create a Raspberry Pi Imager" %}
                                         <ol>
                                             <li> {% translate "Intall MoodleBox on SD" %}
-                                                <video width="620" height="340" controls>
-                                                    <source src="{% static 'images/video_en/1.1.1 InstallMoodleboxonSD.mp4' %}" type="video/mp4">
-                                                  Your browser does not support the video tag.
-                                                  </video>
+                                                <div class="video-section">
+                                                    <video width="620" height="340" controls>
+                                                        <source src="{% static 'images/video_en/1.1.1 InstallMoodleboxonSD.mp4' %}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
                                             </li>
                                             <li>{% translate "Install RasberryPi Imager" %}
-                                                <video width="620" height="340" controls>
-                                                    <source src="{% static 'images/video_en/1.1.2 installRaspberryPiImager.mp4' %}" type="video/mp4">
-                                                  Your browser does not support the video tag.
-                                                  </video>
+                                                <div class="video-section">
+                                                    <video width="620" height="340" controls>
+                                                        <source src="{% static 'images/video_en/1.1.2 installRaspberryPiImager.mp4' %}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
                                             </li>
                                             <li> {% translate "Insert SD on RasberryPi" %}
-                                                <img
-                                                src="{% static 'images/video_en/1.1.3 Insert SD on Raspberry.jpeg' %}" class="center" width="400" height="220" >
+                                                <div class="video-section">
+                                                    <img src="{% static 'images/video_en/1.1.3 Insert SD on Raspberry.jpeg' %}"  width="400" height="220" >
+                                                </div>
                                             </li>
                                         </ol>
                                     </li>
                                     <li> {% translate "Connect to MoodleBox wireless network" %}
                                         <ol>
                                             <li>{% translate "Connect to MoodleBox" %}
-                                                <ul>
-                                                    <li>
-                                                        Connect to Moodlebox wirelless network
-                                                        <ol><li>wifi name: Moodlebox</li>
-                                                        <li>passeword: moodlebox</li></ol>
-                                                    <li>Connect to your Moodlebox "website"</li>
+                                                <div class="video-section">
                                                     <ul>
                                                         <li>
-                                                            Visit http://moodlebox.home/
-                                                        </li>
-                                                        <li>
-                                                            Username : moodlebox
-                                                        </li>
-                                                        <li>
-                                                            password:  Moodlebox4$
+                                                            Connect to Moodlebox wirelless network
+                                                            <ol>
+                                                                <li>wifi name: Moodlebox</li>
+                                                                <li>passeword: moodlebox</li>
+                                                            </ol>
+                                                        <li>Connect to your Moodlebox "website"</li>
+                                                        <ul>
+                                                            <li>
+                                                                Visit http://moodlebox.home/
+                                                            </li>
+                                                            <li>
+                                                                Username : moodlebox
+                                                            </li>
+                                                            <li>
+                                                                password:  Moodlebox4$
+                                                            </li>
+                                                        </ul>
                                                         </li>
                                                     </ul>
-                                                    </li>
-                                                </ul>
+                                                </div>
                                             </li>
                                         </ol>
                                     </li>
                                     <li> {% translate "How to create an account" %}
                                         <ol>
                                             <li>{% translate "Sign Up in MoodleBox" %}
-                                                <video width="620" height="340" controls>
-                                                    <source src="{% static 'images/video_en/2.2 How to create an account.mp4' %}" type="video/mp4">
-                                                  Your browser does not support the video tag.
-                                                  </video> </li>
+                                                <div class="video-section">
+                                                    <video width="620" height="340" controls>
+                                                        <source src="{% static 'images/video_en/2.2 How to create an account.mp4' %}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </li>
                                         </ol>
                                     </li>
                                 </ol>
                             <li> <h3>{% translate "Essential configuration" %} </h3>
                                 <ol>
                                     <li>{% translate "Change language package" %}
-                                        <video width="620" height="340" controls>
-                                            <source src="{% static 'images/video_en/2.1 Change Language package.mp4' %}" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                          </video>
+                                        <div class="video-section">
+                                            <video width="620" height="340" controls>
+                                                <source src="{% static 'images/video_en/2.1 Change Language package.mp4' %}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                            </video>
+                                        </div>
                                     </li>
                                     <li>{% translate "How to create an account" %}
-                                        <video width="620" height="340" controls>
-                                            <source src="{% static 'images/video_en/2.2 How to create an account.mp4' %}" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                          </video>
+                                        <div class="video-section">
+                                            <video width="620" height="340" controls>
+                                                <source src="{% static 'images/video_en/2.2 How to create an account.mp4' %}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                            </video>
+                                        </div>
                                     </li>
 
-                                    <li> {% translate "How to add admin User" %} </li>
-
-                                        <video width="620" height="340" controls>
-                                            <source src="{% static 'images/video_en/2.3 How to add admin Users.mp4' %}" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                        </video>
+                                    <li> {% translate "How to add admin User" %}
+                                        <div class="video-section">
+                                            <video width="620" height="340" controls>
+                                                <source src="{% static 'images/video_en/2.3 How to add admin Users.mp4' %}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                    </li>
 
                                     <li>{% translate "How to allow Students on the platform" %}
-                                        <video width="620" height="340" controls>
-                                            <source src="{% static 'images/video_en/2.4 How to allow Students on the platform.mp4' %}" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                          </video>
+                                        <div class="video-section">
+                                            <video width="620" height="340" controls>
+                                                <source src="{% static 'images/video_en/2.4 How to allow Students on the platform.mp4' %}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                            </video>
+                                        </div>
                                     </li>
                                 </ol>
                             </li>
                             <li> <h3>{% translate "How to create a course" %} </h3>
                                 <ol>
                                     <li>{% translate "How to create a new course" %}
-                                        <video width="620" height="340" controls>
-                                            <source src="{% static 'images/video_en/31.mp4' %}" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                          </video>
+                                        <div class="video-section">
+                                            <video width="620" height="340" controls>
+                                                <source src="{% static 'images/video_en/31.mp4' %}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
                                     </li>
                                     <li>{% translate "How to add, edit and delet topics" %}
-                                        <video width="620" height="340" controls>
-                                            <source src="{% static 'images/video_en/3.2 How to add edit delete topics.mp4' %}" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                          </video>
+                                        <div class="video-section">
+                                            <video width="620" height="340" controls>
+                                                <source src="{% static 'images/video_en/3.2 How to add edit delete topics.mp4' %}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                            </video>
+                                        </div>
                                     </li>
                                     <li>{% translate "How to allow students to delf register on a course" %}
-                                        <video width="620" height="340" controls>
-                                            <source src="{% static 'images/video_en/33.mp4' %}" type="video/mp4">
+                                        <div class="video-section">
+                                            <video  width="620" height="340" controls>
+                                                <source src="{% static 'images/video_en/33.mp4' %}" type=video/mp4">
                                           Your browser does not support the video tag.
-                                          </video> </li>
+                                            </video>
+                                        </div>
+                                    </li>
                                 </ol>
                             </li>
                         </ol>
