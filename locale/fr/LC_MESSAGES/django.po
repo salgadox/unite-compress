@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-03 22:23+0200\n"
+"POT-Creation-Date: 2023-04-05 22:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgid "Description:"
 msgstr "Description:"
 
 #: unite_compress/courses/templates/courses/course_detail.html:26
-#: unite_compress/files/templates/files/file_detail.html:62
+#: unite_compress/files/templates/files/file_detail.html:82
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -89,7 +89,7 @@ msgid "Folder Name:"
 msgstr "Nom de dossier:"
 
 #: unite_compress/courses/templates/courses/course_list.html:25
-#: unite_compress/files/templates/files/file_detail.html:21
+#: unite_compress/files/templates/files/file_detail.html:24
 msgid "Created At:"
 msgstr "Créé à:"
 
@@ -191,74 +191,54 @@ msgstr "Niveau de compression"
 msgid "File Detail"
 msgstr "Détail du fichier"
 
-#: unite_compress/files/templates/files/file_detail.html:18
-msgid " File Type:"
+#: unite_compress/files/templates/files/file_detail.html:19
+#, fuzzy
+#| msgid " File Type:"
+msgid "File Type:"
 msgstr "Type de fichier"
 
-#: unite_compress/files/templates/files/file_detail.html:25
+#: unite_compress/files/templates/files/file_detail.html:30
 msgid "Original Size:"
 msgstr "Taille d'origine"
 
-#: unite_compress/files/templates/files/file_detail.html:29
+#: unite_compress/files/templates/files/file_detail.html:35
 msgid "File still uploading..."
 msgstr "Le fichier est en train de télécharger"
 
-#: unite_compress/files/templates/files/file_detail.html:34
+#: unite_compress/files/templates/files/file_detail.html:41
 msgid "Size after compression:"
 msgstr "Taille après compression"
 
-#: unite_compress/files/templates/files/file_detail.html:37
+#: unite_compress/files/templates/files/file_detail.html:46
 msgid "Converted At:"
 msgstr "Converti à:"
 
-#: unite_compress/files/templates/files/file_detail.html:41
+#: unite_compress/files/templates/files/file_detail.html:52
 msgid "Convert Status:"
 msgstr "Statut de compression"
 
-#: unite_compress/files/templates/files/file_detail.html:48
+#: unite_compress/files/templates/files/file_detail.html:61
 msgid "Download"
 msgstr "Télécharger"
 
-#: unite_compress/files/templates/files/file_detail.html:50
-msgid "Convert"
-msgstr "Convertir"
-
-#: unite_compress/files/templates/files/file_detail.html:51
-msgid "Advanced options"
-msgstr "Options avancées"
-
-#: unite_compress/files/templates/files/file_detail.html:53
-msgid "Compression level"
+#: unite_compress/files/templates/files/file_detail.html:67
+#, fuzzy
+#| msgid "Compression level"
+msgid "Compression rate:"
 msgstr "Niveau de compression"
 
-#: unite_compress/files/templates/files/file_detail.html:55
-msgid "low"
-msgstr "faible"
-
-#: unite_compress/files/templates/files/file_detail.html:56
+#: unite_compress/files/templates/files/file_detail.html:72
 #: unite_compress/templates/pages/good-practices.html:112
 msgid "Medium"
 msgstr "Moyen"
 
-#: unite_compress/files/templates/files/file_detail.html:57
+#: unite_compress/files/templates/files/file_detail.html:76
 msgid "High"
 msgstr "Haut"
 
-#: unite_compress/files/templates/files/file_detail_js.html:15
-#, fuzzy
-#| msgid "Your file is being converted."
-msgid "Your file is converting."
-msgstr "Votre fichier a été téléchargé avec succès."
-
-#: unite_compress/files/templates/files/file_detail_js.html:22
-msgid "File conversion completed!"
-msgstr "Conversion du fichier terminée!"
-
-#: unite_compress/files/templates/files/file_detail_js.html:39
-#, fuzzy
-#| msgid "Information successfully updated"
-msgid "Successfully deleted"
-msgstr "Informations mises à jour avec succès"
+#: unite_compress/files/templates/files/file_detail.html:81
+msgid "Convert"
+msgstr "Convertir"
 
 #: unite_compress/files/templates/files/file_list.html:20
 msgid "File List"
@@ -283,23 +263,14 @@ msgid "Convert Status"
 msgstr "Statut de compression"
 
 #: unite_compress/files/templates/files/file_list.html:31
-#: unite_compress/templates/pages/good-practices.html:94
-msgid "Size"
-msgstr "Taille"
+#, fuzzy
+#| msgid "Original Size:"
+msgid "Original Size"
+msgstr "Taille d'origine"
 
 #: unite_compress/files/templates/files/file_upload.html:4
 msgid "File Upload"
 msgstr "Téléchargement de fichiers"
-
-#: unite_compress/files/templates/files/file_upload.html:20
-msgid "Uploading..."
-msgstr "Téléchargement..."
-
-#: unite_compress/files/templates/files/file_upload.html:54
-#, fuzzy
-#| msgid "File still uploading..."
-msgid "File is uploading"
-msgstr "Le fichier est en train de télécharger"
 
 #: unite_compress/files/views.py:35
 msgid "Your file has been uploaded successfully."
@@ -542,7 +513,7 @@ msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
 msgstr ""
 "Vous avez déjà un compte? Alors veuillez <a href=\"%(login_url)s\">vous "
-"connecter"
+"connecter</a>"
 
 #: unite_compress/templates/account/signup_closed.html:5
 #: unite_compress/templates/account/signup_closed.html:8
@@ -610,7 +581,7 @@ msgstr "Accueil"
 
 #: unite_compress/templates/base.html:53
 msgid "Good Practices"
-msgstr "Bonnes practiques"
+msgstr "Bonnes pratiques"
 
 #: unite_compress/templates/base.html:60
 msgid "My Folders"
@@ -659,8 +630,22 @@ msgstr "Niveau de compression"
 
 #: unite_compress/templates/pages/good-practices.html:71
 msgid ""
-"Compression is a critical component of low-bandwidth content development. All files that are transmitted over the internet should be compressed to reduce their size. There are several compression algorithms available, example. gzip that can be used to compress different types of files. Compression reduces the size of files, which, in turn, reduces the amount of data that needs to be transmitted over the internet, making the content more accessible to users with slow internet connections."
-msgstr "La compression est un élément essentiel du développement de contenu à faible bande passante. Tous les fichiers transmis sur Internet doivent être compressés en réduire leur taille. Il existe plusieurs algorithmes de compression disponibles, exemple. gzip qui peut être utilisé pour compresser différents types de fichiers. La compression réduit la taille des fichiers, ce qui, à son tour, réduit la quantité de des données qui doivent être transmises sur Internet, rendant le contenu plus accessible aux utilisateurs avec des connexions Internet lentes."
+"Compression is a critical component of low-bandwidth content development. "
+"All files that are transmitted over the internet should be compressed to "
+"reduce their size. There are several compression algorithms available, "
+"example. gzip that can be used to compress different types of files. "
+"Compression reduces the size of files, which, in turn, reduces the amount of "
+"data that needs to be transmitted over the internet, making the content more "
+"accessible to users with slow internet connections."
+msgstr ""
+"La compression est un élément essentiel du développement de contenu à faible "
+"bande passante. Tous les fichiers transmis sur Internet doivent être "
+"compressés en réduire leur taille. Il existe plusieurs algorithmes de "
+"compression disponibles, exemple. gzip qui peut être utilisé pour compresser "
+"différents types de fichiers. La compression réduit la taille des fichiers, "
+"ce qui, à son tour, réduit la quantité de des données qui doivent être "
+"transmises sur Internet, rendant le contenu plus accessible aux utilisateurs "
+"avec des connexions Internet lentes."
 
 #: unite_compress/templates/pages/good-practices.html:74
 msgid "Use ad blockers"
@@ -671,9 +656,12 @@ msgid ""
 "Ads can be a major source of bandwidth usage, particularly if they include "
 "high-resolution images or videos. Installing an ad blocker can help reduce "
 "the amount of bandwidth used by ads, leading to faster page load times."
-msgstr "Les publicités peuvent être une source majeure d'utilisation de la bande passante, en particulier si elles incluent"
-"images ou vidéos haute résolution. L'installation d'un bloqueur de publicités peut aider à réduire"
-"la quantité de bande passante utilisée par les publicités, ce qui accélère les temps de chargement des pages."
+msgstr ""
+"Les publicités peuvent être une source majeure d'utilisation de la bande "
+"passante, en particulier si elles incluentimages ou vidéos haute résolution. "
+"L'installation d'un bloqueur de publicités peut aider à réduirela quantité "
+"de bande passante utilisée par les publicités, ce qui accélère les temps de "
+"chargement des pages."
 
 #: unite_compress/templates/pages/good-practices.html:78
 msgid "Limit video quality"
@@ -684,7 +672,11 @@ msgid ""
 "If you're streaming videos, consider reducing the video quality to a lower "
 "resolution. This can help reduce the amount of bandwidth used by the video, "
 "without sacrificing too much in terms of video quality."
-msgstr "Si vous diffusez des vidéos, envisagez de réduire la qualité vidéo à un niveau inférieur résolution. Cela peut aider à réduire la quantité de bande passante utilisée par la vidéo sans trop sacrifier en termes de qualité vidéo."
+msgstr ""
+"Si vous diffusez des vidéos, envisagez de réduire la qualité vidéo à un "
+"niveau inférieur résolution. Cela peut aider à réduire la quantité de bande "
+"passante utilisée par la vidéo sans trop sacrifier en termes de qualité "
+"vidéo."
 
 #: unite_compress/templates/pages/good-practices.html:86
 #: unite_compress/templates/pages/good-practices.html:214
@@ -705,6 +697,10 @@ msgstr "Description:"
 #: unite_compress/templates/pages/good-practices.html:93
 msgid "Best for"
 msgstr "Meilleur pour"
+
+#: unite_compress/templates/pages/good-practices.html:94
+msgid "Size"
+msgstr "Taille"
 
 #: unite_compress/templates/pages/good-practices.html:95
 msgid "Example"
@@ -758,7 +754,13 @@ msgid ""
 "compressed to very small file sizes without significantly degrading the "
 "image quality, which makes it a popular choice for web and mobile "
 "applications. "
-msgstr "est un format de compression avec perte largement utilisé pour les images photographiques. Il atteint des taux de compression élevés en supprimant certaines données d'image, ce qui peut entraîner une légère perte de qualité d'image. Les images JPEG peuvent être compressé à de très petites tailles de fichiers sans dégrader significativement qualité d'image, ce qui en fait un choix populaire pour le web et le mobile applications."
+msgstr ""
+"est un format de compression avec perte largement utilisé pour les images "
+"photographiques. Il atteint des taux de compression élevés en supprimant "
+"certaines données d'image, ce qui peut entraîner une légère perte de qualité "
+"d'image. Les images JPEG peuvent être compressé à de très petites tailles de "
+"fichiers sans dégrader significativement qualité d'image, ce qui en fait un "
+"choix populaire pour le web et le mobile applications."
 
 #: unite_compress/templates/pages/good-practices.html:138
 #, python-format
@@ -770,7 +772,13 @@ msgid ""
 "in web development due to its small file size and fast loading times. "
 "(source: external) person walking"
 msgstr ""
-"est un format d'image relativement nouveau développé par Google qui utilise à la fois lossy et des algorithmes de compression sans perte. Il a été conçu pour être plus efficace que JPEG et d'autres formats d'image, et il peut atteindre jusqu'à 34 percent plus petit taille de fichier supérieure à JPEG pour la même qualité d'image. WebP gagne en popularité dans le développement Web en raison de sa petite taille de fichier et de ses temps de chargement rapides. (source : externe) personne qui marche"
+"est un format d'image relativement nouveau développé par Google qui utilise "
+"à la fois lossy et des algorithmes de compression sans perte. Il a été conçu "
+"pour être plus efficace que JPEG et d'autres formats d'image, et il peut "
+"atteindre jusqu'à 34 percent plus petit taille de fichier supérieure à JPEG "
+"pour la même qualité d'image. WebP gagne en popularité dans le développement "
+"Web en raison de sa petite taille de fichier et de ses temps de chargement "
+"rapides. (source : externe) personne qui marche"
 
 #: unite_compress/templates/pages/good-practices.html:140
 msgid ""
@@ -779,11 +787,13 @@ msgid ""
 "compressed without losing any image data, which makes them larger than JPEG "
 "images. However, they can still be compressed to relatively small file "
 "sizes, and they are preferred for graphics that require transparency. "
-msgstr "est un format de compression sans perte couramment utilisé pour les graphiques et "
-"d'autres types d'images nécessitant de la transparence. Les images PNG peuvent être "
-"compressé sans perdre aucune donnée d'image, ce qui les rend plus grands que JPEG "
-"images. Cependant, elles peuvent toujours être compressées dans un fichier relativement petit "
-"tailles, et ils sont préférés pour les graphiques qui nécessitent de la transparence."
+msgstr ""
+"est un format de compression sans perte couramment utilisé pour les "
+"graphiques et d'autres types d'images nécessitant de la transparence. Les "
+"images PNG peuvent être compressé sans perdre aucune donnée d'image, ce qui "
+"les rend plus grands que JPEG images. Cependant, elles peuvent toujours être "
+"compressées dans un fichier relativement petit tailles, et ils sont préférés "
+"pour les graphiques qui nécessitent de la transparence."
 
 #: unite_compress/templates/pages/good-practices.html:142
 msgid ""
@@ -792,7 +802,13 @@ msgid ""
 "and they can be scaled to any size without losing image quality. SVG is "
 "ideal for graphics that are simple in design and require high resolution, "
 "such as logos and icons."
-msgstr "est un format graphique vectoriel qui utilise des équations mathématiques pour créer des images, plutôt que des pixels. Cela rend les fichiers SVG extrêmement petits, et ils peuvent être mis à l'échelle à n'importe quelle taille sans perte de qualité d'image. SVG est idéal pour les graphiques de conception simple et nécessitant une haute résolution, comme les logos et les icônes."
+msgstr ""
+"est un format graphique vectoriel qui utilise des équations mathématiques "
+"pour créer des images, plutôt que des pixels. Cela rend les fichiers SVG "
+"extrêmement petits, et ils peuvent être mis à l'échelle à n'importe quelle "
+"taille sans perte de qualité d'image. SVG est idéal pour les graphiques de "
+"conception simple et nécessitant une haute résolution, comme les logos et "
+"les icônes."
 
 #: unite_compress/templates/pages/good-practices.html:149
 msgid "Section Optimisation Tool EXAF"
@@ -811,10 +827,11 @@ msgid ""
 "data size. By using compression algorithms, data can be encoded in a more "
 "efficient way, leading to reduced storage requirements and faster "
 "transmission speeds."
-msgstr "En résumé, la compression des données est un outil d'optimisation efficace pour réduire "
-"taille des données. En utilisant des algorithmes de compression, les données peuvent être "
-"moyen efficace, conduisant à des besoins de stockage réduits et plus rapides"
-"vitesses de transmission."
+msgstr ""
+"En résumé, la compression des données est un outil d'optimisation efficace "
+"pour réduire taille des données. En utilisant des algorithmes de "
+"compression, les données peuvent être moyen efficace, conduisant à des "
+"besoins de stockage réduits et plus rapidesvitesses de transmission."
 
 #: unite_compress/templates/pages/good-practices.html:155
 msgid "visit the tool page"
@@ -829,9 +846,11 @@ msgid ""
 "is a widely-used video format that is compatible with most devices and web "
 "browsers. It is a compressed format that can be optimized for smaller file "
 "sizes without sacrificing video quality."
-msgstr "est un format vidéo largement utilisé qui est compatible avec la plupart des appareils et le Web "
-"navigateurs. Il s'agit d'un format compressé qui peut être optimisé pour des fichiers plus petits "
-"tailles sans sacrifier la qualité vidéo."
+msgstr ""
+"est un format vidéo largement utilisé qui est compatible avec la plupart des "
+"appareils et le Web navigateurs. Il s'agit d'un format compressé qui peut "
+"être optimisé pour des fichiers plus petits tailles sans sacrifier la "
+"qualité vidéo."
 
 #: unite_compress/templates/pages/good-practices.html:198
 msgid ""
@@ -845,24 +864,29 @@ msgid ""
 "videos and resources. It has become an important tool for educators, "
 "businesses, and individuals who want to share their message with a wide "
 "audience."
-msgstr "n'est pas un format en soi, mais nous pensons qu'il présente certains avantages en basse-"
-"environnement de bande passante. YouTube est une plate-forme de partage de vidéos où les utilisateurs peuvent "
-"téléchargez, partagez et visionnez des vidéos. La plate-forme est gratuite et prise en charge "
-"par la publicité. Les utilisateurs peuvent télécharger des vidéos sur une variété de sujets, y compris "
-"musique, comédie, éducation, etc. YouTube propose des fonctionnalités telles que la vidéo"
-"optimisation pour les environnements à faible bande passante, compression, lecture hors ligne"
-"(fonctionnalité payante), compatibilité mobile et une vaste bibliothèque de "
-"des vidéos et des ressources. C'est devenu un outil important pour les éducateurs, "
-"les entreprises et les particuliers qui souhaitent diffuser leur message auprès d'un large "
-"public."
+msgstr ""
+"n'est pas un format en soi, mais nous pensons qu'il présente certains "
+"avantages en basse-environnement de bande passante. YouTube est une plate-"
+"forme de partage de vidéos où les utilisateurs peuvent téléchargez, partagez "
+"et visionnez des vidéos. La plate-forme est gratuite et prise en charge par "
+"la publicité. Les utilisateurs peuvent télécharger des vidéos sur une "
+"variété de sujets, y compris musique, comédie, éducation, etc. YouTube "
+"propose des fonctionnalités telles que la vidéooptimisation pour les "
+"environnements à faible bande passante, compression, lecture hors "
+"ligne(fonctionnalité payante), compatibilité mobile et une vaste "
+"bibliothèque de des vidéos et des ressources. C'est devenu un outil "
+"important pour les éducateurs, les entreprises et les particuliers qui "
+"souhaitent diffuser leur message auprès d'un large public."
 
 #: unite_compress/templates/pages/good-practices.html:202
 msgid ""
 "is an open-source video format developed by Google that is optimized for web "
 "use. It is a lightweight format that can be compressed to smaller file sizes "
 "without losing quality."
-msgstr "est un format vidéo open source développé par Google et optimisé pour le Web "
-"utiliser. Il s'agit d'un format léger qui peut être compressé en fichiers de plus petite taille sans perte de qualité."
+msgstr ""
+"est un format vidéo open source développé par Google et optimisé pour le Web "
+"utiliser. Il s'agit d'un format léger qui peut être compressé en fichiers de "
+"plus petite taille sans perte de qualité."
 
 #: unite_compress/templates/pages/good-practices.html:205
 msgid ""
@@ -876,32 +900,41 @@ msgid ""
 "environment or storage capacity, you may want to consider compressing your "
 "MOV files or using a different format that is more optimized for smaller "
 "file sizes. "
-msgstr "est un format vidéo développé par Apple pour être utilisé sur son lecteur multimédia QuickTime. "
-"C'est un format populaire pour les utilisateurs de Mac et il est également compatible avec Windows"
-"systèmes d'exploitation. Les fichiers MOV peuvent être volumineux, surtout si la vidéo "
-"a une haute résolution ou contient de nombreux effets. Cependant, les fichiers MOV peuvent être "
-"compressé pour réduire la taille du fichier sans sacrifier la qualité vidéo. Fichiers MOV "
-"peut être lu sur la plupart des lecteurs multimédias, y compris QuickTime, Windows Media "
-"Lecteur et lecteur multimédia VLC. Si vous travaillez avec un Internet limité "
-"environnement ou capacité de stockage, vous pouvez envisager de compresser votre "
-"Fichiers MOV ou en utilisant un format différent qui est plus optimisé pour les plus petits "
-"tailles des fichiers."
+msgstr ""
+"est un format vidéo développé par Apple pour être utilisé sur son lecteur "
+"multimédia QuickTime. C'est un format populaire pour les utilisateurs de Mac "
+"et il est également compatible avec Windowssystèmes d'exploitation. Les "
+"fichiers MOV peuvent être volumineux, surtout si la vidéo a une haute "
+"résolution ou contient de nombreux effets. Cependant, les fichiers MOV "
+"peuvent être compressé pour réduire la taille du fichier sans sacrifier la "
+"qualité vidéo. Fichiers MOV peut être lu sur la plupart des lecteurs "
+"multimédias, y compris QuickTime, Windows Media Lecteur et lecteur "
+"multimédia VLC. Si vous travaillez avec un Internet limité environnement ou "
+"capacité de stockage, vous pouvez envisager de compresser votre Fichiers MOV "
+"ou en utilisant un format différent qui est plus optimisé pour les plus "
+"petits tailles des fichiers."
 
 #: unite_compress/templates/pages/good-practices.html:208
 msgid ""
 "is a popular video format that can be used for both high-quality and low-"
 "quality videos. It uses a simple compression algorithm that can reduce file "
 "size, but it may not be as efficient as other formats. "
-msgstr "est un format vidéo populaire qui peut être utilisé à la fois pour des vidéos de haute qualité et de basse qualité. des vidéos de qualité. Il utilise un algorithme de compression simple qui peut réduire le fichier taille, mais il peut ne pas être aussi efficace que d'autres formats."
+msgstr ""
+"est un format vidéo populaire qui peut être utilisé à la fois pour des "
+"vidéos de haute qualité et de basse qualité. des vidéos de qualité. Il "
+"utilise un algorithme de compression simple qui peut réduire le fichier "
+"taille, mais il peut ne pas être aussi efficace que d'autres formats."
 
 #: unite_compress/templates/pages/good-practices.html:219
 msgid ""
 "All of these digital text formats - plain text (txt), PDF, ePub, and "
 "Markdown - are great options for different use cases, offering a variety of "
 "benefits such as accessibility, portability, and flexibility."
-msgstr "Tous ces formats de texte numérique - texte brut (txt), PDF, ePub et "
-"Markdown - sont d'excellentes options pour différents cas d'utilisation, offrant une variété de "
-"des avantages tels que l'accessibilité, la portabilité et la flexibilité."
+msgstr ""
+"Tous ces formats de texte numérique - texte brut (txt), PDF, ePub et "
+"Markdown - sont d'excellentes options pour différents cas d'utilisation, "
+"offrant une variété de des avantages tels que l'accessibilité, la "
+"portabilité et la flexibilité."
 
 #: unite_compress/templates/pages/good-practices.html:253
 msgid "Plain text (.txt)"
@@ -914,11 +947,13 @@ msgid ""
 "most text editors, including basic editors like Notepad. Plain text files "
 "can be opened and read on almost any device, including those with limited "
 "internet access."
-msgstr "Les fichiers de texte brut sont des fichiers texte simples qui ne contiennent que du texte de base "
-"caractères. Ils sont très légers et peuvent être facilement lus et modifiés par "
-"la plupart des éditeurs de texte, y compris les éditeurs de base comme le Bloc-notes. Fichiers de texte brut "
-"peut être ouvert et lu sur presque tous les appareils, y compris ceux avec des "
-"accès Internet."
+msgstr ""
+"Les fichiers de texte brut sont des fichiers texte simples qui ne "
+"contiennent que du texte de base caractères. Ils sont très légers et peuvent "
+"être facilement lus et modifiés par la plupart des éditeurs de texte, y "
+"compris les éditeurs de base comme le Bloc-notes. Fichiers de texte brut "
+"peut être ouvert et lu sur presque tous les appareils, y compris ceux avec "
+"des accès Internet."
 
 #: unite_compress/templates/pages/good-practices.html:255
 msgid "Portable Document Format (.pdf)"
@@ -931,10 +966,12 @@ msgid ""
 "optimized for small file sizes without sacrificing the quality of the "
 "document. PDF files can also be easily shared and distributed via email or "
 "other digital means."
-msgstr "Les fichiers PDF sont un format de document numérique populaire qui peut être facilement "
-"téléchargés et ouverts sur la plupart des appareils. Les fichiers PDF sont compacts et peuvent être "
-"optimisé pour les fichiers de petite taille sans sacrifier la qualité du "
-"document. Les fichiers PDF peuvent également être facilement partagés et distribués par e-mail ou "
+msgstr ""
+"Les fichiers PDF sont un format de document numérique populaire qui peut "
+"être facilement téléchargés et ouverts sur la plupart des appareils. Les "
+"fichiers PDF sont compacts et peuvent être optimisé pour les fichiers de "
+"petite taille sans sacrifier la qualité du document. Les fichiers PDF "
+"peuvent également être facilement partagés et distribués par e-mail ou "
 "d'autres moyens numériques."
 
 #: unite_compress/templates/pages/good-practices.html:257
@@ -947,10 +984,12 @@ msgid ""
 "are lightweight and can be optimized for small file sizes without "
 "sacrificing the quality of the content. Epub files can be opened and read on "
 "most devices, including e-readers and tablets"
-msgstr "Epub est un format standard ouvert pour les livres et documents numériques. Fichiers Epub "
-"sont légers et peuvent être optimisés pour les fichiers de petite taille sans "
-" sacrifier la qualité du contenu. Les fichiers Epub peuvent être ouverts et lus "
-"la plupart des appareils, y compris les liseuses et les tablettes"
+msgstr ""
+"Epub est un format standard ouvert pour les livres et documents numériques. "
+"Fichiers Epub sont légers et peuvent être optimisés pour les fichiers de "
+"petite taille sans  sacrifier la qualité du contenu. Les fichiers Epub "
+"peuvent être ouverts et lus la plupart des appareils, y compris les liseuses "
+"et les tablettes"
 
 #: unite_compress/templates/pages/good-practices.html:259
 msgid "Markdown (.md)"
@@ -962,10 +1001,13 @@ msgid ""
 "documents. Markdown files are simple text files that can be easily read and "
 "edited by most text editors. Markdown files can be easily converted to other "
 "formats, such as HTML or PDF, using specialized software or online converters"
-msgstr "Markdown est un langage de balisage léger utilisé pour formater du texte "
-"documents. Les fichiers Markdown sont de simples fichiers texte qui peuvent être facilement lus et "
-"édité par la plupart des éditeurs de texte. Les fichiers Markdown peuvent être facilement convertis en d'autres "
-"formats, tels que HTML ou PDF, à l'aide de logiciels spécialisés ou de convertisseurs en ligne"
+msgstr ""
+"Markdown est un langage de balisage léger utilisé pour formater du texte "
+"documents. Les fichiers Markdown sont de simples fichiers texte qui peuvent "
+"être facilement lus et édité par la plupart des éditeurs de texte. Les "
+"fichiers Markdown peuvent être facilement convertis en d'autres formats, "
+"tels que HTML ou PDF, à l'aide de logiciels spécialisés ou de convertisseurs "
+"en ligne"
 
 #: unite_compress/templates/pages/good-practices.html:266
 msgid "Flipped Classroom"
@@ -975,38 +1017,51 @@ msgstr "Classe inversée"
 msgid "Section Introduction"
 msgstr "Présentation de la rubrique"
 
-#: unite_compress/templates/pages/good-practices.html:275
+#: unite_compress/templates/pages/good-practices.html:271
+msgid ""
+"A flipped classroom is a teaching model in which traditional classroom "
+"activities, such as lecturing and direct instruction, are moved outside of "
+"class time through pre-recorded videos, reading assignments, or other forms "
+"of self-paced learning. In-class time is then used for activities that "
+"typically would have been homework, such as group work, discussions, and "
+"problem-solving activities, which allow for more active learning and "
+"engagement with the material.The idea is that students can learn the content "
+"at their own pace outside of class, freeing up class time for more "
+"interactive and collaborative activities."
+msgstr ""
+
+#: unite_compress/templates/pages/good-practices.html:273
 msgid "Ressources"
 msgstr "Ressources"
 
-#: unite_compress/templates/pages/good-practices.html:279
+#: unite_compress/templates/pages/good-practices.html:277
 msgid "Flipped Classroom Field Guide"
 msgstr "Guide de terrain de la classe inversée"
 
-#: unite_compress/templates/pages/good-practices.html:282
+#: unite_compress/templates/pages/good-practices.html:280
 msgid " Example of Flipped Classroom"
 msgstr "Exemple de classe inversée"
 
-#: unite_compress/templates/pages/good-practices.html:285
+#: unite_compress/templates/pages/good-practices.html:283
 msgid "Template to create a Flipped Classroom"
 msgstr "Modèle pour créer une classe inversée"
 
-#: unite_compress/templates/pages/good-practices.html:289
+#: unite_compress/templates/pages/good-practices.html:287
 msgid "Témoignage (internet connection)"
 msgstr "Témoignage (connexion internet)"
 
-#: unite_compress/templates/pages/good-practices.html:298
-#: unite_compress/templates/pages/good-practices.html:423
+#: unite_compress/templates/pages/good-practices.html:296
+#: unite_compress/templates/pages/good-practices.html:421
 msgid "Close"
 msgstr "Fermer"
 
-#: unite_compress/templates/pages/good-practices.html:305
+#: unite_compress/templates/pages/good-practices.html:303
 #, fuzzy
 #| msgid "Moodle and MoodleBox Tutorial"
 msgid "Tutorial 2: Moodle and MoodleBox Tutorial"
 msgstr "Tutoriel Moodle et MoodleBox"
 
-#: unite_compress/templates/pages/good-practices.html:310
+#: unite_compress/templates/pages/good-practices.html:308
 msgid ""
 "This tutorial aims to help you during the installation and configuration of "
 "your Raspbery Pi as well as to teach you the bases for creating a Moodle "
@@ -1016,92 +1071,92 @@ msgstr ""
 "configuration de votre Raspbery Pi ainsi que de vous apprendre les bases "
 "pour créer un Moodlecours à l'intérieur de la MoodleBox"
 
-#: unite_compress/templates/pages/good-practices.html:312
+#: unite_compress/templates/pages/good-practices.html:310
 msgid "Preparation"
 msgstr "Préparation"
 
-#: unite_compress/templates/pages/good-practices.html:314
+#: unite_compress/templates/pages/good-practices.html:312
 msgid " How to create a Raspberry Pi Imager"
 msgstr "Comment créer un imager Raspberry Pi"
 
-#: unite_compress/templates/pages/good-practices.html:316
+#: unite_compress/templates/pages/good-practices.html:314
 msgid "Intall MoodleBox on SD"
 msgstr "Installer MoodleBox sur SD"
 
-#: unite_compress/templates/pages/good-practices.html:322
+#: unite_compress/templates/pages/good-practices.html:320
 #, fuzzy
 #| msgid " How to create a Raspberry Pi Imager"
 msgid "Install RasberryPi Imager"
 msgstr "Comment créer un imager Raspberry Pi"
 
-#: unite_compress/templates/pages/good-practices.html:328
+#: unite_compress/templates/pages/good-practices.html:326
 msgid "Insert SD on RasberryPi"
 msgstr "Insérer SD sur Raspberry Pi"
 
-#: unite_compress/templates/pages/good-practices.html:334
+#: unite_compress/templates/pages/good-practices.html:332
 msgid "Connect to MoodleBox wireless network"
 msgstr "Connectez-vous au réseau sans fil MoodleBox"
 
-#: unite_compress/templates/pages/good-practices.html:336
+#: unite_compress/templates/pages/good-practices.html:334
 msgid "Connect to MoodleBox"
 msgstr "Se connecter à Moodle Box"
 
-#: unite_compress/templates/pages/good-practices.html:359
-#: unite_compress/templates/pages/good-practices.html:377
+#: unite_compress/templates/pages/good-practices.html:357
+#: unite_compress/templates/pages/good-practices.html:375
 #, fuzzy
 #| msgid "How to create a course"
 msgid "How to create an account"
 msgstr "Comment créer un cours"
 
-#: unite_compress/templates/pages/good-practices.html:361
+#: unite_compress/templates/pages/good-practices.html:359
 msgid "Sign Up in MoodleBox"
 msgstr "S'inscrire sur MoodleBox"
 
-#: unite_compress/templates/pages/good-practices.html:369
+#: unite_compress/templates/pages/good-practices.html:367
 msgid "Essential configuration"
 msgstr "Configuration essentielle"
 
-#: unite_compress/templates/pages/good-practices.html:371
+#: unite_compress/templates/pages/good-practices.html:369
 msgid "Change language package"
 msgstr "Changer de pack de langue"
 
-#: unite_compress/templates/pages/good-practices.html:384
+#: unite_compress/templates/pages/good-practices.html:382
 #, fuzzy
 #| msgid "How to create a course"
 msgid "How to add admin User"
 msgstr "Comment créer un cours"
 
-#: unite_compress/templates/pages/good-practices.html:391
+#: unite_compress/templates/pages/good-practices.html:389
 msgid "How to allow Students on the platform"
 msgstr "Comment autoriser les étudiants sur la plateforme"
 
-#: unite_compress/templates/pages/good-practices.html:399
+#: unite_compress/templates/pages/good-practices.html:397
 msgid "How to create a course"
 msgstr "Comment créer un cours"
 
-#: unite_compress/templates/pages/good-practices.html:401
+#: unite_compress/templates/pages/good-practices.html:399
 #, fuzzy
 #| msgid "How to create a course"
 msgid "How to create a new course"
 msgstr "Comment créer un cours"
 
-#: unite_compress/templates/pages/good-practices.html:407
+#: unite_compress/templates/pages/good-practices.html:405
 msgid "How to add, edit and delet topics"
 msgstr "Comment ajouter, modifier et supprimer des sujets"
 
-#: unite_compress/templates/pages/good-practices.html:413
+#: unite_compress/templates/pages/good-practices.html:411
 msgid "How to allow students to delf register on a course"
 msgstr "Comment permettre aux étudiants de s'inscrire eux-mêmes à un cours"
 
 #: unite_compress/templates/pages/home.html:11
 msgid "Welcome to our file compression and course management system!"
 msgstr ""
-"Bienvenue dans notre système de compression de fichiers et de gestion de "
-"cours !"
+"Nous vous souhaitons la bienvenue dans notre système de gestion de cours et "
+"de compression de fichiers ! "
 
 #: unite_compress/templates/pages/home.html:12
 msgid "Here you can compress your files and organize them into courses."
-msgstr "Ici, vous pouvez compresser vos fichiers et les organiser en cours."
+msgstr "Vous pouvez ici compresser vos fichiers et les organiser en cours."
 
 #: unite_compress/templates/pages/home.html:16
 msgid "Upload a file"
@@ -1113,19 +1168,21 @@ msgstr "Créer un cours"
 
 #: unite_compress/templates/pages/home.html:22
 msgid "How it works"
-msgstr "Comment ça fonctionne"
+msgstr "Comment ça marche"
 
 #: unite_compress/templates/pages/home.html:24
+#, fuzzy
+#| msgid "Upload a file: Go to the"
 msgid " Create a Folder: Go to the "
-msgstr "Créer un dossier : accédez à la"
+msgstr "Pour télécharger un fichier, rendez-vous sur la page "
 
 #: unite_compress/templates/pages/home.html:24
 msgid "page and enter a name and a description for your folder."
-msgstr "page et entrez un nom et une description pour votre dossier."
+msgstr "et saisissez un nom et une description pour ce dossier"
 
 #: unite_compress/templates/pages/home.html:25
 msgid "Upload a file: Go to the"
-msgstr "Téléchargez un fichier : accédez à la"
+msgstr "Pour télécharger un fichier, rendez-vous sur la page "
 
 #: unite_compress/templates/pages/home.html:25
 msgid " Upload File"
@@ -1136,15 +1193,13 @@ msgid ""
 " page and select the file you want to upload. You can choose to add it to an "
 "existing folder or create a new one."
 msgstr ""
-"page et sélectionnez le fichier que vous souhaitez télécharger. Vous pouvez "
-"choisir de l'ajouter à un dossier existant ou créez-en un nouveau."
+"et sélectionnez le fichier que vous souhaitez télécharger. Vous pouvez "
+"choisir de l'ajouter à un dossier existant ou d'en créer un nouveau."
 
 #: unite_compress/templates/pages/home.html:26
 msgid ""
 "Compress the file: Go to the file detail page by clicking on its name in the "
-msgstr ""
-"Compressez le fichier : Accédez à la page de détail du fichier en cliquant "
-"sur son nom dans la"
+msgstr "Pour compresser le fichier, accédez à la page de "
 
 #: unite_compress/templates/pages/home.html:26
 msgid "file list"
@@ -1156,13 +1211,13 @@ msgid ""
 "the default 'medium' compression level or click on the 'Advanced options' "
 "button to choose from three different compression levels."
 msgstr ""
-"et cliquez sur le bouton convertir. Vous pouvez choisir de compresser le "
-"fichier avec le niveau de compression 'moyen' par défaut ou cliquez sur "
-"'Options avancées'pour choisir parmi trois niveaux de compression différents."
+" en cliquant sur son nom dans la liste des fichiers, puis cliquez sur le "
+"bouton 'Convertir'. Vous pouvez choisir le niveau de compression, 'moyen' "
+"par défaut, ou cliquez sur degree de compression 'haute' "
 
 #: unite_compress/templates/pages/home.html:29
 msgid "The platform supports the following mime types :"
-msgstr "La plate-forme prend en charge les types mime suivants"
+msgstr "Les formats suivants sont pris en charge par la plateforme :"
 
 #: unite_compress/templates/pages/home.html:31
 msgid "application/pdf"
@@ -1182,27 +1237,34 @@ msgstr "Fichiers"
 
 #: unite_compress/templates/pages/home.html:40
 msgid "To see a list of all your files, go to"
-msgstr "Pour afficher une liste de tous vos fichiers, accédez à"
+msgstr "Pour afficher la liste de tous vos fichiers, rendez-vous sur la page"
 
 #: unite_compress/templates/pages/home.html:40
 #, fuzzy
 #| msgid "page"
 msgid " page"
-msgstr "page"
+msgstr " "
 
 #: unite_compress/templates/pages/home.html:43
 msgid "To see a list of all your Folders, go to the"
-msgstr "Pour afficher une liste de tous vos dossiers, accédez à la"
+msgstr "Pour afficher la liste de tous vos dossiers, rendez-vous sur la page"
 
 #: unite_compress/templates/pages/home.html:43
 #, fuzzy
-#| msgid "My Folders"
 msgid "My Folders "
 msgstr "Mes Dossiers"
 
 #: unite_compress/templates/pages/home.html:43
 msgid "page"
-msgstr "page"
+msgstr " "
+
+#: unite_compress/templates/users/user_detail.html:24
+msgid "My Info"
+msgstr "Mon Information"
+
+#: unite_compress/templates/users/user_detail.html:25
+msgid "E-Mail"
+msgstr "Courrier électronique "
 
 #: unite_compress/users/admin.py:18
 msgid "Personal info"
@@ -1231,6 +1293,39 @@ msgstr "Nom de l'utilisateur"
 #: unite_compress/users/views.py:24
 msgid "Information successfully updated"
 msgstr "Informations mises à jour avec succès"
+
+#~ msgid "Advanced options"
+#~ msgstr "Options avancées"
+
+#~ msgid "Compression level"
+#~ msgstr "Niveau de compression"
+
+#~ msgid "low"
+#~ msgstr "faible"
+
+#, fuzzy
+#~| msgid "Your file is being converted."
+#~ msgid "Your file is converting."
+#~ msgstr "Votre fichier a été téléchargé avec succès."
+
+#~ msgid "File conversion completed!"
+#~ msgstr "Conversion du fichier terminée!"
+
+#, fuzzy
+#~| msgid "Information successfully updated"
+#~ msgid "Successfully deleted"
+#~ msgstr "Informations mises à jour avec succès"
+
+#~ msgid "Uploading..."
+#~ msgstr "Téléchargement..."
+
+#, fuzzy
+#~| msgid "File still uploading..."
+#~ msgid "File is uploading"
+#~ msgstr "Le fichier est en train de télécharger"
+
+#~ msgid " Pour créer un dossier, rendez-vous sur la page"
+#~ msgstr "Créer un dossier : accédez à la"
 
 #~ msgid "Folder Detail"
 #~ msgstr "Détail du dossier"

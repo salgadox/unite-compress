@@ -9,61 +9,128 @@
 {% endblock %}
 
 {% block content %}
+<div class="container">
+    <h1>{{ file.original_file_name }}</h1>
+    <div class="table-responsive">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <strong>{% translate "File Type:" %}</strong> {{ file.file_type }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{% translate "Created At:" %}</strong> {{ file.created_at | date:"d/m/Y G:i" }}
+            </td>
+          </tr>
+          {% if file.original_file_size > 0 %}
+          <tr>
+            <td>
+              <strong>{% translate "Original Size:" %}</strong> {{ file.original_file_size | filesizeformat }}
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td>{% translate "File still uploading..." %}</td>
+          </tr>
+          {% endif %}
+          {% if file.convert_status == "converted" and file.converted_file_size >= 1 %}
+          <tr>
+            <td>
+              <strong>{% translate "Size after compression:" %}</strong> {{ file.converted_file_size | filesizeformat }} ({% percent_reduction file.file.size file.converted_file_size %}% reduction)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{% translate "Converted At:" %}</strong> {{ file.converted_at }}
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td>
+              <strong>{% translate "Convert Status:" %}</strong> {{ file.convert_status }}
+            </td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+    {% if file.convert_status == "converted" %}
+    <div class="d-grid gap-2">
+      <button id="download-button" class="btn btn-primary" type="button">{% translate "Download" %}</button>
+    </div>
+    {% else %}
+    <form>
+        <div class="form-check">
+            <label class="form-check-label">
+              {% translate "Compression rate:" %}
+            </label>
+            <div class="d-flex flex-column">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="conversion-rate" id="medium-rate" value="medium" checked>
+                <label class="form-check-label" for="medium-rate">{% translate "Medium" %}</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="conversion-rate" id="high-rate" value="high">
+                <label class="form-check-label" for="high-rate">{% translate "High" %}</label>
+              </div>
+            </div>
+          </div>
+      <div class="btn-group" role="group">
+        <button id="convert-button" class="btn btn-primary" type="button">{% translate "Convert" %}</button>
+        <button id="delete-button" class="btn btn-danger" type="submit">{% translate "Delete" %}</button>
+      </div>
 
-    <div class="container">
-        <h1>{{ file.original_file_name }}</h1>
-        <table class="table">
-            <tbody>
-                <tr>
-                    <td><strong> {% translate " File Type:" %}</strong> {{ file.file_type }}</td>
-                </tr>
-                <tr>
-                    <td><strong> {% translate "Created At:" %} </strong> {{ file.created_at  | date:"d/m/Y G:i" }}</td>
-                </tr>
-                {% if file.original_file_size > 0 %}
-                <tr>
-                    <td><strong> {% translate "Original Size:" %}</strong> {{ file.original_file_size | filesizeformat }}</td>
-                </tr>
-                {% else %}
-                <tr>
-                    <td> {% translate "File still uploading..." %}  </td>
-                </tr>
-                {% endif %}
-                {% if file.convert_status == "converted" and file.converted_file_size >= 1%}
-                    <tr>
-                        <td> <strong> {% translate "Size after compression:" %}  </strong> {{ file.converted_file_size | filesizeformat }} ({% percent_reduction file.file.size file.converted_file_size %}% reduction)</td>
-                    </tr>
-                    <tr>
-                        <td><strong> {% translate "Converted At:" %} </strong> {{ file.converted_at }}</td>
-                    </tr>
-                {% else %}
-                    <tr>
-                        <td><strong>{% translate "Convert Status:" %} </strong> {{ file.convert_status }}</td>
-                    </tr>
-                {% endif %}
-            </tbody>
-        </table>
-
-        {% if file.convert_status == "converted" %}
-        <button id="download-button" class="btn btn-primary" type="button"> {% translate "Download" %} </button>
-        {% else %}
-        <button id="convert-button" class="btn btn-primary" type="button"> {% translate "Convert" %} </button>
-        <button id="advanced-options-button" class="btn btn-secondary" type="button"> {% translate "Advanced options" %} </button>
-        <div id="advanced-options" style="display: none;">
-            <label for="compression"> {% translate "Compression level" %}</label>
-            <select id="compression-rate" name="compression_rate">
-                <option value="low"> {% translate "low" %} </option>
-                <option value="medium" selected> {% translate "Medium" %} </option>
-                <option value="high"> {% translate "High" %} </option>
-            </select>
-        </div>
-
+    </form>
     {% endif %}
-    <button id="delete-button" class="btn btn-danger" type="submit"> {% translate "Delete" %} </button>
-</div>
-<div id="message"></div>
+    <div id="message"></div>
+  </div>
+
 {% endblock %}
 
 {% block inline_javascript %}
-    {% include "files/file_detail_js.html" %}
+<script>
+    var message = $('#message');
+    {% if file.convert_status == "converted" %}
+        var downloadButton = $('#download-button');
+        downloadButton.on('click', function() {
+            $.getJSON("{% url 'api:file-generate-url' pk=file.id %}", function(data){
+                var win = window.open(data.url, "_blank");
+                win.focus();
+            });
+        });
+    {% else %}
+        var convertButton = $('#convert-button');
+        convertButton.on('click', function() {
+            var compressionRate = $("input[name=conversion-rate]:checked").val();
+            message.html( 'Your file is converting.', compressionRate);
+            $.ajax({
+				url: "{% url 'api:file-convert' pk=file.id %}?compression_rate="+compressionRate,
+				method: "POST",
+                data: {},
+                headers: {"X-CSRFToken": "{{ csrf_token }}"},
+                success: function() {
+					message.html('File conversion completed!');
+                    window.location.replace("{% url 'files:file-converting' %}");
+				},
+                error: function(data) {
+                    console.log(CSSStyleDeclaration)
+					message.html(data.responseJSON.message);
+				},
+            });
+        });
+    {% endif %}
+    var deleteButton = $('#delete-button');
+        deleteButton.on('click', function() {
+            $.ajax({
+               url: "{% url 'api:file-detail' pk=file.id %}",
+               type: "DELETE",
+               headers: {"X-CSRFToken": "{{ csrf_token }}"},
+               success: function(data){
+                message.html('Successfully deleted');
+                window.location.replace("{% url 'files:list' %}");
+            }});
+        });
+</script>
 {% endblock %}

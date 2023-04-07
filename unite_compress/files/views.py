@@ -44,3 +44,4 @@ def file_converting_view(request):
 class FileUploadView(FormView):
     template_name = "files/file_upload.html"
     form_class = FileForm
+    success_url = "files:list"
