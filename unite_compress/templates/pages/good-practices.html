@@ -57,6 +57,10 @@
             align-items: left;
             padding-left: 10%;
         }
+        h5 {
+            margin-top: 35px;
+            text-align: center;
+        }
 
 
         </style>
@@ -123,7 +127,7 @@
                                         <td><strong> GIF </strong></td>
                                         <td> {% translate "Simple short animation" %}</td>
                                         <td> {% translate "Medium Light" %}</td>
-                                        <td><img src="{% static 'images/CleanShot%202023-02-23%20at%2012.18.21.gif' %}" width="100" height="58" alt=""></td>
+                                        <td><img src="{% static 'images/tuto.gif' %}" width="100" height="58" alt=""></td>
                                     </tr>
                                 </table>
                             </li>
@@ -138,14 +142,15 @@
                                 <h4> {% translate "Different Image format" %}</h4>
 
 
-
+                                <h5><strong>JPEG</strong></h5>
                                 <p><strong>JPEG</strong> {% translate "is a lossy compression format that is widely used for photographic images. It achieves high compression ratios by removing some of the image data, which can result in a slight loss of image quality. JPEG images can be compressed to very small file sizes without significantly degrading the image quality, which makes it a popular choice for web and mobile applications. " %}</p>
                                 <img src="{% static 'images/paysage.jpeg' %}" alt="" width="500" height="233" class="center">
-
+                                <h5><strong>WebP</strong> </h5>
                                 <p> <strong>WebP</strong> {% translate "is a relatively new image format developed by Google that uses both lossy and lossless compression algorithms. It was designed to be more efficient than JPEG and other image formats, and it can achieve up to 34% smaller file sizes than JPEG for the same image quality. WebP is gaining popularity in web development due to its small file size and fast loading times. (source: external) person walking" %} </p>
-
+                                <h5><strong> PNG </strong></h5>
                                 <p> <strong> PNG </strong> {% translate "is a lossless compression format that is commonly used for graphics and other types of images that require transparency. PNG images can be compressed without losing any image data, which makes them larger than JPEG images. However, they can still be compressed to relatively small file sizes, and they are preferred for graphics that require transparency. " %}</p>
                                 <img src="{% static 'images/resizedBefore.png' %}" alt="" width="200" height="80" class="center">
+                                <h5><strong> SVG </strong></h5>
                                 <p><strong> SVG </strong> {% translate "is a vector graphics format that uses mathematical equations to create images, rather than pixels. This makes SVG files extremely small in size, and they can be scaled to any size without losing image quality. SVG is ideal for graphics that are simple in design and require high resolution, such as logos and icons." %}</p>
                                 <img src="{% static 'images/Trajans-Column-lower-animated.svg' %}" alt="" width="200" height="220" class="center">
                             </li>
@@ -318,18 +323,18 @@
                                 <ol>
                                     <li> {% translate " How to create a Raspberry Pi Imager" %}
                                         <ol>
-                                            <li> {% translate "Intall MoodleBox on SD" %}
+                                            <li> {% translate "Install a RasberryPi imager"%}
                                                 <div class="video-section">
                                                     <video width="620" height="340" controls>
-                                                        <source src="{% static 'images/video_en/1.1.1 InstallMoodleboxonSD.mp4' %}" type="video/mp4">
+                                                        <source src="{% static 'images/video_en/1.1.2 installRaspberryPiImager.mp4' %}" type="video/mp4">
                                                     Your browser does not support the video tag.
                                                     </video>
                                                 </div>
                                             </li>
-                                            <li>{% translate "Install RasberryPi Imager" %}
+                                            <li> {% translate "Intall MoodleBox on SD" %}
                                                 <div class="video-section">
                                                     <video width="620" height="340" controls>
-                                                        <source src="{% static 'images/video_en/1.1.2 installRaspberryPiImager.mp4' %}" type="video/mp4">
+                                                        <source src="{% static 'images/video_en/1.1.1 InstallMoodleboxonSD.mp4' %}" type="video/mp4">
                                                     Your browser does not support the video tag.
                                                     </video>
                                                 </div>
@@ -439,10 +444,10 @@
                                             </video>
                                         </div>
                                     </li>
-                                    <li>{% translate "How to allow students to delf register on a course" %}
+                                    <li>{% translate "How to allow students to self register on a course" %}
                                         <div class="video-section">
                                             <video  width="620" height="340" controls>
-                                                <source src="{% static 'images/video_en/33.mp4' %}" type=video/mp4">
+                                                <source src="{% static 'images/video_en/33.mp4' %}" type="video/mp4">
                                           Your browser does not support the video tag.
                                             </video>
                                         </div>
