@@ -21,7 +21,7 @@
 		<section>
 			<h2>{% translate "How it works" %} </h2>
 			<ol>
-				<li> {% translate " Create a Folder: Go to the " %}<a href="{% url 'courses:create' %}"> {% translate "Create Folder" %} </a> {% translate "page and enter a name and a description for your folder." %} </li>
+				<li> {% translate "Create a Folder: Go to the" %} <a href="{% url 'courses:create' %}"> {% translate "Create Folder" %} </a> {% translate "page and enter a name and a description for your folder." %} </li>
 				<li> {% translate "Upload a file: Go to the" %}  <a href="{% url 'files:upload'  %}"> {% translate " Upload File" %}</a> {% translate " page and select the file you want to upload. You can choose to add it to an existing folder or create a new one." %}</li>
 				<li>{% translate "Compress the file: Go to the file detail page by clicking on its name in the " %} <a href="{% url 'files:list'  %}"> {% translate "file list" %}  </a> {% translate "and click on the convert button.  You can choose to compress the file with the default 'medium' compression level or click on the 'Advanced options' button to choose from three different compression levels." %} </li>
 			 </ol>
