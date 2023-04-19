@@ -57,8 +57,9 @@
       </table>
     </div>
     {% if file.convert_status == "converted" %}
-    <div class="d-grid gap-2">
+    <div class="btn-group" role="group">
       <button id="download-button" class="btn btn-primary" type="button">{% translate "Download" %}</button>
+      <button id="delete-button" class="btn btn-danger" type="submit">{% translate "Delete" %}</button>
     </div>
     {% else %}
     <form>
