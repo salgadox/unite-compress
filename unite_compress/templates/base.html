@@ -52,9 +52,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'good-practices'  %}"> {% translate "Good Practices" %}</a>
               </li>
-            <!--   <li class="nav-item">
-                <a class="nav-link" href="{# url 'about' #}">About</a>
-              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+              </li>
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'courses:list'  %}"> {% translate "My Folders" %}</a>
@@ -108,7 +108,6 @@
       </nav>
 
     </div>
-
     <div class="container">
 
       {% if messages %}
@@ -138,4 +137,23 @@
     {% endcomment %}
     {% endblock inline_javascript %}
   </body>
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-muted">This project was co-financed by DDC with Unité and implemented by the EXAF-EPFL team.</p>
+
+
+      <div class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <a href="https://www.epfl.ch">
+        <img  width="60" height="52" src="{% static 'images/logo_epfl.png' %}" alt="EPFL" class="img-fluid">
+      </a>
+      <a href="https://www.epfl.ch" >
+        <img  width="60" height="52" src="{% static 'images/logo_unite.png' %}" alt="EPFL" class="img-fluid">
+      </a>
+    </div>
+
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link px-2 text-muted">Contact us! </a></li>
+      </ul>
+    </footer>
+  </div>
 </html>
