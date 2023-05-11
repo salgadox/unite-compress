@@ -4,6 +4,10 @@ TERRAFORM_DIR := terraform
 ENVS := stage prod
 VARS_FILENAME := vars.tfvars
 DEPLOY_DIR := $(TERRAFORM_DIR)/deploy
+MODULES_DIR := $(TERRAFORM_DIR)/modules
+MODULES_APP_DIR := $(MODULES_DIR)/app
+MODULES_BASE_DIR := $(MODULES_DIR)/base
+MODULES_DIRS := $(MODULES_APP_DIR) $(MODULES_BASE_DIR)
 META_DIR := $(DEPLOY_DIR)/meta
 DOTENV_DIR := $(DEPLOY_DIR)/dotenv
 BASE_DIR := $(DEPLOY_DIR)/base
@@ -37,6 +41,17 @@ update-$(TARGET):
 	terraform -chdir="./$(DIR)" get -update
 endef
 $(foreach DIR, $(WORKSPACE_DIRS), $(eval $(UPDATE_RULE)))
+
+# providers lock to match locks generated in github actions (ubuntu) so that linter checks pass
+define PROVIDERS_LOCK_RULE
+.PHONY: providers-lock-$(DIR)
+providers-lock-$(DIR):
+	terraform -chdir="./$(DIR)" providers lock -platform=linux_amd64
+endef
+$(foreach DIR, $(WORKSPACE_DIRS) $(MODULES_DIRS), $(eval $(PROVIDERS_LOCK_RULE)))
+.PHONY: providers-lock-all
+providers-lock-all: $(foreach DIR, $(WORKSPACE_DIRS) $(MODULES_DIRS), providers-lock-$(DIR))
+
 
 # plan/apply/destroy
 ## treat meta separatedly because of `-var-file`
