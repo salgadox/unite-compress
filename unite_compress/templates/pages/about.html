@@ -1,1 +1,153 @@
 {% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% translate "About the project" %}{% endblock %}
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      <header>
+        <h1> {% translate "Project Context" %}</h1>
+
+    </header>
+    <div class="container">
+      <div class="section">
+        <p>{% translate "The 'E-learning in Fragile Contexts' project was co-funded by the Swiss Agency for Development and Cooperation (SDC) as part of its program contribution to Unité. The project was implemented by the EXAF-EPFL team" %}
+        </p>
+   <!--      Le projet « E-learning in Fragile Contexts » a été cofinancé "
+        "par la Direction du développement et de la coopération (DDC)"
+        " dans le cadre de sa contribution de programme à Unité. "
+        "Le projet a été mis en œuvre par l'équipe EXAF-EPFL."
+         -->
+        <h3>{% translate "About the institutions" %}</h3>
+        <p>{% translate "Unité has partnered with EPFL's" %}<a href="https://www.epfl.ch/research/domains/exaf/fr/excellence-en-afrique/"> EXAF (Centre Excellence in Africa)</a>
+           {% translate "to develop technological solutions that will allow people in geographical areas with little or no internet connection to access educational content remotely. This issue is at the heart of EXAF's concerns, which promotes excellence in digital education and in research on the African continent" %}</p>
+
+        <!--   Unité s’est associée avec le <a href="https://www.epfl.ch/research/domains/exaf/fr/excellence-en-afrique/">Centre Excellence in Africa (EXAF)</a>"
+          " de l’EPFL afin de développer des solutions technologiques qui "
+          "permettront à des personnes se trouvant dans des zones géographiques"
+          " avec peu ou pas de connexion internet d’accéder à du contenu pédagogique"
+          " à distance. Cette problématique est au cœur des préoccupations du centre"
+          " EXAF qui promeut l’excellence dans l’éducation numérique et dans "
+          "la recherche sur le continent africain
+ -->
+          <h4> Unité </h4>
+            <p><a href="https://www.unite-ch.org/fr"> Unité </a> {% translate "is an association of 13 Swiss organizations active in development cooperation for the exchange of people. They aim to contribute to the implementation of the 2030 Agenda by strengthening the capacities of partner organizations to fight against multidimensional poverty in the Global South in favor of the people local communities and to improve the framework conditions for development." %} </p>
+<!--
+              est une association regroupant 13 organisations suisses "
+              "actives dans la coopération au développement pour l’échange de personnes."
+              " Elles visent à contribuer à la mise en œuvre de l’Agenda 2030 "
+              "en renforçant les capacités d’organisations partenaires à lutter contre"
+              " la pauvreté multidimensionnelle dans le Sud global en faveur des populations "
+              "locales et à améliorer les conditions-cadres pour le développement. -->
+
+          <h4>EPFL</h4>
+            <p>
+              L’EPFL,  <a href="https://www.epfl.ch"> (l'École polytechnique fédérale de Lausanne)</a>, {% translate "is one of the best universities specialized in the field of science and technology in the world, welcoming students, professors and collaborators from more than 120 countries. The EPFL is centered on three missions: teaching, research and innovation. It collaborates with an important network partners including other universities and colleges, secondary schools, gymnasiums (high schools), businesses, political circles and the general public, this with the aim of having a real impact on society, both nationally and globally." %}
+            </p>
+
+
+            <!-- "est l’une des meilleures universités spécialisées dans le domaine"
+            " des  sciences et de technologies au monde, accueillant des étudiant·e·s, "
+            "professeur·e·s et collaborateur·trice·s de plus de 120 pays. Institution"
+            " publique, l’EPFL est centrée sur trois missions : l’enseignement, "
+            "la recherche et l’innovation. Elle collabore avec un important réseau"
+            " de partenaires comprenant notamment d’autres universités et hautes écoles, "
+            "des écoles secondaires, des gymnases (lycées), des entreprises, "
+            "les milieux politiques et le grand public, ceci dans le but d’avoir"
+            " un véritable impact sur la société, tant à l’échelle nationale que mondiale. -->
+
+      </div>
+
+      <div id="contact" class="container marketing">
+        <h1>{% translate "Contact" %}</h1>
+        <h4>{% translate "About the project" %}</h3>
+          <div class="col-lg-3">
+
+            <div class="row">
+              <p>{% translate "Centre Excellence in Africa EXAF" %}</p>
+            </div>
+                  <p></p>
+                  <p>exaf@epfl.ch</p>
+                  <p></p>
+                  <hr>
+                  <p></p>
+                  <p>±41 21 693 64 01</p>
+                  <p></p>
+                  <hr>
+                  <p></p>
+                  <p>EPFL ENT-R EXAF EXAF-GE&nbsp;</p>
+                  <p>CM 2 200 (Centre Midi)&nbsp;</p>
+                  <p>{% translate "Station 10" %}&nbsp;</p>
+                  <p>CH-1015 Lausanne&nbsp;</p>
+                  <p></p>
+                  <hr>
+            </div>
+
+
+            <h3>{% translate "Send us a mail" %}</h3>
+
+          <div class="row">
+
+      <form class="form-horizontal" id="mailForm" method="post" action="../mail-post.php">
+
+
+      <div class="modal-body">
+
+            <div class="form-group">
+              <label for="from" class="col-lg-3 control-label">{% translate "From" %}</label>
+              <div class="col-sm-10"><input type="email" class="form-control" id="from" name="from" required="true"></div>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="col-lg-3 control-label">{% translate "Subject" %}</label>
+              <div class="col-sm-10"><input type="text" class="form-control" id="subject" name="subject" required></div>
+            </div>
+            <div class="form-group">
+              <label for="text" class="col-lg-3 control-label">{% translate "Text" %}</label>
+              <div class="col-sm-10"><textarea class="form-control" id="text" name="text" required></textarea></div>
+            </div>
+            <input type="hidden" name="mailto">
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" value="Send">
+      </div>
+
+    </form>
+
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <h3>{% translate "News" %}</h3>
+     <div  class="container">
+ <ul>
+   <li>
+     <a href="https://www.unite-ch.org/fr/actualites/deux-projets-pilotes-sur-le-e-learning-dans-des-contextes-fragiles">
+      {% translate "Deux projets pilotes sur le e-learning dans des contexte fragiles" %}</a>
+      <!-- Two pilot projects on e-learning in fragile contexts -->
+   </li>
+   <li>
+     <a href="https://actu.epfl.ch/news/e-learning-dans-les-contextes-fragiles-mission-egy/">
+      {% translate "E-learning in fragile context : A successful mission in Egypt" %}</a>
+      <!-- E-Learning dans les contextes fragiles : Mission égyptienne réussie ! -->
+   </li>
+   <li>
+     <a href="https://actu.epfl.ch/news/e-learning-en-contexte-fragile-projet-pilote-en-co/">
+      {% translate "E-Learning en contexte fragile : Projet pilote en Côte d'Ivoire" %}</a>
+      <!-- E-Learning en contexte fragile : Projet pilote en Côte d'Ivoire -->
+   </li>
+ </ul>
+ </div>
+</div>
+  </div>
+
+
+</div>
+
+      </div>
+
+      <div class="section">
+        <h1>{% translate "Code Source" %}</h1>
+
+        <p>  <a href="https://github.com/salgadox/unite-compress">{% translate "unite-compress code source" %}</a></p>
+      </div>
+    </div>
+
+{% endblock %}
