@@ -803,7 +803,7 @@ msgstr ""
 #: unite_compress/templates/pages/good-practices.html:97
 #: unite_compress/templates/pages/good-practices.html:226
 msgid " Best Image format"
-msgstr " meilleur format d'image"
+msgstr " Meilleur format d'image"
 
 #: unite_compress/templates/pages/good-practices.html:100
 #: unite_compress/templates/pages/good-practices.html:177
@@ -853,11 +853,11 @@ msgstr "Courte animation simple"
 
 #: unite_compress/templates/pages/good-practices.html:138
 msgid " Different Image format"
-msgstr " format d'image différent"
+msgstr " Format d'image différent"
 
 #: unite_compress/templates/pages/good-practices.html:142
 msgid "Different Image format"
-msgstr " format d'image différent"
+msgstr " Format d'image différent"
 
 #: unite_compress/templates/pages/good-practices.html:146
 msgid ""
