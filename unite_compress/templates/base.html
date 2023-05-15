@@ -53,7 +53,7 @@
                 <a class="nav-link" href="{% url 'good-practices'  %}"> {% translate "Good Practices" %}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
+                <a class="nav-link" href="{% url 'about' %}">{% translate "About" %}</a>
               </li>
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
