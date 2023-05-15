@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-15 17:03+0200\n"
+"POT-Creation-Date: 2023-05-15 17:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -560,6 +560,10 @@ msgstr "Accueil"
 msgid "Good Practices"
 msgstr "Bonnes pratiques"
 
+#: unite_compress/templates/base.html:56
+msgid "About"
+msgstr "A propos du projet"
+
 #: unite_compress/templates/base.html:60
 #: unite_compress/templates/pages/home.html:41
 msgid "My Folders"
@@ -582,14 +586,16 @@ msgstr "Langue"
 msgid ""
 "This project was co-financed by DDC with Unité and implemented by the EXAF-"
 "EPFL team."
-msgstr "Ce projet a été cofinancé par la Direction du développement et de la coopération (DDC) dans le cadre de sa contribution de programme à Unité. Le projet a été mis en œuvre par l'équipe EXAF-EPFL"
+msgstr ""
+"Ce projet a été cofinancé par la DDC dans le cadre de sa contribution de programme à Unité. Le "
+"projet a été mis en œuvre par l'équipe EXAF-EPFL"
 
 #: unite_compress/templates/base.html:156
 msgid "Contact us!"
 msgstr "Contactez-nous "
 
 #: unite_compress/templates/pages/about.html:4
-#: unite_compress/templates/pages/about.html:62
+#: unite_compress/templates/pages/about.html:33
 msgid "About the project"
 msgstr "A propos du projet"
 
@@ -602,33 +608,35 @@ msgid ""
 "The 'E-learning in Fragile Contexts' project was co-funded by the Swiss "
 "Agency for Development and Cooperation (SDC) as part of its program "
 "contribution to Unité. The project was implemented by the EXAF-EPFL team"
-msgstr " Le projet « E-learning in Fragile Contexts » a été cofinancé "
-        "par la Direction du développement et de la coopération (DDC)"
-        " dans le cadre de sa contribution de programme à Unité. "
-        "Le projet a été mis en œuvre par l'équipe EXAF-EPFL."
+msgstr ""
+" Le projet « E-learning in Fragile Contexts » a été cofinancé par la "
+"Direction du développement et de la coopération (DDC) dans le cadre de sa "
+"contribution de programme à Unité. Le projet a été mis en œuvre par l'équipe "
+"EXAF-EPFL."
 
-#: unite_compress/templates/pages/about.html:20
+#: unite_compress/templates/pages/about.html:16
 msgid "About the institutions"
 msgstr "Les institutions"
 
-#: unite_compress/templates/pages/about.html:21
+#: unite_compress/templates/pages/about.html:17
 msgid "Unité has partnered with EPFL's"
 msgstr "Unité s’est associée avec le "
 
-#: unite_compress/templates/pages/about.html:22
+#: unite_compress/templates/pages/about.html:18
 msgid ""
 "to develop technological solutions that will allow people in geographical "
 "areas with little or no internet connection to access educational content "
 "remotely. This issue is at the heart of EXAF's concerns, which promotes "
 "excellence in digital education and in research on the African continent"
-msgstr "  de l’EPFL afin de développer des solutions technologiques qui "
-          "permettront à des personnes se trouvant dans des zones géographiques"
-          " avec peu ou pas de connexion internet d’accéder à du contenu pédagogique"
-          " à distance. Cette problématique est au cœur des préoccupations du centre"
-          " EXAF qui promeut l’excellence dans l’éducation numérique et dans "
-          "la recherche sur le continent africain"
+msgstr ""
+"  de l’EPFL afin de développer des solutions technologiques qui permettront "
+"à des personnes se trouvant dans des zones géographiques avec peu ou pas de "
+"connexion internet d’accéder à du contenu pédagogique à distance. Cette "
+"problématique est au cœur des préoccupations du centre EXAF qui promeut "
+"l’excellence dans l’éducation numérique et dans la recherche sur le "
+"continent africain"
 
-#: unite_compress/templates/pages/about.html:33
+#: unite_compress/templates/pages/about.html:21
 msgid ""
 "is an association of 13 Swiss organizations active in development "
 "cooperation for the exchange of people. They aim to contribute to the "
@@ -636,14 +644,15 @@ msgid ""
 "organizations to fight against multidimensional poverty in the Global South "
 "in favor of the people local communities and to improve the framework "
 "conditions for development."
-msgstr "est une association regroupant 13 organisations suisses "
-              "actives dans la coopération au développement pour l’échange de personnes."
-              " Elles visent à contribuer à la mise en œuvre de l’Agenda 2030 "
-              "en renforçant les capacités d’organisations partenaires à lutter contre"
-              " la pauvreté multidimensionnelle dans le Sud global en faveur des populations "
-              "locales et à améliorer les conditions-cadres pour le développement"
+msgstr ""
+"est une association regroupant 13 organisations suisses actives dans la "
+"coopération au développement pour l’échange de personnes. Elles visent à "
+"contribuer à la mise en œuvre de l’Agenda 2030 en renforçant les capacités "
+"d’organisations partenaires à lutter contre la pauvreté multidimensionnelle "
+"dans le Sud global en faveur des populations locales et à améliorer les "
+"conditions-cadres pour le développement"
 
-#: unite_compress/templates/pages/about.html:44
+#: unite_compress/templates/pages/about.html:25
 msgid ""
 "is one of the best universities specialized in the field of science and "
 "technology in the world, welcoming students, professors and collaborators "
@@ -653,65 +662,66 @@ msgid ""
 "gymnasiums (high schools), businesses, political circles and the general "
 "public, this with the aim of having a real impact on society, both "
 "nationally and globally."
-msgstr "est l’une des meilleures universités spécialisées dans le domaine"
-            " des  sciences et de technologies au monde, accueillant des étudiant·e·s, "
-            "professeur·e·s et collaborateur·trice·s de plus de 120 pays. Institution"
-            " publique, l’EPFL est centrée sur trois missions : l’enseignement, "
-            "la recherche et l’innovation. Elle collabore avec un important réseau"
-            " de partenaires comprenant notamment d’autres universités et hautes écoles, "
-            "des écoles secondaires, des gymnases (lycées), des entreprises, "
-            "les milieux politiques et le grand public, ceci dans le but d’avoir"
-            " un véritable impact sur la société, tant à l’échelle nationale que mondiale."
+msgstr ""
+"est l’une des meilleures universités spécialisées dans le domaine des  "
+"sciences et de technologies au monde, accueillant des étudiant·e·s, "
+"professeur·e·s et collaborateur·trice·s de plus de 120 pays. Institution "
+"publique, l’EPFL est centrée sur trois missions : l’enseignement, la "
+"recherche et l’innovation. Elle collabore avec un important réseau de "
+"partenaires comprenant notamment d’autres universités et hautes écoles, des "
+"écoles secondaires, des gymnases (lycées), des entreprises, les milieux "
+"politiques et le grand public, ceci dans le but d’avoir un véritable impact "
+"sur la société, tant à l’échelle nationale que mondiale."
 
-#: unite_compress/templates/pages/about.html:61
+#: unite_compress/templates/pages/about.html:32
 msgid "Contact"
 msgstr "Contact"
 
-#: unite_compress/templates/pages/about.html:66
+#: unite_compress/templates/pages/about.html:37
 msgid "Centre Excellence in Africa EXAF"
 msgstr "Excellence in Africa EXAF"
 
-#: unite_compress/templates/pages/about.html:79
+#: unite_compress/templates/pages/about.html:50
 msgid "Station 10"
 msgstr ""
 
-#: unite_compress/templates/pages/about.html:86
+#: unite_compress/templates/pages/about.html:57
 msgid "Send us a mail"
 msgstr "Envoyez-nous un mail"
 
-#: unite_compress/templates/pages/about.html:96
+#: unite_compress/templates/pages/about.html:67
 msgid "From"
 msgstr "De"
 
-#: unite_compress/templates/pages/about.html:100
+#: unite_compress/templates/pages/about.html:71
 msgid "Subject"
 msgstr "Object"
 
-#: unite_compress/templates/pages/about.html:104
+#: unite_compress/templates/pages/about.html:75
 msgid "Text"
 msgstr "Texte"
 
-#: unite_compress/templates/pages/about.html:118
+#: unite_compress/templates/pages/about.html:89
 msgid "News"
 msgstr "Actualités"
 
-#: unite_compress/templates/pages/about.html:123
+#: unite_compress/templates/pages/about.html:94
 msgid "Deux projets pilotes sur le e-learning dans des contexte fragiles"
 msgstr "Two pilot projects on e-learning in fragile contexts"
 
-#: unite_compress/templates/pages/about.html:128
+#: unite_compress/templates/pages/about.html:98
 msgid "E-learning in fragile context : A successful mission in Egypt"
 msgstr "E-Learning dans les contextes fragiles : Mission égyptienne réussie ! "
 
-#: unite_compress/templates/pages/about.html:133
+#: unite_compress/templates/pages/about.html:102
 msgid "E-Learning en contexte fragile : Projet pilote en Côte d'Ivoire"
 msgstr "E-Learning en contexte fragile : Projet pilote en Côte d'Ivoire"
 
-#: unite_compress/templates/pages/about.html:147
+#: unite_compress/templates/pages/about.html:115
 msgid "Code Source"
 msgstr "Le code source"
 
-#: unite_compress/templates/pages/about.html:149
+#: unite_compress/templates/pages/about.html:117
 msgid "Github repo"
 msgstr "Github: Référentiel du projet"
 
@@ -793,7 +803,7 @@ msgstr ""
 #: unite_compress/templates/pages/good-practices.html:97
 #: unite_compress/templates/pages/good-practices.html:226
 msgid " Best Image format"
-msgstr " meilleur format d'image"
+msgstr " Meilleur format d'image"
 
 #: unite_compress/templates/pages/good-practices.html:100
 #: unite_compress/templates/pages/good-practices.html:177
@@ -843,11 +853,11 @@ msgstr "Courte animation simple"
 
 #: unite_compress/templates/pages/good-practices.html:138
 msgid " Different Image format"
-msgstr " format d'image différent"
+msgstr " Format d'image différent"
 
 #: unite_compress/templates/pages/good-practices.html:142
 msgid "Different Image format"
-msgstr " format d'image différent"
+msgstr " Format d'image différent"
 
 #: unite_compress/templates/pages/good-practices.html:146
 msgid ""
