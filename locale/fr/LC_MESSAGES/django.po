@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-10 17:48+0200\n"
+"POT-Creation-Date: 2023-05-15 17:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,8 +31,6 @@ msgid "name"
 msgstr "nom"
 
 #: unite_compress/courses/models.py:10
-#, fuzzy
-#| msgid "Description"
 msgid "description"
 msgstr "Description :"
 
@@ -139,14 +137,10 @@ msgid "Folder"
 msgstr "Dossier"
 
 #: unite_compress/files/models.py:66
-#, fuzzy
-#| msgid "Conversion Status"
 msgid "Conversion status"
 msgstr "Statut de compression"
 
 #: unite_compress/files/models.py:71
-#, fuzzy
-#| msgid "Convert Time"
 msgid "Convert time"
 msgstr "Temps de conversion"
 
@@ -171,8 +165,6 @@ msgid "System command to convert video"
 msgstr "Commande de système pour convertir la vidéo"
 
 #: unite_compress/files/models.py:167
-#, fuzzy
-#| msgid "Compression rate"
 msgid "compression rate"
 msgstr "Niveau de compression"
 
@@ -185,8 +177,6 @@ msgid "File Type:"
 msgstr "Type de fichier :"
 
 #: unite_compress/files/templates/files/file_detail.html:30
-#, fuzzy
-#| msgid "Original Size :"
 msgid "Original Size:"
 msgstr "Taille d'origine :"
 
@@ -254,6 +244,10 @@ msgstr "Taille d'origine :"
 #: unite_compress/files/templates/files/file_upload.html:4
 msgid "File Upload"
 msgstr "Téléchargement de fichiers"
+
+#: unite_compress/files/templates/files/widgets/drag_and_drop_file_input.html:4
+msgid "Select or drop your file here to upload"
+msgstr ""
 
 #: unite_compress/files/views.py:35
 msgid "Your file has been uploaded successfully."
@@ -482,8 +476,6 @@ msgid "Set Password"
 msgstr "Définir le mot de passe"
 
 #: unite_compress/templates/account/signup.html:6
-#, fuzzy
-#| msgid "Sign Up"
 msgid "Signup"
 msgstr "S'inscrire"
 
@@ -586,14 +578,150 @@ msgstr "Mon profil"
 msgid "Language"
 msgstr "Langue"
 
-#: unite_compress/templates/pages/about.html:7
-#: unite_compress/templates/pages/good-practices.html:68
-msgid "Good practices:"
-msgstr "Bonnes pratiques :"
+#: unite_compress/templates/base.html:143
+msgid ""
+"This project was co-financed by DDC with Unité and implemented by the EXAF-"
+"EPFL team."
+msgstr "Ce projet a été cofinancé par la Direction du développement et de la coopération (DDC) dans le cadre de sa contribution de programme à Unité. Le projet a été mis en œuvre par l'équipe EXAF-EPFL"
+
+#: unite_compress/templates/base.html:156
+msgid "Contact us!"
+msgstr "Contactez-nous "
+
+#: unite_compress/templates/pages/about.html:4
+#: unite_compress/templates/pages/about.html:62
+msgid "About the project"
+msgstr "A propos du projet"
+
+#: unite_compress/templates/pages/about.html:8
+msgid "Project Context"
+msgstr "Contexte de projet"
+
+#: unite_compress/templates/pages/about.html:13
+msgid ""
+"The 'E-learning in Fragile Contexts' project was co-funded by the Swiss "
+"Agency for Development and Cooperation (SDC) as part of its program "
+"contribution to Unité. The project was implemented by the EXAF-EPFL team"
+msgstr " Le projet « E-learning in Fragile Contexts » a été cofinancé "
+        "par la Direction du développement et de la coopération (DDC)"
+        " dans le cadre de sa contribution de programme à Unité. "
+        "Le projet a été mis en œuvre par l'équipe EXAF-EPFL."
+
+#: unite_compress/templates/pages/about.html:20
+msgid "About the institutions"
+msgstr "Les institutions"
+
+#: unite_compress/templates/pages/about.html:21
+msgid "Unité has partnered with EPFL's"
+msgstr "Unité s’est associée avec le "
+
+#: unite_compress/templates/pages/about.html:22
+msgid ""
+"to develop technological solutions that will allow people in geographical "
+"areas with little or no internet connection to access educational content "
+"remotely. This issue is at the heart of EXAF's concerns, which promotes "
+"excellence in digital education and in research on the African continent"
+msgstr "  de l’EPFL afin de développer des solutions technologiques qui "
+          "permettront à des personnes se trouvant dans des zones géographiques"
+          " avec peu ou pas de connexion internet d’accéder à du contenu pédagogique"
+          " à distance. Cette problématique est au cœur des préoccupations du centre"
+          " EXAF qui promeut l’excellence dans l’éducation numérique et dans "
+          "la recherche sur le continent africain"
+
+#: unite_compress/templates/pages/about.html:33
+msgid ""
+"is an association of 13 Swiss organizations active in development "
+"cooperation for the exchange of people. They aim to contribute to the "
+"implementation of the 2030 Agenda by strengthening the capacities of partner "
+"organizations to fight against multidimensional poverty in the Global South "
+"in favor of the people local communities and to improve the framework "
+"conditions for development."
+msgstr "est une association regroupant 13 organisations suisses "
+              "actives dans la coopération au développement pour l’échange de personnes."
+              " Elles visent à contribuer à la mise en œuvre de l’Agenda 2030 "
+              "en renforçant les capacités d’organisations partenaires à lutter contre"
+              " la pauvreté multidimensionnelle dans le Sud global en faveur des populations "
+              "locales et à améliorer les conditions-cadres pour le développement"
+
+#: unite_compress/templates/pages/about.html:44
+msgid ""
+"is one of the best universities specialized in the field of science and "
+"technology in the world, welcoming students, professors and collaborators "
+"from more than 120 countries. The EPFL is centered on three missions: "
+"teaching, research and innovation. It collaborates with an important network "
+"partners including other universities and colleges, secondary schools, "
+"gymnasiums (high schools), businesses, political circles and the general "
+"public, this with the aim of having a real impact on society, both "
+"nationally and globally."
+msgstr "est l’une des meilleures universités spécialisées dans le domaine"
+            " des  sciences et de technologies au monde, accueillant des étudiant·e·s, "
+            "professeur·e·s et collaborateur·trice·s de plus de 120 pays. Institution"
+            " publique, l’EPFL est centrée sur trois missions : l’enseignement, "
+            "la recherche et l’innovation. Elle collabore avec un important réseau"
+            " de partenaires comprenant notamment d’autres universités et hautes écoles, "
+            "des écoles secondaires, des gymnases (lycées), des entreprises, "
+            "les milieux politiques et le grand public, ceci dans le but d’avoir"
+            " un véritable impact sur la société, tant à l’échelle nationale que mondiale."
+
+#: unite_compress/templates/pages/about.html:61
+msgid "Contact"
+msgstr "Contact"
+
+#: unite_compress/templates/pages/about.html:66
+msgid "Centre Excellence in Africa EXAF"
+msgstr "Excellence in Africa EXAF"
+
+#: unite_compress/templates/pages/about.html:79
+msgid "Station 10"
+msgstr ""
+
+#: unite_compress/templates/pages/about.html:86
+msgid "Send us a mail"
+msgstr "Envoyez-nous un mail"
+
+#: unite_compress/templates/pages/about.html:96
+msgid "From"
+msgstr "De"
+
+#: unite_compress/templates/pages/about.html:100
+msgid "Subject"
+msgstr "Object"
+
+#: unite_compress/templates/pages/about.html:104
+msgid "Text"
+msgstr "Texte"
+
+#: unite_compress/templates/pages/about.html:118
+msgid "News"
+msgstr "Actualités"
+
+#: unite_compress/templates/pages/about.html:123
+msgid "Deux projets pilotes sur le e-learning dans des contexte fragiles"
+msgstr "Two pilot projects on e-learning in fragile contexts"
+
+#: unite_compress/templates/pages/about.html:128
+msgid "E-learning in fragile context : A successful mission in Egypt"
+msgstr "E-Learning dans les contextes fragiles : Mission égyptienne réussie ! "
+
+#: unite_compress/templates/pages/about.html:133
+msgid "E-Learning en contexte fragile : Projet pilote en Côte d'Ivoire"
+msgstr "E-Learning en contexte fragile : Projet pilote en Côte d'Ivoire"
+
+#: unite_compress/templates/pages/about.html:147
+msgid "Code Source"
+msgstr "Le code source"
+
+#: unite_compress/templates/pages/about.html:149
+msgid "Github repo"
+msgstr "Github: Référentiel du projet"
 
 #: unite_compress/templates/pages/good-practices.html:4
 msgid "My tutorials"
 msgstr "Mes tutoriels"
+
+#: unite_compress/templates/pages/good-practices.html:68
+msgid "Good practices:"
+msgstr "Bonnes pratiques :"
 
 #: unite_compress/templates/pages/good-practices.html:73
 msgid "Tutorial 1: Reduce Bandwidth for Learning"
@@ -614,15 +742,6 @@ msgid "Compression"
 msgstr "Niveau de compression"
 
 #: unite_compress/templates/pages/good-practices.html:82
-#, fuzzy
-#| msgid ""
-#| "Compression is a critical component of low-bandwidth content development. "
-#| "All files that are transmitted over the internet should be compressed to "
-#| "reduce their size. There are several compression algorithms available, "
-#| "for example, gzip that can be used to compress different types of files. "
-#| "Compression reduces the size of files, which, in turn, reduces the amount "
-#| "of data that needs to be transmitted over the internet, making the "
-#| "content more accessible to users with slow internet connections."
 msgid ""
 "Compression is a critical component of low-bandwidth content development. "
 "All files that are transmitted over the internet should be compressed to "
@@ -673,8 +792,6 @@ msgstr ""
 
 #: unite_compress/templates/pages/good-practices.html:97
 #: unite_compress/templates/pages/good-practices.html:226
-#, fuzzy
-#| msgid " Best Image Format"
 msgid " Best Image format"
 msgstr " meilleur format d'image"
 
@@ -729,8 +846,6 @@ msgid " Different Image format"
 msgstr " format d'image différent"
 
 #: unite_compress/templates/pages/good-practices.html:142
-#, fuzzy
-#| msgid " Different Image format"
 msgid "Different Image format"
 msgstr " format d'image différent"
 
@@ -1002,23 +1117,10 @@ msgid "Flipped Classroom"
 msgstr "Classe inversée"
 
 #: unite_compress/templates/pages/good-practices.html:279
-#, fuzzy
-#| msgid "Introduction"
 msgid " Introduction"
 msgstr "Présentation de la rubrique"
 
 #: unite_compress/templates/pages/good-practices.html:283
-#, fuzzy
-#| msgid ""
-#| "A flipped classroom is a teaching model in which traditional classroom "
-#| "activities, such as lecturing and direct instruction, are moved outside "
-#| "of class time through pre-recorded videos, reading assignments, or other "
-#| "forms of self-paced learning. In-class time is then used for activities "
-#| "that typically would have been homework, such as group work, discussions, "
-#| "and problem-solving activities, which allow for more active learning and "
-#| "engagement with the material. The idea is that students can learn the "
-#| "content at their own pace outside of class, freeing up class time for "
-#| "more interactive and collaborative activities."
 msgid ""
 "A flipped classroom is a teaching model in which traditional classroom "
 "activities, such as lecturing and direct instruction, are moved outside of "
@@ -1067,8 +1169,6 @@ msgid "Close"
 msgstr "Fermer"
 
 #: unite_compress/templates/pages/good-practices.html:315
-#, fuzzy
-#| msgid "Moodle and MoodleBox Tutorial"
 msgid "Tutorial 2: Moodle and MoodleBox Tutorial"
 msgstr "Tutoriel 2 : Moodle et MoodleBox"
 
@@ -1099,8 +1199,6 @@ msgid "Intall MoodleBox on SD"
 msgstr "Installer MoodleBox sur SD"
 
 #: unite_compress/templates/pages/good-practices.html:342
-#, fuzzy
-#| msgid "Insert SD on Rasberry Pi"
 msgid "Insert SD on RasberryPi"
 msgstr "Insérer SD sur Raspberry Pi"
 
@@ -1134,8 +1232,6 @@ msgid "How to add admin user"
 msgstr "Comment ajouter un administrateur"
 
 #: unite_compress/templates/pages/good-practices.html:419
-#, fuzzy
-#| msgid "How to allow students on the platform"
 msgid "How to allow Students on the platform"
 msgstr "Comment donner accès à la plateforme aux apprenants"
 
@@ -1225,8 +1321,6 @@ msgid "The platform supports the following mime types :"
 msgstr "Les formats suivants sont pris en charge par la plateforme :"
 
 #: unite_compress/templates/pages/home.html:31
-#, fuzzy
-#| msgid "application/pdf"
 msgid "application / pdf"
 msgstr "application /pdf"
 
