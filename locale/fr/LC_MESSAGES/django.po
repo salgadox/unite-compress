@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-15 17:41+0200\n"
+"POT-Creation-Date: 2023-05-16 20:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,6 +244,10 @@ msgstr "Taille d'origine :"
 #: unite_compress/files/templates/files/file_upload.html:4
 msgid "File Upload"
 msgstr "Téléchargement de fichiers"
+
+#: unite_compress/files/templates/files/file_upload.html:15
+msgid "Save"
+msgstr ""
 
 #: unite_compress/files/templates/files/widgets/drag_and_drop_file_input.html:4
 msgid "Select or drop your file here to upload"
@@ -587,8 +591,8 @@ msgid ""
 "This project was co-financed by DDC with Unité and implemented by the EXAF-"
 "EPFL team."
 msgstr ""
-"Ce projet a été cofinancé par la DDC dans le cadre de sa contribution de programme à Unité. Le "
-"projet a été mis en œuvre par l'équipe EXAF-EPFL"
+"Ce projet a été cofinancé par la DDC dans le cadre de sa contribution de "
+"programme à Unité. Le projet a été mis en œuvre par l'équipe EXAF-EPFL"
 
 #: unite_compress/templates/base.html:156
 msgid "Contact us!"
@@ -689,17 +693,17 @@ msgstr ""
 msgid "Send us a mail"
 msgstr "Envoyez-nous un mail"
 
-#: unite_compress/templates/pages/about.html:67
+#: unite_compress/templates/pages/about.html:66
 msgid "From"
 msgstr "De"
 
-#: unite_compress/templates/pages/about.html:71
+#: unite_compress/templates/pages/about.html:70
 msgid "Subject"
 msgstr "Object"
 
-#: unite_compress/templates/pages/about.html:75
+#: unite_compress/templates/pages/about.html:74
 msgid "Text"
-msgstr "Texte"
+msgstr "Message"
 
 #: unite_compress/templates/pages/about.html:89
 msgid "News"

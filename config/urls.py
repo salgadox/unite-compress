@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.shortcuts import redirect
 from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
@@ -21,6 +22,11 @@ urlpatterns = [
         "good-practices/",
         TemplateView.as_view(template_name="pages/good-practices.html"),
         name="good-practices",
+    ),
+    path(
+        "codesource/",
+        lambda request: redirect("https://github.com/salgadox/unite-compress"),
+        name="codesource",
     ),
     path("users/", include("unite_compress.users.urls", namespace="users")),
     path("files/", include("unite_compress.files.urls", namespace="files")),
