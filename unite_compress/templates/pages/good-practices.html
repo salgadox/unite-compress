@@ -61,406 +61,449 @@
             margin-top: 35px;
             text-align: center;
         }
+        .column-button{
+            float: left;
+            margin-top: 15px;
+            width: 15%;
+        }
 
-
+        .btn {
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .btna {
+            color: white;
+        }
         </style>
         <header>
             <h1>  {% translate "Good practices:" %} </h1>
         </header>
         <body>
-            <div class="tutorial">
-                <div class="header" onclick="toggleSection('section1')">
-                    <h1>{% translate "Tutorial 1: Reduce Bandwidth for Learning" %}</h1>
-                </div>
-                <div class="section" id="section1">
-                    <section>
-                        <h3>{% translate "Teaching Online with Limited Internet" %}</h3>
-                        <h2>{% translate "Tools to reduce data" %}</h2>
-                        <ul>
-                            <li>
-                                <h3> {% translate "Compression" %}</h3>
-                                <p>{% translate "Compression is a critical component of low-bandwidth content development. All files that are transmitted over the internet should be compressed to reduce their size. There are several compression algorithms available, example. gzip that can be used to compress different types of files. Compression reduces the size of files, which, in turn, reduces the amount of data that needs to be transmitted over the internet, making the content more accessible to users with slow internet connections." %}</p>
-                            </li>
-                            <li>
-                                <h3>{% translate "Use ad blockers" %}</h3>
-                                <p>{% translate "Ads can be a major source of bandwidth usage, particularly if they include high-resolution images or videos. Installing an ad blocker can help reduce the amount of bandwidth used by ads, leading to faster page load times." %}</p>
-                            </li>
-                            <li>
-                                <h3>{% translate "Limit video quality" %}</h3>
-                                <p>{% translate "If you're streaming videos, consider reducing the video quality to a lower resolution. This can help reduce the amount of bandwidth used by the video, without sacrificing too much in terms of video quality." %}
-                                </p>
-                            </li>
-                        </ul>
-                    </section>
-                    <hr>
-                    <section>
-                        <h2>{% translate " Best Image format" %}</h2>
-                        <ul>
-                            <li>
-                                <h3>{% translate "Summary:" %}</h3>
-                                <table>
-                                    <tr>
-                                      <th> {% translate "Description" %} </th>
-                                      <th> {% translate "Best for" %}</th>
-                                      <th> {% translate "Size" %}</th>
-                                      <th> {% translate "Example" %} </th>
-                                    </tr>
-                                    <tr>
-                                      <td><strong> SVG </strong></td>
-                                      <td> {% translate "Logos and icons" %}</td>
-                                      <td> {% translate "Very Light" %}</td>
-                                      <td> <img src="{% static 'images/Trajans-Column-lower-animated.svg' %}" alt="" width="100" height="110"  ></td>
-                                    </tr>
-                                    <tr>
-                                      <td><strong> JPEG </strong></td>
-                                      <td> {% translate "photographic images" %}</td>
-                                      <td> {% translate "Medium Light" %}</td>
-                                      <td><img src="{% static 'images/paysage.jpeg' %}" alt="" width="101" height="47"></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong> PNG </strong></td>
-                                        <td> {% translate "images that require transparency" %}</td>
-                                        <td> {% translate "Medium" %}</td>
-                                        <td><img src="{% static 'images/resizedBefore.png' %}" width="200" height="80" alt=""></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong> GIF </strong></td>
-                                        <td> {% translate "Simple short animation" %}</td>
-                                        <td> {% translate "Medium Light" %}</td>
-                                        <td><img src="{% static 'images/tuto.gif' %}" width="100" height="58" alt=""></td>
-                                    </tr>
-                                </table>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2> {% translate " Different Image format" %}</h2>
-                        <ul>
-                            <li>
-                                <h3> {% translate "Tools to reduce data" %}</h3>
-                                <h4> {% translate "Different Image format" %}</h4>
-
-
-                                <h5><strong>JPEG</strong></h5>
-                                <p><strong>JPEG</strong> {% translate "is a lossy compression format that is widely used for photographic images. It achieves high compression ratios by removing some of the image data, which can result in a slight loss of image quality. JPEG images can be compressed to very small file sizes without significantly degrading the image quality, which makes it a popular choice for web and mobile applications. " %}</p>
-                                <img src="{% static 'images/paysage.jpeg' %}" alt="" width="500" height="233" class="center">
-                                <h5><strong>WebP</strong> </h5>
-                                <p> <strong>WebP</strong> {% translate "is a relatively new image format developed by Google that uses both lossy and lossless compression algorithms. It was designed to be more efficient than JPEG and other image formats, and it can achieve up to 34% smaller file sizes than JPEG for the same image quality. WebP is gaining popularity in web development due to its small file size and fast loading times. (source: external) person walking" %} </p>
-                                <h5><strong> PNG </strong></h5>
-                                <p> <strong> PNG </strong> {% translate "is a lossless compression format that is commonly used for graphics and other types of images that require transparency. PNG images can be compressed without losing any image data, which makes them larger than JPEG images. However, they can still be compressed to relatively small file sizes, and they are preferred for graphics that require transparency. " %}</p>
-                                <img src="{% static 'images/resizedBefore.png' %}" alt="" width="200" height="80" class="center">
-                                <h5><strong> SVG </strong></h5>
-                                <p><strong> SVG </strong> {% translate "is a vector graphics format that uses mathematical equations to create images, rather than pixels. This makes SVG files extremely small in size, and they can be scaled to any size without losing image quality. SVG is ideal for graphics that are simple in design and require high resolution, such as logos and icons." %}</p>
-                                <img src="{% static 'images/Trajans-Column-lower-animated.svg' %}" alt="" width="200" height="220" class="center">
-                            </li>
-                        </ul>
-                    </section>
-                    <hr>
-                    <section>
-                        <h2>{% translate "EXAF Optimisation Tool" %}</h3>
-                        <ul>
-                            <li>
-                                 <h3>{% translate "Summary" %}</h3>
-                                 <p>{% translate "In summary, data compression is an effective optimisation tool to reduce data size. By using compression algorithms, data can be encoded in a more efficient way, leading to reduced storage requirements and faster transmission speeds." %}</p>
-                                 <img src="{% static 'images/EPFL_tool.png' %}" alt="" width="700" class="center">
-                                 <p> <a href="https://e-learning4all.app/"> {% translate "visit the tool page" %}</a> </p>
-                            </li>
-                        </ul>
-                    </section>
-                    <hr>
-                    <section>
-                        <h3> {% translate " Best Video Format " %}</h3>
-                        <ul>
-                            <li>
-                                <h3> {% translate "Tools to reduce data" %}</h3>
-                                <h4> {% translate "Summary:" %}</h4>
-                                <table>
-                                    <tr>
-                                        <th></th>
-                                      <th><strong>Pros</strong></th>
-                                      <th><strong>Cons</strong></th>
-                                      <th><strong>Size</strong></th>
-                                    </tr>
-                                    <tr>
-                                      <td><strong>MP4</strong></td>
-                                      <td>Long videos with a lot of details</td>
-                                      <td>Not as efficient as the other two</td>
-                                      <td>Medium</td>
-                                    </tr>
-                                    <tr>
-                                      <td><strong>Webm</strong></td>
-                                      <td>Long videos with a lot of details</td>
-                                      <td>Currently harder to access</td>
-                                      <td>Medium Light</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>GIF</strong></td>
-                                        <td>Simple short animation</td>
-                                        <td>Lost of frames (quality)</td>
-                                        <td>Medium Light</td>
-                                      </tr>
-                                </table>
-                                </li>
-                                <br>
+                <div class="tutorial">
+                    <div class="header" onclick="toggleSection('section1')">
+                        <h1>{% translate "Tutorial 1: Reduce Bandwidth for Learning" %}</h1>
+                    </div>
+                    <div class="section" id="section1">
+                        <section>
+                            <h3>{% translate "Teaching Online with Limited Internet" %}</h3>
+                            <h2>{% translate "Tools to reduce data" %}</h2>
+                            <ul>
                                 <li>
-                                <p> <strong>MP4</strong> {% translate "is a widely-used video format that is compatible with most devices and web browsers. It is a compressed format that can be optimized for smaller file sizes without sacrificing video quality." %}</p>
-                            </li>
-                            <li>
-                                <p> <strong>Youtube</strong>  {% translate "is not per se a format but we believe that it has some benefits in low-bandwidth environement. YouTube is a video-sharing platform where users can upload, share, and view videos. The platform is free to use and is supported by advertising. Users can upload videos on a variety of topics, including music, comedy, education, and more. YouTube offers features such as video optimization for low-bandwidth environments, compression, offline playback (paid feature), mobile compatibility, and a vast library of educational videos and resources. It has become an important tool for educators, businesses, and individuals who want to share their message with a wide audience." %}</p>
-                                <p class="d-flex justify-content-center"> <iframe width="560" height="315" src="https://www.youtube.com/embed/RQaW2bFieo8" frameborder="0"></iframe> </p>
-                            </li>
-                            <li>
-                                <p> <strong>WebM</strong>  {% translate "is an open-source video format developed by Google that is optimized for web use. It is a lightweight format that can be compressed to smaller file sizes without losing quality." %}</p>
-                            </li>
-                            <li>
-                                <p> <strong>MOV</strong> {% translate "is a video format developed by Apple for use on its QuickTime media player. It is a popular format for Mac users and is also compatible with Windows operating systems. MOV files can be large in size, especially if the video has a high resolution or contains many effects. However, MOV files can be compressed to reduce file size without sacrificing video quality. MOV files can be played on most media players, including QuickTime, Windows Media Player, and VLC media player. If you are working with a limited internet environment or storage capacity, you may want to consider compressing your MOV files or using a different format that is more optimized for smaller file sizes. " %}</p>
-                            </li>
-                            <li>
-                                <p> <strong>AVI</strong> {% translate "is a popular video format that can be used for both high-quality and low-quality videos. It uses a simple compression algorithm that can reduce file size, but it may not be as efficient as other formats. " %}</p>
-                            </li>
-                        </ul>
-                    </section>
-                    <hr>
-                    <section>
-                        <h3> {% translate " Best Image format" %}</h3>
-                        <ul>
-                            <li>
-                                <h3> {% translate "Summary" %}</h3>
-                                <h3> {% translate "Summary" %}</h3>
-                                <p> {% translate "All of these digital text formats - plain text (txt), PDF, ePub, and Markdown - are great options for different use cases, offering a variety of benefits such as accessibility, portability, and flexibility." %}</p>
-                                <table>
-                                    <tr>
-                                        <th></th>
-                                      <th><strong>Pro</strong></th>
-                                      <th><strong>Cons</strong></th>
-                                      <th><strong>Size of our example</strong></th>
-                                    </tr>
-                                    <tr>
-                                      <td><strong>.txt</strong></td>
-                                      <td>Really light </td>
-                                      <td>do not support image</td>
-                                      <td>1KB</td>
-                                    </tr>
-                                    <tr>
-                                      <td><strong>.pdf</strong></td>
-                                      <td>Wide accessibility and use</td>
-                                      <td>a bit heavier than the others</td>
-                                      <td>16KB</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>.epub</strong></td>
-                                        <td>Interactive</td>
-                                        <td>a bit less accessible than txt and pdf</td>
-                                        <td>3KB</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>.md</strong></td>
-                                        <td>Support image and hyperlinks</td>
-                                        <td>learning curve</td>
-                                        <td>3KB</td>
-                                    </tr>
-                                </table>
-                                <br>
-                                <h3> {% translate "Plain text (.txt)" %}</h3>
-                                <p> {% translate "Plain text files are simple text files that contain only basic text characters. They are very lightweight and can be easily read and edited by most text editors, including basic editors like Notepad. Plain text files can be opened and read on almost any device, including those with limited internet access." %}</p>
-                                <h3> {% translate "Portable Document Format (.pdf)" %}</h3>
-                                <p> {% translate "PDF files are a popular digital document format that can be easily downloaded and opened on most devices. PDF files are compact and can be optimized for small file sizes without sacrificing the quality of the document. PDF files can also be easily shared and distributed via email or other digital means." %}</p>
-                                <h3> {% translate "Electronic Publication (.epub)" %}</h3>
-                                <p> {% translate "Epub is an open standard format for digital books and documents. Epub files are lightweight and can be optimized for small file sizes without sacrificing the quality of the content. Epub files can be opened and read on most devices, including e-readers and tablets" %}</p>
-                                <h3> {% translate "Markdown (.md)" %}</h3>
-                                <p> {% translate "Markdown is a lightweight markup language that is used to format text documents. Markdown files are simple text files that can be easily read and edited by most text editors. Markdown files can be easily converted to other formats, such as HTML or PDF, using specialized software or online converters" %}</p>
-                            </li>
-                        </ul>
-                    </section>
-                    <hr>
-                    <section>
-                        <h3> {% translate "Flipped Classroom" %}</h3>
-                        <h4> {% translate " Introduction" %}</h4>
-                        <ul>
-                            <li>
-                                <h3> {% translate "Summary" %}</h3>
-                                <p> {% translate "A flipped classroom is a teaching model in which traditional classroom activities, such as lecturing and direct instruction, are moved outside of class time through pre-recorded videos, reading assignments, or other forms of self-paced learning. In-class time is then used for activities that typically would have been homework, such as group work, discussions, and problem-solving activities, which allow for more active learning and engagement with the material.The idea is that students can learn the content at their own pace outside of class, freeing up class time for more interactive and collaborative activities." %}</p>
+                                    <h3> {% translate "Compression" %}</h3>
+                                    <p>{% translate "Compression is a critical component of low-bandwidth content development. All files that are transmitted over the internet should be compressed to reduce their size. There are several compression algorithms available, example. gzip that can be used to compress different types of files. Compression reduces the size of files, which, in turn, reduces the amount of data that needs to be transmitted over the internet, making the content more accessible to users with slow internet connections." %}</p>
+                                </li>
+                                <li>
+                                    <h3>{% translate "Use ad blockers" %}</h3>
+                                    <p>{% translate "Ads can be a major source of bandwidth usage, particularly if they include high-resolution images or videos. Installing an ad blocker can help reduce the amount of bandwidth used by ads, leading to faster page load times." %}</p>
+                                </li>
+                                <li>
+                                    <h3>{% translate "Limit video quality" %}</h3>
+                                    <p>{% translate "If you're streaming videos, consider reducing the video quality to a lower resolution. This can help reduce the amount of bandwidth used by the video, without sacrificing too much in terms of video quality." %}
+                                    </p>
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2>{% translate " Best Image format" %}</h2>
+                            <ul>
+                                <li>
+                                    <h3>{% translate "Summary:" %}</h3>
+                                    <table>
+                                        <tr>
+                                        <th> {% translate "Description" %} </th>
+                                        <th> {% translate "Best for" %}</th>
+                                        <th> {% translate "Size" %}</th>
+                                        <th> {% translate "Example" %} </th>
+                                        </tr>
+                                        <tr>
+                                        <td><strong> SVG </strong></td>
+                                        <td> {% translate "Logos and icons" %}</td>
+                                        <td> {% translate "Very Light" %}</td>
+                                        <td> <img src="{% static 'images/Trajans-Column-lower-animated.svg' %}" alt="" width="100" height="110"  ></td>
+                                        </tr>
+                                        <tr>
+                                        <td><strong> JPEG </strong></td>
+                                        <td> {% translate "photographic images" %}</td>
+                                        <td> {% translate "Medium Light" %}</td>
+                                        <td><img src="{% static 'images/paysage.jpeg' %}" alt="" width="101" height="47"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong> PNG </strong></td>
+                                            <td> {% translate "images that require transparency" %}</td>
+                                            <td> {% translate "Medium" %}</td>
+                                            <td><img src="{% static 'images/resizedBefore.png' %}" width="200" height="80" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong> GIF </strong></td>
+                                            <td> {% translate "Simple short animation" %}</td>
+                                            <td> {% translate "Medium Light" %}</td>
+                                            <td><img src="{% static 'images/tuto.gif' %}" width="100" height="58" alt=""></td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </section>
 
-                                <li><h3> {% translate "Ressources" %}</h3>
-                                <p class="d-flex justify-content-center"><iframe src="https://tube.switch.ch/embed/Bd12mpw9v3" width="640" height="360" frameborder="0"></iframe></p>
-                                <ul>
-                                    <li>
-                                        <a title="Flipped Classroom Field Guide" href="./docs/FlippedClassroomFieldGuide.pdf" target="_blank"> {% translate "Flipped Classroom Field Guide" %}</a>
+                        <section>
+                            <h2> {% translate " Different Image format" %}</h2>
+                            <ul>
+                                <li>
+                                    <h3> {% translate "Tools to reduce data" %}</h3>
+                                    <h4> {% translate "Different Image format" %}</h4>
+
+
+                                    <h5><strong>JPEG</strong></h5>
+                                    <p><strong>JPEG</strong> {% translate "is a lossy compression format that is widely used for photographic images. It achieves high compression ratios by removing some of the image data, which can result in a slight loss of image quality. JPEG images can be compressed to very small file sizes without significantly degrading the image quality, which makes it a popular choice for web and mobile applications. " %}</p>
+                                    <img src="{% static 'images/paysage.jpeg' %}" alt="" width="500" height="233" class="center">
+                                    <h5><strong>WebP</strong> </h5>
+                                    <p> <strong>WebP</strong> {% translate "is a relatively new image format developed by Google that uses both lossy and lossless compression algorithms. It was designed to be more efficient than JPEG and other image formats, and it can achieve up to 34% smaller file sizes than JPEG for the same image quality. WebP is gaining popularity in web development due to its small file size and fast loading times. (source: external) person walking" %} </p>
+                                    <h5><strong> PNG </strong></h5>
+                                    <p> <strong> PNG </strong> {% translate "is a lossless compression format that is commonly used for graphics and other types of images that require transparency. PNG images can be compressed without losing any image data, which makes them larger than JPEG images. However, they can still be compressed to relatively small file sizes, and they are preferred for graphics that require transparency. " %}</p>
+                                    <img src="{% static 'images/resizedBefore.png' %}" alt="" width="200" height="80" class="center">
+                                    <h5><strong> SVG </strong></h5>
+                                    <p><strong> SVG </strong> {% translate "is a vector graphics format that uses mathematical equations to create images, rather than pixels. This makes SVG files extremely small in size, and they can be scaled to any size without losing image quality. SVG is ideal for graphics that are simple in design and require high resolution, such as logos and icons." %}</p>
+                                    <img src="{% static 'images/Trajans-Column-lower-animated.svg' %}" alt="" width="200" height="220" class="center">
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2>{% translate "EXAF Optimisation Tool" %}</h3>
+                            <ul>
+                                <li>
+                                    <h3>{% translate "Summary" %}</h3>
+                                    <p>{% translate "In summary, data compression is an effective optimisation tool to reduce data size. By using compression algorithms, data can be encoded in a more efficient way, leading to reduced storage requirements and faster transmission speeds." %}</p>
+                                    <img src="{% static 'images/EPFL_tool.png' %}" alt="" width="700" class="center">
+                                    <p> <a href="https://e-learning4all.app/"> {% translate "visit the tool page" %}</a> </p>
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section>
+                            <h3> {% translate " Best Video Format " %}</h3>
+                            <ul>
+                                <li>
+                                    <h3> {% translate "Tools to reduce data" %}</h3>
+                                    <h4> {% translate "Summary:" %}</h4>
+                                    <table>
+                                        <tr>
+                                            <th></th>
+                                        <th><strong>Pros</strong></th>
+                                        <th><strong>Cons</strong></th>
+                                        <th><strong>Size</strong></th>
+                                        </tr>
+                                        <tr>
+                                        <td><strong>MP4</strong></td>
+                                        <td>Long videos with a lot of details</td>
+                                        <td>Not as efficient as the other two</td>
+                                        <td>Medium</td>
+                                        </tr>
+                                        <tr>
+                                        <td><strong>Webm</strong></td>
+                                        <td>Long videos with a lot of details</td>
+                                        <td>Currently harder to access</td>
+                                        <td>Medium Light</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>GIF</strong></td>
+                                            <td>Simple short animation</td>
+                                            <td>Lost of frames (quality)</td>
+                                            <td>Medium Light</td>
+                                        </tr>
+                                    </table>
                                     </li>
+                                    <br>
                                     <li>
-                                        <a title="Example of Flipped Classroom" href="./docs/OptionalReading-Flipping_a_600_students_class-ReachingStudents.pdf" target="_blank"> {% translate " Example of Flipped Classroom" %}</a>
+                                    <p> <strong>MP4</strong> {% translate "is a widely-used video format that is compatible with most devices and web browsers. It is a compressed format that can be optimized for smaller file sizes without sacrificing video quality." %}</p>
+                                </li>
+                                <li>
+                                    <p> <strong>Youtube</strong>  {% translate "is not per se a format but we believe that it has some benefits in low-bandwidth environement. YouTube is a video-sharing platform where users can upload, share, and view videos. The platform is free to use and is supported by advertising. Users can upload videos on a variety of topics, including music, comedy, education, and more. YouTube offers features such as video optimization for low-bandwidth environments, compression, offline playback (paid feature), mobile compatibility, and a vast library of educational videos and resources. It has become an important tool for educators, businesses, and individuals who want to share their message with a wide audience." %}</p>
+                                    <p class="d-flex justify-content-center"> <iframe width="560" height="315" src="https://www.youtube.com/embed/RQaW2bFieo8" frameborder="0"></iframe> </p>
+                                </li>
+                                <li>
+                                    <p> <strong>WebM</strong>  {% translate "is an open-source video format developed by Google that is optimized for web use. It is a lightweight format that can be compressed to smaller file sizes without losing quality." %}</p>
+                                </li>
+                                <li>
+                                    <p> <strong>MOV</strong> {% translate "is a video format developed by Apple for use on its QuickTime media player. It is a popular format for Mac users and is also compatible with Windows operating systems. MOV files can be large in size, especially if the video has a high resolution or contains many effects. However, MOV files can be compressed to reduce file size without sacrificing video quality. MOV files can be played on most media players, including QuickTime, Windows Media Player, and VLC media player. If you are working with a limited internet environment or storage capacity, you may want to consider compressing your MOV files or using a different format that is more optimized for smaller file sizes. " %}</p>
+                                </li>
+                                <li>
+                                    <p> <strong>AVI</strong> {% translate "is a popular video format that can be used for both high-quality and low-quality videos. It uses a simple compression algorithm that can reduce file size, but it may not be as efficient as other formats. " %}</p>
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section>
+                            <h3> {% translate " Best Image format" %}</h3>
+                            <ul>
+                                <li>
+                                    <h3> {% translate "Summary" %}</h3>
+                                    <h3> {% translate "Summary" %}</h3>
+                                    <p> {% translate "All of these digital text formats - plain text (txt), PDF, ePub, and Markdown - are great options for different use cases, offering a variety of benefits such as accessibility, portability, and flexibility." %}</p>
+                                    <table>
+                                        <tr>
+                                            <th></th>
+                                        <th><strong>Pro</strong></th>
+                                        <th><strong>Cons</strong></th>
+                                        <th><strong>Size of our example</strong></th>
+                                        </tr>
+                                        <tr>
+                                        <td><strong>.txt</strong></td>
+                                        <td>Really light </td>
+                                        <td>do not support image</td>
+                                        <td>1KB</td>
+                                        </tr>
+                                        <tr>
+                                        <td><strong>.pdf</strong></td>
+                                        <td>Wide accessibility and use</td>
+                                        <td>a bit heavier than the others</td>
+                                        <td>16KB</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>.epub</strong></td>
+                                            <td>Interactive</td>
+                                            <td>a bit less accessible than txt and pdf</td>
+                                            <td>3KB</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>.md</strong></td>
+                                            <td>Support image and hyperlinks</td>
+                                            <td>learning curve</td>
+                                            <td>3KB</td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <h3> {% translate "Plain text (.txt)" %}</h3>
+                                    <p> {% translate "Plain text files are simple text files that contain only basic text characters. They are very lightweight and can be easily read and edited by most text editors, including basic editors like Notepad. Plain text files can be opened and read on almost any device, including those with limited internet access." %}</p>
+                                    <h3> {% translate "Portable Document Format (.pdf)" %}</h3>
+                                    <p> {% translate "PDF files are a popular digital document format that can be easily downloaded and opened on most devices. PDF files are compact and can be optimized for small file sizes without sacrificing the quality of the document. PDF files can also be easily shared and distributed via email or other digital means." %}</p>
+                                    <h3> {% translate "Electronic Publication (.epub)" %}</h3>
+                                    <p> {% translate "Epub is an open standard format for digital books and documents. Epub files are lightweight and can be optimized for small file sizes without sacrificing the quality of the content. Epub files can be opened and read on most devices, including e-readers and tablets" %}</p>
+                                    <h3> {% translate "Markdown (.md)" %}</h3>
+                                    <p> {% translate "Markdown is a lightweight markup language that is used to format text documents. Markdown files are simple text files that can be easily read and edited by most text editors. Markdown files can be easily converted to other formats, such as HTML or PDF, using specialized software or online converters" %}</p>
+                                </li>
+                            </ul>
+                        </section>
+                        <hr>
+                        <section>
+                            <h3> {% translate "Flipped Classroom" %}</h3>
+                            <h4> {% translate " Introduction" %}</h4>
+                            <ul>
+                                <li>
+                                    <h3> {% translate "Summary" %}</h3>
+                                    <p> {% translate "A flipped classroom is a teaching model in which traditional classroom activities, such as lecturing and direct instruction, are moved outside of class time through pre-recorded videos, reading assignments, or other forms of self-paced learning. In-class time is then used for activities that typically would have been homework, such as group work, discussions, and problem-solving activities, which allow for more active learning and engagement with the material.The idea is that students can learn the content at their own pace outside of class, freeing up class time for more interactive and collaborative activities." %}</p>
+
+                                    <li><h3> {% translate "Ressources" %}</h3>
+                                    <p class="d-flex justify-content-center"><iframe src="https://tube.switch.ch/embed/Bd12mpw9v3" width="640" height="360" frameborder="0"></iframe></p>
+                                    <ul>
+                                        <li>
+                                            <a title="Flipped Classroom Field Guide" href="./docs/FlippedClassroomFieldGuide.pdf" target="_blank"> {% translate "Flipped Classroom Field Guide" %}</a>
+                                        </li>
+                                        <li>
+                                            <a title="Example of Flipped Classroom" href="./docs/OptionalReading-Flipping_a_600_students_class-ReachingStudents.pdf" target="_blank"> {% translate " Example of Flipped Classroom" %}</a>
+                                        </li>
+                                        <li>
+                                            <a title="Template to create a Flipped Classroom" href="./docs/template_flipped_classroom.docx" target="_blank"> {% translate "Template to create a Flipped Classroom" %}</a>
+                                        </li>
                                     </li>
-                                    <li>
-                                        <a title="Template to create a Flipped Classroom" href="./docs/template_flipped_classroom.docx" target="_blank"> {% translate "Template to create a Flipped Classroom" %}</a>
+                                    </ul>
+                                        <li><h3> {% translate "Testimony (internet connection)" %}</h3>
+                                        <p class="d-flex justify-content-center"><iframe src="https://tube.switch.ch/embed/pUMDgb7RUK" width="640" height="360" frameborder="0"></iframe></p>
+
+                                        <p class="d-flex justify-content-center"><iframe src="https://tube.switch.ch/embed/wTrxxiU0Jr" width="640" height="360" frameborder="0"></iframe></p>
                                     </li>
                                 </li>
-                                </ul>
-                                    <li><h3> {% translate "Testimony (internet connection)" %}</h3>
-                                    <p class="d-flex justify-content-center"><iframe src="https://tube.switch.ch/embed/pUMDgb7RUK" width="640" height="360" frameborder="0"></iframe></p>
-
-                                    <p class="d-flex justify-content-center"><iframe src="https://tube.switch.ch/embed/wTrxxiU0Jr" width="640" height="360" frameborder="0"></iframe></p>
-                                </li>
-                            </li>
-                        </ul>
-                    </section>
-                    <div class="close">
-                        <button onclick="toggleSection('section1')"> {% translate "Close" %}</button>
+                            </ul>
+                        </section>
+                        <div class="close">
+                            <button onclick="toggleSection('section1')"> {% translate "Close" %}</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <div class="tutorial">
-                <div class="header" onclick="toggleSection('section2')">
-                    <h1> {% translate "Tutorial 2: Moodle and MoodleBox Tutorial" %}   </h1>
 
-                </div>
-                <div class="section" id="section2">
-                    <section>
-                        <h2>{% translate "This tutorial aims to help you during the installation and configuration of your Raspbery Pi as well as to teach you the bases for creating a Moodle course inside the MoodleBox" %}</h2>
-                        <ol>
-                            <li> <h3>{% translate "Preparation" %} </h3> </li>
-                                <ol>
-                                    <li> {% translate " How to create a Raspberry Pi Imager" %}
-                                        <ol>
-                                            <li> {% translate "Install a RasberryPi imager"%}
-                                                <div class="video-section">
-                                                    <video width="620" height="340" controls>
-                                                        <source src="{% static 'images/video_en/1.1.2 installRaspberryPiImager.mp4' %}" type="video/mp4">
-                                                    Your browser does not support the video tag.
-                                                    </video>
-                                                </div>
-                                            </li>
-                                            <li> {% translate "Intall MoodleBox on SD" %}
-                                                <div class="video-section">
-                                                    <video width="620" height="340" controls>
-                                                        <source src="{% static 'images/video_en/1.1.1 InstallMoodleboxonSD.mp4' %}" type="video/mp4">
-                                                    Your browser does not support the video tag.
-                                                    </video>
-                                                </div>
-                                            </li>
-                                            <li> {% translate "Insert SD on RasberryPi" %}
-                                                <div class="video-section">
-                                                    <img src="{% static 'images/video_en/1.1.3 Insert SD on Raspberry.jpeg' %}"  width="400" height="220" >
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li> {% translate "Connect to MoodleBox wireless network" %}
-                                        <ol>
-                                            <li>{% translate "Connect to MoodleBox" %}
-                                                <div class="video-section">
-                                                    <ul>
-                                                        <li>
-                                                            Connect to Moodlebox wirelless network
-                                                            <ol>
-                                                                <li>wifi name: Moodlebox</li>
-                                                                <li>passeword: moodlebox</li>
-                                                            </ol>
-                                                        <li>Connect to your Moodlebox "website"</li>
+                    <button class="btn">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% if LANGUAGE_CODE == "fr" %}
+                            <a class="btna" href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=enseigner_en_ligne_avec_une_connexion_internet_limit%C3%A9e.mbz">
+                                {% translate "Download" %} </a>
+                        {% else %}
+                            <a class="btna" href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=teaching_online_with_limited_internet.mbz"> {% translate "Download" %} </a>
+                        {% endif %}
+
+
+                    </button>
+
+            <hr>
+
+                <div class="tutorial">
+                    <div class="header" onclick="toggleSection('section2')">
+                        <h1> {% translate "Tutorial 2: Moodle and MoodleBox Tutorial" %}   </h1>
+
+                    </div>
+                    <div class="section" id="section2">
+                        <section>
+                            <h2>{% translate "This tutorial aims to help you during the installation and configuration of your Raspbery Pi as well as to teach you the bases for creating a Moodle course inside the MoodleBox" %}</h2>
+                            <ol>
+                                <li> <h3>{% translate "Preparation" %} </h3> </li>
+                                    <ol>
+                                        <li> {% translate " How to create a Raspberry Pi Imager" %}
+                                            <ol>
+                                                <li> {% translate "Install a RasberryPi imager"%}
+                                                    <div class="video-section">
+                                                        <video width="620" height="340" controls>
+                                                            <source src="{% static 'images/video_en/1.1.2 installRaspberryPiImager.mp4' %}" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                        </video>
+                                                    </div>
+                                                </li>
+                                                <li> {% translate "Intall MoodleBox on SD" %}
+                                                    <div class="video-section">
+                                                        <video width="620" height="340" controls>
+                                                            <source src="{% static 'images/video_en/1.1.1 InstallMoodleboxonSD.mp4' %}" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                        </video>
+                                                    </div>
+                                                </li>
+                                                <li> {% translate "Insert SD on RasberryPi" %}
+                                                    <div class="video-section">
+                                                        <img src="{% static 'images/video_en/1.1.3 Insert SD on Raspberry.jpeg' %}"  width="400" height="220" >
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li> {% translate "Connect to MoodleBox wireless network" %}
+                                            <ol>
+                                                <li>{% translate "Connect to MoodleBox" %}
+                                                    <div class="video-section">
                                                         <ul>
                                                             <li>
-                                                                Visit http://moodlebox.home/
-                                                            </li>
-                                                            <li>
-                                                                Username : moodlebox
-                                                            </li>
-                                                            <li>
-                                                                password:  Moodlebox4$
+                                                                Connect to Moodlebox wirelless network
+                                                                <ol>
+                                                                    <li>wifi name: Moodlebox</li>
+                                                                    <li>passeword: moodlebox</li>
+                                                                </ol>
+                                                            <li>Connect to your Moodlebox "website"</li>
+                                                            <ul>
+                                                                <li>
+                                                                    Visit http://moodlebox.home/
+                                                                </li>
+                                                                <li>
+                                                                    Username : moodlebox
+                                                                </li>
+                                                                <li>
+                                                                    password:  Moodlebox4$
+                                                                </li>
+                                                            </ul>
                                                             </li>
                                                         </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li> {% translate "How to create an account" %}
-                                        <ol>
-                                            <li>{% translate "Sign Up in MoodleBox" %}
-                                                <div class="video-section">
-                                                    <video width="620" height="340" controls>
-                                                        <source src="{% static 'images/video_en/2.2 How to create an account.mp4' %}" type="video/mp4">
-                                                    Your browser does not support the video tag.
-                                                    </video>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            <li> <h3>{% translate "Essential configuration" %} </h3>
-                                <ol>
-                                    <li>{% translate "Change language package" %}
-                                        <div class="video-section">
-                                            <video width="620" height="340" controls>
-                                                <source src="{% static 'images/video_en/2.1 Change Language package.mp4' %}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </li>
-                                    <li>{% translate "How to create an account" %}
-                                        <div class="video-section">
-                                            <video width="620" height="340" controls>
-                                                <source src="{% static 'images/video_en/2.2 How to create an account.mp4' %}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </li>
-
-                                    <li> {% translate "How to add admin user" %}
-                                        <div class="video-section">
-                                            <video width="620" height="340" controls>
-                                                <source src="{% static 'images/video_en/2.3 How to add admin Users.mp4' %}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </li>
-
-                                    <li>{% translate "How to allow Students on the platform" %}
-                                        <div class="video-section">
-                                            <video width="620" height="340" controls>
-                                                <source src="{% static 'images/video_en/2.4 How to allow Students on the platform.mp4' %}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li> <h3>{% translate "How to create a course" %} </h3>
-                                <ol>
-                                    <li>{% translate "How to create a new course" %}
-                                        <div class="video-section">
-                                            <video width="620" height="340" controls>
-                                                <source src="{% static 'images/video_en/31.mp4' %}" type="video/mp4">
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li> {% translate "How to create an account" %}
+                                            <ol>
+                                                <li>{% translate "Sign Up in MoodleBox" %}
+                                                    <div class="video-section">
+                                                        <video width="620" height="340" controls>
+                                                            <source src="{% static 'images/video_en/2.2 How to create an account.mp4' %}" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                        </video>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                <li> <h3>{% translate "Essential configuration" %} </h3>
+                                    <ol>
+                                        <li>{% translate "Change language package" %}
+                                            <div class="video-section">
+                                                <video width="620" height="340" controls>
+                                                    <source src="{% static 'images/video_en/2.1 Change Language package.mp4' %}" type="video/mp4">
                                                 Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </li>
-                                    <li>{% translate "How to add, edit and delet topics" %}
-                                        <div class="video-section">
-                                            <video width="620" height="340" controls>
-                                                <source src="{% static 'images/video_en/3.2 How to add edit delete topics.mp4' %}" type="video/mp4">
+                                                </video>
+                                            </div>
+                                        </li>
+                                        <li>{% translate "How to create an account" %}
+                                            <div class="video-section">
+                                                <video width="620" height="340" controls>
+                                                    <source src="{% static 'images/video_en/2.2 How to create an account.mp4' %}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </li>
+
+                                        <li> {% translate "How to add admin user" %}
+                                            <div class="video-section">
+                                                <video width="620" height="340" controls>
+                                                    <source src="{% static 'images/video_en/2.3 How to add admin Users.mp4' %}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </li>
+
+                                        <li>{% translate "How to allow Students on the platform" %}
+                                            <div class="video-section">
+                                                <video width="620" height="340" controls>
+                                                    <source src="{% static 'images/video_en/2.4 How to allow Students on the platform.mp4' %}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li> <h3>{% translate "How to create a course" %} </h3>
+                                    <ol>
+                                        <li>{% translate "How to create a new course" %}
+                                            <div class="video-section">
+                                                <video width="620" height="340" controls>
+                                                    <source src="{% static 'images/video_en/31.mp4' %}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </li>
+                                        <li>{% translate "How to add, edit and delet topics" %}
+                                            <div class="video-section">
+                                                <video width="620" height="340" controls>
+                                                    <source src="{% static 'images/video_en/3.2 How to add edit delete topics.mp4' %}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </li>
+                                        <li>{% translate "How to allow students to self register on a course" %}
+                                            <div class="video-section">
+                                                <video  width="620" height="340" controls>
+                                                    <source src="{% static 'images/video_en/33.mp4' %}" type="video/mp4">
                                             Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </li>
-                                    <li>{% translate "How to allow students to self register on a course" %}
-                                        <div class="video-section">
-                                            <video  width="620" height="340" controls>
-                                                <source src="{% static 'images/video_en/33.mp4' %}" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </section>
-                    <div class="close">
-                        <button onclick="toggleSection('section2')">{% translate "Close" %}</button>
+                                                </video>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </section>
+                        <div class="close">
+                            <button onclick="toggleSection('section2')">{% translate "Close" %}</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <button class="btn">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% if LANGUAGE_CODE == "fr" %}
+                        <a class="btna" href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=mise_en_place_Moodelbox.mbz">
+
+                             {% translate "Download" %} </a>
+                    {% else %}
+                        <a class="btna" href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=set_up_Moodlebox.mbz">
+                            {% translate "Download" %}  </a>
+                    {% endif %}
+
+
+                    </button>
+
         </body>
         </html>
 
