@@ -6,6 +6,8 @@
 {% block head_title %}{% translate "Signup" %}{% endblock %}
 
 {% block inner %}
+
+<div class="container signinup center">
 <h1>{% translate "Sign Up" %}</h1>
 
 <p>{% blocktranslate %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktranslate %}</p>
@@ -18,5 +20,6 @@
   {% endif %}
   <button class="btn btn-primary" type="submit">{% translate "Sign Up" %} &raquo;</button>
 </form>
+</div>
 
 {% endblock %}
