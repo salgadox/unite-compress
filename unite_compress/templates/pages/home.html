@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static i18n %}
 {% block javascript %}
     {{ block.super }}
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -8,37 +9,54 @@
 {% block content %}
     <div class="container">
 		<header>
-			<h2> {% translate "Welcome to our file compression and course management system!" %} </h2>
-			<p> {% translate "Here you can compress your files and organize them into courses." %} </p>
+				<h2> {% translate "Welcome to our file compression and course management system!" %} </h2>
+				<p> {% translate "Here you can compress your files and organize them into courses." %} </p>
+
+			<section>
+				<div class="buttons">
+					<a href="{% url 'files:upload'  %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Upload a file" %} </a>
+					<a href="{% url 'courses:create' %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Create a course" %} </a>
+				</div>
+			</section>
 		</header>
-		<section>
-			<div class="buttons">
-				<a href="{% url 'files:upload'  %}" class="btn btn-secondary " role="button" aria-disabled="true"> {% translate "Upload a file" %} </a>
-				<a href="{% url 'courses:create' %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Create a course" %} </a>
-			</div>
-		</section>
-		<hr>
-		<section>
+
+		<div class="center">
 			<h2>{% translate "How it works" %} </h2>
-			<ol>
-				<li> {% translate "Create a Folder: Go to the" %} <a href="{% url 'courses:create' %}"> {% translate "Create Folder" %} </a> {% translate "page and enter a name and a description for your folder." %} </li>
-				<li> {% translate "Upload a file: Go to the" %}  <a href="{% url 'files:upload'  %}"> {% translate " Upload File" %}</a> {% translate " page and select the file you want to upload. You can choose to add it to an existing folder or create a new one." %}</li>
-				<li>{% translate "Compress the file: Go to the file detail page by clicking on its name in the " %} <a href="{% url 'files:list'  %}"> {% translate "file list" %}  </a> {% translate "and click on the convert button.  You can choose to compress the file with the default 'medium' compression level or click on the 'Advanced options' button to choose from three different compression levels." %} </li>
-			 </ol>
+			<div class="box">
+				<img width="60" height="52" src="{% static 'images/folder.png' %}" alt=""/>
+				<p> {% translate "Create a Folder: Go to the" %} <a href="{% url 'courses:create' %}"> {% translate "Create Folder" %} </a> {% translate "page and enter a name and a description for your folder." %} </p>
+			</div>
+			<div class="box">
+				<img width="60" height="52" src="{% static 'images/upload.png' %}" alt=""/>
+				<p>{% translate "Upload a file: Go to the" %}  <a href="{% url 'files:upload'  %}"> {% translate " Upload File" %}</a> {% translate " page and select the file you want to upload. You can choose to add it to an existing folder or create a new one." %}</p>
+			</div>
+			<div class="box">
+				<img width="60" height="52" src="{% static 'images/compress.png' %}"  alt=""/>
+				<p> {% translate "Compress the file: Go to the file detail page by clicking on its name in the " %} <a href="{% url 'files:list'  %}"> {% translate "file list" %}  </a> {% translate "and click on the convert button.  You can choose to compress the file with the default 'medium' compression level or click on the 'Advanced options' button to choose from three different compression levels." %}</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
 
-			<p> {% translate "The platform supports the following mime types :" %}  </p>
-			<ul>
-				<li>{% translate "application / pdf" %}   </li>
-				<li> {% translate "image" %} /* </li>
-				<li> {% translate "video" %} /* </li>
-			</ul>
-		</section>
-		<section>
-			<h3>{% translate "Files" %}</h3>
-			<p>{% translate "To see a list of all your files, go to" %} <a href="{% url 'files:list'  %}">{% translate "My Files" %}</a>.</p>
+		<div class="line"> </div>
+		<div class="center">
+			<div class="small-box">
+				<h3>{% translate "Files" %}</h3>
+				<p>{% translate "To see a list of all your files, go to" %} <a href="{% url 'files:list'  %}">{% translate "My Files" %}</a>.</p>
+				<h3>{% translate "Folder" %}</h3>
+				<p>{% translate "To see a list of all your Folders, go to the " %} <a href="{% url 'courses:list'  %}">{% translate "My Folders" %}</a>{% translate " page" %}.</p>
+			</div>
 
-			<h3>{% translate "Folder" %}</h3>
-			<p>{% translate "To see a list of all your Folders, go to the" %} <a href="{% url 'courses:list'  %}">{% translate "My Folders" %}</a>{% translate "page" %}.</p>
-		</section>
-    </div>
+			<div class="medium-box">
+				<ul>
+					<p> {% translate "The platform supports the following mime types :" %}  </p>
+					<li>{% translate "application / pdf" %}   </li>
+					<li> {% translate "image" %} /* </li>
+					<li> {% translate "video" %} /* </li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
 {% endblock %}
