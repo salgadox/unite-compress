@@ -22,6 +22,8 @@ header {
   color: #fff !important;
   background-color: #667292 !important;
   border-color: #b0aac0 !important;
+  margin-inline-end: 2.5%;
+
 }
 /*-------------------------------- END Header --------------------------------*/
 
@@ -51,7 +53,7 @@ header {
 }
 
 .center a {
-  color: #588c7e !important;
+  color: #588c7e;
 }
 .line {
   width: 100%;
@@ -111,7 +113,9 @@ header {
 .color h2 {
   text-align: center !important;
   margin: 2%;
-
+}
+.color a {
+  color: aliceblue !important;
 }
 .btn-primary {
   color: #fff;
@@ -126,26 +130,11 @@ header {
   margin: auto;
   text-align: left;
 }
-
-@media only screen and (max-width: 600px) {
-  .box {
-    width: auto;
-  }
-  .small-box {
-    width: auto;
-    display: inline-flex;
-  }
-  .small-box h3 {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-  }
-  .medium-box {
-    width: auto;
-  }
-  .center {
-    width: auto !important;
-  }
+.contact {
+  padding-left: 14%;
 }
+
+
 /*-------------------------------- END Body  --------------------------------*/
 
 /* Tutorials */
@@ -153,7 +142,7 @@ header {
 
   text-align: left !important;
   margin: 3% 5% 3%;
-  width:75%;
+  width:82%;
   display: inline-block;
   align-items: center !important;
   justify-content: center !important;
@@ -175,3 +164,25 @@ footer {
   background-color:  #80a3a2 !important;
 }
 /*-------------------------------- END Footer --------------------------------*/
+@media only screen and (max-width: 600px) {
+  .box {
+    width: auto;
+  }
+  .small-box {
+    width: auto;
+    display: inline-flex;
+  }
+  .small-box h3 {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+  .medium-box {
+    width: auto;
+  }
+  .center {
+    width: auto !important;
+  }
+  .tuto-box{
+    width: auto;
+   }
+}

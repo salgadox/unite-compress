@@ -5,7 +5,7 @@
 {% block content %}
 
     <header>
-        <h1 id="up">  {% translate "Good practices" %} </h1>
+        <h2 id="up">{% translate "Good practices" %} </h2>
         <section>
             <div>
                 <a href="#1tuto" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Tutorial 1" %} </a>
@@ -15,9 +15,10 @@
     </header>
     <body>
         <div class="container center">
-            <div class="medium-box">
+            <div class="center tuto-box">
 
-                <h2>{% translate "Tutorial 1: Reduce Bandwidth for Learning" %}</h2>
+                <h2 id="1tuto">{% translate "Tutorial 1: Reduce Bandwidth for Learning" %}</h2>
+
                 <div class="line"></div>
                 <div class="box">
                     <a href="#1tuto1">1. {% translate "Tools to reduce data" %}</a>
@@ -32,12 +33,13 @@
                     <br>
                     <a href="#1tuto5">5. {% translate " Best Video Format " %}</a>
                     <br>
-                    <a href="#1tuto6">6. {% translate " Best Image format" %}</a>
+                    <a href="#1tuto6">6. {% translate " Best Text format" %}</a>
 
                 </div>
 
                 <div class="box">
                     <a href="#1tuto7">7. {% translate "Flipped Classroom" %}</a>
+                    <br>
                     <button class="btn">
                         {% get_current_language as LANGUAGE_CODE %}
                         {% if LANGUAGE_CODE == "fr" %}
@@ -50,17 +52,11 @@
                 </div>
             </div>
 
-                    <div class="center color">
-                        <div class="tuto-box">
-                            <!-- <div class="header" onclick="toggleSection('section1')">-->
-                     <h2 id="1tuto">{% translate "Tutorial 1: Reduce Bandwidth for Learning" %}</h2>
-                 </div>
-                            <!-- <div class="section" id="section1">-->
+                    <div>
                      <section>
-                         <h3>{% translate "Teaching Online with Limited Internet" %}</h3>
-
-                        <div class="tuto-box">
-                            <h2 id="1tuto1">1. {% translate "Tools to reduce data" %}</h2>
+                        <div class=" center tuto-box">
+                            <h3>{% translate "Teaching Online with Limited Internet" %}</h3>
+                            <h3 id="1tuto1">1. {% translate "Tools to reduce data" %}</h3>
                             <ul>
                                 <li>
                                     <h3> {% translate "Compression" %}</h3>
@@ -80,11 +76,10 @@
                     </div>
                 </section>
 
-                <section>
+                <section class="center color">
                     <div class="tuto-box">
-                        <h2 id="1tuto2">2. {% translate " Best Image format" %}</h2>
-                    </div>
-                        <div class="center tuto-box">
+                        <h3 id="1tuto2">2. {% translate " Best Image format" %}</h3>
+
                             <ul>
                                 <li>
                                     <h3>{% translate "Summary:" %}</h3>
@@ -127,11 +122,10 @@
 
                     <section>
 
-                            <div class="center color">
+                            <div class="center">
+
                                 <div class="tuto-box">
-                                    <h2 id="1tuto3"> 3. {% translate " Different Image format" %}</h2>
-                                </div>
-                                <div class="tuto-box">
+                                    <h3 id="1tuto3"> 3. {% translate " Different Image format" %}</h3>
                                     <ul>
                                         <li>
                                             <h3> {% translate "Tools to reduce data" %}</h3>
@@ -156,12 +150,11 @@
 
                     </section>
 
-                    <section>
-                        <div class="tuto-box">
-                        <h2 id="1tuto4">4. {% translate "EXAF Optimisation Tool" %}</h3>
-                        </div>
+                    <section class="center color">
 
-                        <div class="center tuto-box">
+
+                        <div class="tuto-box">
+                            <h3 id="1tuto4">4. {% translate "EXAF Optimisation Tool" %}</h3>
                                 <ul>
                                     <li>
                                         <h3>{% translate "Summary" %}</h3>
@@ -174,9 +167,9 @@
                     </section>
 
                     <section>
-                        <div class="center color">
+                        <div class="center">
                             <div class="tuto-box">
-                        <h2 id="1tuto5"> 5. {% translate " Best Video Format " %}</h2>
+                        <h3 id="1tuto5"> 5. {% translate " Best Video Format " %}</h3>
 
                                 <ul>
                                     <li>
@@ -231,11 +224,10 @@
                                 </div>
                     </section>
 
-                     <section>
+                     <section class="center color">
+
                         <div class="tuto-box">
-                        <h2 id="1tuto6"> 6. {% translate " Best Image format" %}</h2>
-                         </div>
-                        <div class="center tuto-box">
+                            <h3 id="1tuto6"> 6. {% translate " Best Text format" %}</h3>
                         <ul>
                             <li>
                                 <h3> {% translate "Summary" %}</h3>
@@ -288,9 +280,9 @@
                     </section>
 
                     <section>
-                        <div class="center color">
+                        <div class="center ">
                             <div class="tuto-box">
-                        <h2 id="1tuto7"> 7. {% translate "Flipped Classroom" %}</h2>
+                        <h3 id="1tuto7"> 7. {% translate "Flipped Classroom" %}</h3>
                         <h4> {% translate " Introduction" %}</h4>
                         <ul>
                             <li>
@@ -325,40 +317,35 @@
 
         </div>
         <div class="container center">
-        <div class="medium-box">
-
-            <h2 id="2tuto">{% translate "Tutorial 2: Moodle and MoodleBox Tutorial" %}</h2>
-            <div class="line"></div>
-            <div class="box">
-                <a href="#2tuto1">1. {% translate "Preparation" %}</a>
-            </div>
-            <div class="box">
-                <a href="#2tuto2">2. {% translate "Essential configuration" %} </a>
-            </div>
-            <div class="box">
-                <a href="#2tuto3">3. {% translate "How to create a course" %}</a>
-            </div>
-            <button class="btn">
-                {% get_current_language as LANGUAGE_CODE %}
-                {% if LANGUAGE_CODE == "fr" %}
-                    <a class="btna" href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=mise_en_place_Moodelbox.mbz">
-
-                        {% translate "Download" %} </a>
-                {% else %}
-                    <a class="btna" href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=set_up_Moodlebox.mbz">
-                        {% translate "Download" %}  </a>
-                {% endif %}
-            </button>
-        </div>
-
                     <div class="center color">
+                        <h2 id="2tuto">{% translate "Tutorial 2: Moodle and MoodleBox Tutorial" %}</h2>
+                        <div class="line"></div>
+                        <div class="box">
+                            <a href="#2tuto1">1. {% translate "Preparation" %}</a>
+                        </div>
+                        <div class="box">
+                            <a href="#2tuto2">2. {% translate "Essential configuration" %} </a>
+                        </div>
+                        <div class="box">
+                            <a href="#2tuto3">3. {% translate "How to create a course" %}</a>
+                        </div>
+                        <button class="btn box">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% if LANGUAGE_CODE == "fr" %}
+                                <a class="btna" href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=mise_en_place_Moodelbox.mbz">
+
+                                    {% translate "Download" %} </a>
+                            {% else %}
+                                <a class="btna" href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=set_up_Moodlebox.mbz">
+                                    {% translate "Download" %}  </a>
+                            {% endif %}
+                        </button>
                         <div class="tuto-box">
-                        <h2> {% translate "Tutorial 2: Moodle and MoodleBox Tutorial" %}   </h2>
 
                         <section>
-                            <h3>{% translate "This tutorial aims to help you during the installation and configuration of your Raspbery Pi as well as to teach you the bases for creating a Moodle course inside the MoodleBox" %}</h3>
+                            <p>{% translate "This tutorial aims to help you during the installation and configuration of your Raspbery Pi as well as to teach you the bases for creating a Moodle course inside the MoodleBox" %}</p>
 
-                                <h2 id="2tuto1"> 1. {% translate "Preparation" %} </h2>
+                                <h3 id="2tuto1"> 1. {% translate "Preparation" %} </h3>
                                     <ol>
                                         <li> {% translate " How to create a Raspberry Pi Imager" %}
                                             <ol>
@@ -430,7 +417,7 @@
                                 </div>
                                 </div>
                                 <div class="tuto-box center">
-                                    <h2 id="2tuto2">2. {% translate "Essential configuration" %} </h2>
+                                    <h3 id="2tuto2">2. {% translate "Essential configuration" %} </h3>
                                         <ol>
                                             <li>{% translate "Change language package" %}
                                                 <div class="video-section">
@@ -471,7 +458,7 @@
                                 </div>
                         <div class="center color">
                             <div class="tuto-box">
-                                <h2 id="2tuto3">3. {% translate "How to create a course" %} </h2>
+                                <h3 id="2tuto3">3. {% translate "How to create a course" %} </h3>
                                     <ol>
                                         <li>{% translate "How to create a new course" %}
                                             <div class="video-section">
