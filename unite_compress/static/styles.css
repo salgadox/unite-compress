@@ -151,6 +151,10 @@ header {
 .tuto-box img {
   margin-left: 20% !important;
 }
+video {
+  width: 620 !important ;
+  height: 340 !important ;
+}
 
 
 /* END Tutorials*/
@@ -182,7 +186,21 @@ footer {
   .center {
     width: auto !important;
   }
-  .tuto-box{
+  .tuto-box {
     width: auto;
    }
+   iframe  {
+    width: auto;
+   }
+  .tuto-box img {
+    width: auto;
+  }
+  video {
+    width: 80%;
+  }
+  .video-section {
+    width: auto;
+  }
+
+
 }
