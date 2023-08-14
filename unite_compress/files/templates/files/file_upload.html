@@ -9,6 +9,8 @@
 {% endblock css %}
 
 {% block content %}
+<div class="tuto-box tuto-box">
+
     <form id="file-upload-form" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
 	{{ form.as_p }}
@@ -19,6 +21,15 @@
 	<img src="{% static 'images/spinner.gif' %}" alt="Uploading...">
 	<span>  "Uploading..." </span>
     </div>
+
+	<br>
+	<ul>
+		<p> {% translate "The platform supports the following mime types :" %}  </p>
+		<li>{% translate "application / pdf" %}   </li>
+		<li> {% translate "image" %} /* </li>
+		<li> {% translate "video" %} /* </li>
+	</ul>
+	</div>
 {% endblock content %}
 
 {% block inline_javascript %}
