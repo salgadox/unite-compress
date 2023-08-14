@@ -21,7 +21,7 @@
 			</section>-->
 		</header>
 
-		<div class="center tuto-box">
+		<div class="center">
 			<h2>{% translate "How it works" %} </h2>
 			<div class="box">
 				<img width="60" height="52" src="{% static 'images/folder.png' %}" alt=""/>
@@ -36,6 +36,12 @@
 			<div class="box">
 				<img width="60" height="52" src="{% static 'images/compress.png' %}"  alt=""/>
 				<p> {% translate "Compress the file: Go to the file detail page by clicking on its name in the " %} <a href="{% url 'files:list'  %}"> {% translate "file list" %}  </a> {% translate "and click on the convert button.  You can choose to compress the file with the default 'medium' compression level or click on the 'Advanced options' button to choose from three different compression levels." %}</p>
+				<a href="{% url 'files:list'  %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "File list" %} </a>
+			</div>
+			<div class="box">
+				<img width="60" height="55" src="{% static 'images/best_p.png' %}"  alt=""/>
+				<p> {% translate "In order to create and deliver an optimized course in low connectivity contexts, you will find many tips in the page : " %} <a href="{% url 'good-practices'  %}"> {% translate "Good Practices" %}  </a></p>
+				<a href="{% url 'good-practices'  %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Good Practices" %} </a>
 			</div>
 		</div>
 
