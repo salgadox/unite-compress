@@ -24,6 +24,7 @@ header {
   border-color: #b0aac0 !important;
   margin-inline-end: 2.5%;
 
+
 }
 /*-------------------------------- END Header --------------------------------*/
 
@@ -65,10 +66,13 @@ header {
 }
 .box {
   text-align: left !important;
-  margin: 2% 5% 2%;
+  margin: 2% 4% 2%;
+  width:14%;
   float: left;
-  width:23%;
-  display:inline;
+  display:inline-block;
+}
+.box .btn {
+ justify-content: center;
 }
 
 .small-box {
