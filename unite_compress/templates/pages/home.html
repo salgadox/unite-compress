@@ -13,12 +13,12 @@
 				<h2> {% translate "Welcome to our file compression and course management system!" %} </h2>
 				<p> {% translate "Here you can compress your files and organize them into courses." %} </p>
 			</div>
-			<section>
+			<!--<section>
 				<div class="buttons">
 					<a href="{% url 'files:upload'  %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Upload a file" %} </a>
 					<a href="{% url 'courses:create' %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Create a course" %} </a>
 				</div>
-			</section>
+			</section>-->
 		</header>
 
 		<div class="center tuto-box">
@@ -26,10 +26,12 @@
 			<div class="box">
 				<img width="60" height="52" src="{% static 'images/folder.png' %}" alt=""/>
 				<p> {% translate "Create a Folder: Go to the" %} <a href="{% url 'courses:create' %}"> {% translate "Create Folder" %} </a> {% translate "page and enter a name and a description for your folder." %} </p>
+				<a href="{% url 'courses:create' %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Create Folder" %} </a>
 			</div>
 			<div class="box">
 				<img width="60" height="52" src="{% static 'images/upload.png' %}" alt=""/>
 				<p>{% translate "Upload a file: Go to the" %}  <a href="{% url 'files:upload'  %}"> {% translate " Upload File" %}</a> {% translate " page and select the file you want to upload. You can choose to add it to an existing folder or create a new one." %}</p>
+				<a href="{% url 'files:upload'  %}" class="btn btn-secondary" role="button" aria-disabled="true"> {% translate "Upload a file" %} </a>
 			</div>
 			<div class="box">
 				<img width="60" height="52" src="{% static 'images/compress.png' %}"  alt=""/>
