@@ -227,7 +227,7 @@ msgstr "Liste de fichiers"
 
 #: unite_compress/files/templates/files/file_list.html:21
 msgid "Upload new file"
-msgstr "Télécharger un fichier"
+msgstr "Téléverser un fichier"
 
 #: unite_compress/files/templates/files/file_list.html:26
 msgid "File Name"
