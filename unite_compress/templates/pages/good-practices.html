@@ -25,20 +25,27 @@
                     <br>
                     <a href="#1tuto2">2. {% translate " Best Image format" %}</a>
                     <br>
-                    <a href="#1tuto3">3. {% translate " Different Image format" %}</a>
+
 
                 </div>
                 <div class="box">
+                    <a href="#1tuto3">3. {% translate " Different Image format" %}</a>
+                    <br>
                     <a href="#1tuto4">4. {% translate "EXAF Optimisation Tool" %}</a>
                     <br>
+                </div>
+                <div class="box">
                     <a href="#1tuto5">5. {% translate " Best Video Format " %}</a>
                     <br>
                     <a href="#1tuto6">6. {% translate " Best Text format" %}</a>
 
                 </div>
 
+
                 <div class="box">
                     <a href="#1tuto7">7. {% translate "Flipped Classroom" %}</a>
+                    <br>
+                    <div class="line"></div>
                     <br>
                     <button class="btn">
                         {% get_current_language as LANGUAGE_CODE %}
@@ -49,6 +56,7 @@
                         <a  href="https://drive.switch.ch/index.php/s/SrbzVlBzZXT5Yne/download?path=%2F&files=teaching_online_with_limited_internet.mbz"> {% translate "Download" %} </a>
                                 {% endif %}
                     </button>
+                    <p> <em>{% translate " Click to donwload a moodle cours " %}</em></p>
                 </div>
             </div>
 
@@ -329,6 +337,8 @@
                         <div class="box">
                             <a href="#2tuto3">3. {% translate "How to create a course" %}</a>
                         </div>
+                    <div class="box">
+                        <p> <em>{% translate " Click to donwload a moodle cours " %}</em></p>
                         <button class="btn box">
                             {% get_current_language as LANGUAGE_CODE %}
                             {% if LANGUAGE_CODE == "fr" %}
@@ -340,6 +350,8 @@
                                     {% translate "Download" %}  </a>
                             {% endif %}
                         </button>
+
+                    </div>
                         <div class="tuto-box">
 
                         <section>
