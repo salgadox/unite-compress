@@ -45,7 +45,7 @@
 			{% endif %}
 		    </td>
 		    <td>{{ file.created_at  | date:"d/m/Y G:i"  }}</td>
-			{% if file.convert_status = "started" %}
+			{% if file.convert_status == "started" %}
             	<td>{{ file.convert_status }} {% translate "Refresh the page" %}</td>
 			{% else %}
 				<td>{{ file.convert_status }} </td>
