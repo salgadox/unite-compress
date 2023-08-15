@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-14 18:01+0200\n"
+"POT-Creation-Date: 2023-08-15 15:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -249,6 +249,10 @@ msgstr "Taille d'origine :"
 #: unite_compress/files/templates/files/file_list.html:32
 msgid "Size after compression"
 msgstr "Taille après compression :"
+
+#: unite_compress/files/templates/files/file_list.html:49
+msgid "Refresh the page"
+msgstr "Actualisez la page."
 
 #: unite_compress/files/templates/files/file_upload.html:4
 msgid "File Upload"
@@ -585,10 +589,6 @@ msgstr ""
 msgid "Compress 4 e-learning"
 msgstr "Compress 4 e-learning"
 
-#: unite_compress/templates/base.html:49
-msgid "Home"
-msgstr "Accueil"
-
 #: unite_compress/templates/base.html:52
 #: unite_compress/templates/pages/home.html:43
 #: unite_compress/templates/pages/home.html:44
@@ -617,7 +617,7 @@ msgstr "Mon profil"
 msgid "Language"
 msgstr "Langue"
 
-#: unite_compress/templates/base.html:142
+#: unite_compress/templates/base.html:143
 msgid ""
 "This project was co-financed by DDC with Unité and implemented by the EXAF-"
 "EPFL team."
@@ -625,12 +625,12 @@ msgstr ""
 "Ce projet a été cofinancé par la DDC dans le cadre de sa contribution de "
 "programme à Unité. Le projet a été mis en œuvre par l'équipe EXAF-EPFL"
 
-#: unite_compress/templates/base.html:156
 #: unite_compress/templates/base.html:157
+#: unite_compress/templates/base.html:158
 msgid "Contact us!"
 msgstr "Contactez-nous "
 
-#: unite_compress/templates/base.html:158
+#: unite_compress/templates/base.html:159
 #: unite_compress/templates/pages/about.html:82
 msgid "Code Source"
 msgstr "Le code source"
@@ -1455,6 +1455,9 @@ msgstr "Nom de l'utilisateur"
 #: unite_compress/users/views.py:24
 msgid "Information successfully updated"
 msgstr "Information mise à jour avec succès"
+
+#~ msgid "Home"
+#~ msgstr "Accueil"
 
 #~ msgid "Create a folder"
 #~ msgstr "Créer un dossier"
