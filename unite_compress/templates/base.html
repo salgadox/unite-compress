@@ -36,7 +36,7 @@
   </head>
   <body>
     <div class="mb-1">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <nav class="navbar center navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">{% translate "Home" %} <span class="visually-hidden">(current)</span></a>
+                <a class="nav-link navbar-brand" href="{% url 'home' %}"> Compress 4 e-learning <span class="visually-hidden">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'good-practices'  %}"> {% translate "Good Practices" %}</a>
@@ -137,8 +137,9 @@
     {% endblock inline_javascript %}
   </body>
   <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-     <!-- <p class="col-md-4 mb-0 text-muted">{% translate "This project was co-financed by DDC with Unité and implemented by the EXAF-EPFL team." %}</p>-->
+    <footer class="d-flex flex-wrap justify-content-between  align-items-center py-3 my-4 border-top ">
+
+             <!-- <p class="col-md-4 mb-0 text-muted">{% translate "This project was co-financed by DDC with Unité and implemented by the EXAF-EPFL team." %}</p>-->
 
 
       <div class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
