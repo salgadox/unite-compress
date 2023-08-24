@@ -1,0 +1,220 @@
+/*-------------------------------- nav bar --------------------------------*/
+.mb-1 {
+  margin-bottom: 0 !important;
+}
+.navbar {
+  justify-content: center !important;
+  background-color:  #413d3a !important;
+
+}
+.navbar a {
+  color: #fff !important;
+}
+
+/*-------------------------------- END nav bar --------------------------------*/
+
+
+/*-------------------------------- Header --------------------------------*/
+header {
+  padding: 3% 2% 3%  !important;
+  background-color:#b51f1f !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  color:#fff;
+
+}
+.btn-secondary {
+  color: #fff !important;
+  background-color: #413d3a !important;
+  border-color: #b0aac0 !important;
+  margin-inline-end: 2.5%;
+
+
+}
+/*-------------------------------- END Header --------------------------------*/
+
+
+/*-------------------------------- Body --------------------------------*/
+.container {
+  max-width: none !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.center {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.center h2 {
+  text-align: center !important;
+
+}
+.center  img {
+  margin-bottom: 7% !important;
+  margin-left: 40%;
+}
+
+.center a {
+  color: #b51f1f;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #413d3a;
+  justify-content: bottom !important;
+  display: flex;
+  margin-top: 1%;
+}
+.box {
+  text-align: left !important;
+  margin: 2% 4% 2%;
+  width:14%;
+  float: left;
+  display:inline-block;
+}
+.box .btn {
+ justify-content: center;
+}
+
+.small-box {
+  vertical-align: text-top;
+  text-align: left !important;
+  width: 40%;
+  margin: 1%;
+  padding: 1% 0% 1%;
+  display:inline-block;
+}
+.medium-box {
+  vertical-align: text-top;
+  margin-left: 5%;
+  margin-top: 2%;
+  text-align: left;
+  width: 50%;
+  font-style: italic;
+  display:inline-block;
+}
+.medium-box ul {
+  text-align: right !important;
+  list-style: none;
+}
+
+.large-box {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 1%;
+  float: center;
+  width:90%;
+  display:inline-block;
+  }
+.large-box p {
+  text-align: left !important;
+}
+.large-box a {
+  text-align: left !important;
+}
+.color {
+  background-color: #cac7c7 ;
+}
+.color h2 {
+  text-align: center !important;
+  margin: 2%;
+}
+.color a {
+  color: aliceblue !important;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #413d3a !important;
+  border-color: #b0aac0 !important;
+}
+.btn {
+  border-color: #b0aac0 !important;
+}
+.signinup {
+  border-color: #b0aac0 !important;
+  margin: auto;
+  text-align: left;
+}
+.contact {
+  padding-left: 14%;
+}
+
+
+/*-------------------------------- END Body  --------------------------------*/
+
+/* Tutorials */
+.tuto-box {
+
+  text-align: left !important;
+  margin: 3% 5% 3%;
+  width:82%;
+  display: inline-block;
+  align-items: center !important;
+  justify-content: center !important;
+
+}
+.tuto-box img {
+  margin-left: 20% !important;
+}
+video {
+  width: 620 !important ;
+  height: 340 !important ;
+}
+
+
+/* END Tutorials*/
+
+/*-------------------------------- Footer --------------------------------*/
+.space {
+  padding: 5% 2% 5%  !important;
+}
+footer {
+  padding: 2% 2% 5%  !important;
+  background-color:  #cac7c7 !important;
+
+  position: absolute;
+  bottom: auto;
+  width: 100%;
+}
+/*-------------------------------- END Footer --------------------------------*/
+@media only screen and (max-width: 600px) {
+  .box {
+    width: auto;
+  }
+  .small-box {
+    width: auto;
+    display: inline-flex;
+  }
+  .small-box h3 {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+  .medium-box {
+    width: auto;
+  }
+  .center {
+    width: auto !important;
+  }
+  .tuto-box {
+    width: auto;
+   }
+   iframe  {
+    width: auto;
+   }
+  .tuto-box img {
+    width: auto;
+  }
+  video {
+    width: 80%;
+  }
+  .video-section {
+    width: auto;
+  }
+
+
+}

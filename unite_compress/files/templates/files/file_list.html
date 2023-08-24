@@ -16,7 +16,7 @@
 {% block content %}
 
 
-<div class="container">
+<div class="container tuto-box">
     <h1> {% translate "File List" %} </h1>
     <p><a href="{% url 'files:upload' %}" class="btn btn-primary" role="button">{% translate "Upload new file" %}</a></p>
 
@@ -29,6 +29,7 @@
                 <th><a href="#" data-sortby="created">{% translate "Created At" %}</a></th>
                 <th><a href="#" data-sortby="status">{% translate "Convert Status" %}</a></th>
 				<th><a href="#" data-sortby="size">{% translate "Original Size" %}</a></th>
+				<th><a href="#" data-sortby="size">{% translate "Size after compression" %}</a></th>
             </tr>
         </thead>
         <tbody id="fileTable">
@@ -44,8 +45,13 @@
 			{% endif %}
 		    </td>
 		    <td>{{ file.created_at  | date:"d/m/Y G:i"  }}</td>
-            <td>{{ file.convert_status }}</td>
+			{% if file.convert_status == "started" %}
+            	<td>{{ file.convert_status }} : {% translate "Refresh the page" %}</td>
+			{% else %}
+				<td>{{ file.convert_status }} </td>
+			{% endif %}
 			<td> {{ file.original_file_size | filesizeformat }} </td>
+			<td> {{ file.converted_file_size | filesizeformat  }} </td>
 		</tr>
             {% endfor %}
         </tbody>

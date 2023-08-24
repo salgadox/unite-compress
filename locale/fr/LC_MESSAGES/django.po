@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 20:31+0200\n"
+"POT-Creation-Date: 2023-08-15 15:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,8 @@ msgstr "Description :"
 # msgid "Description"
 # msgstr "Description"
 #: unite_compress/courses/templates/courses/course_create.html:5
-#: unite_compress/templates/pages/home.html:24
+#: unite_compress/templates/pages/home.html:28
+#: unite_compress/templates/pages/home.html:29
 msgid "Create Folder"
 msgstr "Créer le dossier"
 
@@ -45,20 +46,20 @@ msgstr "Créer le dossier"
 msgid "Create"
 msgstr "Créer"
 
-#: unite_compress/courses/templates/courses/course_delete.html:4
+#: unite_compress/courses/templates/courses/course_delete.html:5
 msgid "Delete Folder"
 msgstr "Supprimer le dossier"
 
-#: unite_compress/courses/templates/courses/course_delete.html:5
+#: unite_compress/courses/templates/courses/course_delete.html:6
 msgid "Are you sure you want to delete"
 msgstr "Voulez-vous supprimer le fichier : "
 
-#: unite_compress/courses/templates/courses/course_delete.html:8
+#: unite_compress/courses/templates/courses/course_delete.html:9
 #: unite_compress/courses/templates/courses/course_detail.html:18
 msgid "Associated Files"
 msgstr "Fichiers associés"
 
-#: unite_compress/courses/templates/courses/course_delete.html:19
+#: unite_compress/courses/templates/courses/course_delete.html:20
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -132,7 +133,7 @@ msgstr "Fichier"
 
 #: unite_compress/files/models.py:47
 #: unite_compress/files/templates/files/file_list.html:28
-#: unite_compress/templates/pages/home.html:40
+#: unite_compress/templates/pages/home.html:55
 msgid "Folder"
 msgstr "Dossier"
 
@@ -197,6 +198,10 @@ msgid "Convert Status:"
 msgstr "Statut de compression :"
 
 #: unite_compress/files/templates/files/file_detail.html:61
+#: unite_compress/templates/pages/good-practices.html:54
+#: unite_compress/templates/pages/good-practices.html:56
+#: unite_compress/templates/pages/good-practices.html:347
+#: unite_compress/templates/pages/good-practices.html:350
 msgid "Download"
 msgstr "Télécharger"
 
@@ -205,7 +210,7 @@ msgid "Compression rate:"
 msgstr "Niveau de compression :"
 
 #: unite_compress/files/templates/files/file_detail.html:73
-#: unite_compress/templates/pages/good-practices.html:123
+#: unite_compress/templates/pages/good-practices.html:116
 msgid "Medium"
 msgstr "Moyen"
 
@@ -223,7 +228,7 @@ msgstr "Liste de fichiers"
 
 #: unite_compress/files/templates/files/file_list.html:21
 msgid "Upload new file"
-msgstr "Télécharger un fichier"
+msgstr "Téléverser un fichier"
 
 #: unite_compress/files/templates/files/file_list.html:26
 msgid "File Name"
@@ -241,17 +246,45 @@ msgstr "Statut de compression"
 msgid "Original Size"
 msgstr "Taille d'origine :"
 
+#: unite_compress/files/templates/files/file_list.html:32
+msgid "Size after compression"
+msgstr "Taille après compression :"
+
+#: unite_compress/files/templates/files/file_list.html:49
+msgid "Refresh the page"
+msgstr "Actualisez la page."
+
 #: unite_compress/files/templates/files/file_upload.html:4
 msgid "File Upload"
 msgstr "Téléchargement de fichiers"
 
-#: unite_compress/files/templates/files/file_upload.html:15
+#: unite_compress/files/templates/files/file_upload.html:17
 msgid "Save"
 msgstr ""
 
+#: unite_compress/files/templates/files/file_upload.html:27
+#: unite_compress/templates/pages/home.html:61
+msgid "The platform supports the following mime types :"
+msgstr "Les formats suivants sont pris en charge par la plateforme :"
+
+#: unite_compress/files/templates/files/file_upload.html:28
+#: unite_compress/templates/pages/home.html:62
+msgid "application / pdf"
+msgstr "application /pdf"
+
+#: unite_compress/files/templates/files/file_upload.html:29
+#: unite_compress/templates/pages/home.html:63
+msgid "image"
+msgstr "image"
+
+#: unite_compress/files/templates/files/file_upload.html:30
+#: unite_compress/templates/pages/home.html:64
+msgid "video"
+msgstr "vidéo"
+
 #: unite_compress/files/templates/files/widgets/drag_and_drop_file_input.html:4
 msgid "Select or drop your file here to upload"
-msgstr ""
+msgstr "Sélectionnez ou faites glisser ici le fichier à téléverser"
 
 #: unite_compress/files/views.py:35
 msgid "Your file has been uploaded successfully."
@@ -361,7 +394,7 @@ msgstr ""
 #: unite_compress/templates/account/login.html:7
 #: unite_compress/templates/account/login.html:11
 #: unite_compress/templates/account/login.html:56
-#: unite_compress/templates/base.html:82
+#: unite_compress/templates/base.html:81
 msgid "Sign In"
 msgstr "S'identifier"
 
@@ -398,7 +431,7 @@ msgstr "Mot de passe oublié?"
 #: unite_compress/templates/account/logout.html:5
 #: unite_compress/templates/account/logout.html:8
 #: unite_compress/templates/account/logout.html:17
-#: unite_compress/templates/base.html:71
+#: unite_compress/templates/base.html:70
 msgid "Sign Out"
 msgstr "Se déconnecter"
 
@@ -483,13 +516,13 @@ msgstr "Définir le mot de passe"
 msgid "Signup"
 msgstr "S'inscrire"
 
-#: unite_compress/templates/account/signup.html:9
-#: unite_compress/templates/account/signup.html:19
-#: unite_compress/templates/base.html:77
+#: unite_compress/templates/account/signup.html:11
+#: unite_compress/templates/account/signup.html:21
+#: unite_compress/templates/base.html:76
 msgid "Sign Up"
 msgstr "S'inscrire"
 
-#: unite_compress/templates/account/signup.html:11
+#: unite_compress/templates/account/signup.html:13
 #, python-format
 msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
@@ -552,37 +585,35 @@ msgstr ""
 "<strong>Remarque :</strong> vous pouvez toujours <a href=\"%(email_url)s"
 "\">modifier votre e-adresse e-mail</a>"
 
-#: unite_compress/templates/base.html:45
+#: unite_compress/templates/base.html:44
 msgid "Compress 4 e-learning"
 msgstr "Compress 4 e-learning"
 
-#: unite_compress/templates/base.html:50
-msgid "Home"
-msgstr "Accueil"
-
-#: unite_compress/templates/base.html:53
+#: unite_compress/templates/base.html:52
+#: unite_compress/templates/pages/home.html:43
+#: unite_compress/templates/pages/home.html:44
 msgid "Good Practices"
 msgstr "Bonnes pratiques"
 
-#: unite_compress/templates/base.html:56
+#: unite_compress/templates/base.html:55
 msgid "About"
 msgstr "A propos du projet"
 
-#: unite_compress/templates/base.html:60
-#: unite_compress/templates/pages/home.html:41
+#: unite_compress/templates/base.html:59
+#: unite_compress/templates/pages/home.html:56
 msgid "My Folders"
 msgstr "Mes dossiers"
 
-#: unite_compress/templates/base.html:63
-#: unite_compress/templates/pages/home.html:38
+#: unite_compress/templates/base.html:62
+#: unite_compress/templates/pages/home.html:54
 msgid "My Files"
 msgstr "Mes Fichiers"
 
-#: unite_compress/templates/base.html:67
+#: unite_compress/templates/base.html:66
 msgid "My Profile"
 msgstr "Mon profil"
 
-#: unite_compress/templates/base.html:90
+#: unite_compress/templates/base.html:89
 msgid "Language"
 msgstr "Langue"
 
@@ -594,12 +625,18 @@ msgstr ""
 "Ce projet a été cofinancé par la DDC dans le cadre de sa contribution de "
 "programme à Unité. Le projet a été mis en œuvre par l'équipe EXAF-EPFL"
 
-#: unite_compress/templates/base.html:156
+#: unite_compress/templates/base.html:157
+#: unite_compress/templates/base.html:158
 msgid "Contact us!"
 msgstr "Contactez-nous "
 
+#: unite_compress/templates/base.html:159
+#: unite_compress/templates/pages/about.html:82
+msgid "Code Source"
+msgstr "Le code source"
+
 #: unite_compress/templates/pages/about.html:4
-#: unite_compress/templates/pages/about.html:33
+#: unite_compress/templates/pages/about.html:38
 msgid "About the project"
 msgstr "A propos du projet"
 
@@ -607,7 +644,7 @@ msgstr "A propos du projet"
 msgid "Project Context"
 msgstr "Contexte de projet"
 
-#: unite_compress/templates/pages/about.html:13
+#: unite_compress/templates/pages/about.html:10
 msgid ""
 "The 'E-learning in Fragile Contexts' project was co-funded by the Swiss "
 "Agency for Development and Cooperation (SDC) as part of its program "
@@ -618,15 +655,15 @@ msgstr ""
 "contribution de programme à Unité. Le projet a été mis en œuvre par l'équipe "
 "EXAF-EPFL."
 
-#: unite_compress/templates/pages/about.html:16
+#: unite_compress/templates/pages/about.html:17
 msgid "About the institutions"
 msgstr "Les institutions"
 
-#: unite_compress/templates/pages/about.html:17
+#: unite_compress/templates/pages/about.html:18
 msgid "Unité has partnered with EPFL's"
 msgstr "Unité s’est associée avec le "
 
-#: unite_compress/templates/pages/about.html:18
+#: unite_compress/templates/pages/about.html:19
 msgid ""
 "to develop technological solutions that will allow people in geographical "
 "areas with little or no internet connection to access educational content "
@@ -640,7 +677,7 @@ msgstr ""
 "l’excellence dans l’éducation numérique et dans la recherche sur le "
 "continent africain"
 
-#: unite_compress/templates/pages/about.html:21
+#: unite_compress/templates/pages/about.html:25
 msgid ""
 "is an association of 13 Swiss organizations active in development "
 "cooperation for the exchange of people. They aim to contribute to the "
@@ -656,7 +693,7 @@ msgstr ""
 "dans le Sud global en faveur des populations locales et à améliorer les "
 "conditions-cadres pour le développement"
 
-#: unite_compress/templates/pages/about.html:25
+#: unite_compress/templates/pages/about.html:30
 msgid ""
 "is one of the best universities specialized in the field of science and "
 "technology in the world, welcoming students, professors and collaborators "
@@ -677,85 +714,121 @@ msgstr ""
 "politiques et le grand public, ceci dans le but d’avoir un véritable impact "
 "sur la société, tant à l’échelle nationale que mondiale."
 
-#: unite_compress/templates/pages/about.html:32
+#: unite_compress/templates/pages/about.html:36
 msgid "Contact"
 msgstr "Contact"
 
-#: unite_compress/templates/pages/about.html:37
+#: unite_compress/templates/pages/about.html:39
 msgid "Centre Excellence in Africa EXAF"
 msgstr "Excellence in Africa EXAF"
 
-#: unite_compress/templates/pages/about.html:50
+#: unite_compress/templates/pages/about.html:39
 msgid "Station 10"
 msgstr ""
 
-#: unite_compress/templates/pages/about.html:57
+#: unite_compress/templates/pages/about.html:43
 msgid "Send us a mail"
 msgstr "Envoyez-nous un mail"
 
-#: unite_compress/templates/pages/about.html:66
+#: unite_compress/templates/pages/about.html:48
 msgid "From"
 msgstr "De"
 
-#: unite_compress/templates/pages/about.html:70
+#: unite_compress/templates/pages/about.html:52
 msgid "Subject"
 msgstr "Object"
 
-#: unite_compress/templates/pages/about.html:74
+#: unite_compress/templates/pages/about.html:56
 msgid "Text"
 msgstr "Message"
 
-#: unite_compress/templates/pages/about.html:89
+#: unite_compress/templates/pages/about.html:70
 msgid "News"
 msgstr "Actualités"
 
-#: unite_compress/templates/pages/about.html:94
+#: unite_compress/templates/pages/about.html:73
 msgid "Deux projets pilotes sur le e-learning dans des contexte fragiles"
 msgstr "Two pilot projects on e-learning in fragile contexts"
 
-#: unite_compress/templates/pages/about.html:98
+#: unite_compress/templates/pages/about.html:75
 msgid "E-learning in fragile context : A successful mission in Egypt"
 msgstr "E-Learning dans les contextes fragiles : Mission égyptienne réussie ! "
 
-#: unite_compress/templates/pages/about.html:102
+#: unite_compress/templates/pages/about.html:77
 msgid "E-Learning en contexte fragile : Projet pilote en Côte d'Ivoire"
 msgstr "E-Learning en contexte fragile : Projet pilote en Côte d'Ivoire"
-
-#: unite_compress/templates/pages/about.html:115
-msgid "Code Source"
-msgstr "Le code source"
-
-#: unite_compress/templates/pages/about.html:117
-msgid "Github repo"
-msgstr "Github: Référentiel du projet"
 
 #: unite_compress/templates/pages/good-practices.html:4
 msgid "My tutorials"
 msgstr "Mes tutoriels"
 
-#: unite_compress/templates/pages/good-practices.html:68
-msgid "Good practices:"
+#: unite_compress/templates/pages/good-practices.html:8
+msgid "Good practices"
 msgstr "Bonnes pratiques :"
 
-#: unite_compress/templates/pages/good-practices.html:73
+#: unite_compress/templates/pages/good-practices.html:11
+msgid "Tutorial 1 <br> Create a course"
+msgstr "Tutoriel 1 <br> Créer de cours optimisés "
+
+#: unite_compress/templates/pages/good-practices.html:12
+msgid "Tutorial 2 <br>  Moodle and MoodleBox"
+msgstr "Tutoriel 2 <br>  Moodle et MoodleBox"
+
+#: unite_compress/templates/pages/good-practices.html:20
 msgid "Tutorial 1: Reduce Bandwidth for Learning"
 msgstr "Tutoriel 1 : Réduire la bande passante pour l'apprentissage"
 
-#: unite_compress/templates/pages/good-practices.html:77
-msgid "Teaching Online with Limited Internet"
-msgstr "Enseignement en ligne avec accès à Internet limité"
-
-#: unite_compress/templates/pages/good-practices.html:78
-#: unite_compress/templates/pages/good-practices.html:141
-#: unite_compress/templates/pages/good-practices.html:176
+#: unite_compress/templates/pages/good-practices.html:24
+#: unite_compress/templates/pages/good-practices.html:67
+#: unite_compress/templates/pages/good-practices.html:139
+#: unite_compress/templates/pages/good-practices.html:184
 msgid "Tools to reduce data"
 msgstr "Outils pour réduire les données"
 
-#: unite_compress/templates/pages/good-practices.html:81
+#: unite_compress/templates/pages/good-practices.html:26
+#: unite_compress/templates/pages/good-practices.html:89
+msgid " Best Image format"
+msgstr " Meilleur format d'image"
+
+#: unite_compress/templates/pages/good-practices.html:32
+#: unite_compress/templates/pages/good-practices.html:136
+msgid " Different Image format"
+msgstr " Format d'image différent"
+
+#: unite_compress/templates/pages/good-practices.html:34
+#: unite_compress/templates/pages/good-practices.html:165
+msgid "EXAF Optimisation Tool"
+msgstr "Outil d'optimisation EXAF"
+
+#: unite_compress/templates/pages/good-practices.html:38
+#: unite_compress/templates/pages/good-practices.html:180
+msgid " Best Video Format "
+msgstr " Meilleur format vidéo"
+
+#: unite_compress/templates/pages/good-practices.html:40
+#: unite_compress/templates/pages/good-practices.html:238
+msgid " Best Text format"
+msgstr " Meilleur format d'image"
+
+#: unite_compress/templates/pages/good-practices.html:46
+#: unite_compress/templates/pages/good-practices.html:293
+msgid "Flipped Classroom"
+msgstr "Classe inversée"
+
+#: unite_compress/templates/pages/good-practices.html:59
+#: unite_compress/templates/pages/good-practices.html:341
+msgid " Click to donwload a moodle cours "
+msgstr "Cliquez pour télécharger un cours moodle"
+
+#: unite_compress/templates/pages/good-practices.html:66
+msgid "Teaching Online with Limited Internet"
+msgstr "Enseignement en ligne avec accès à Internet limité"
+
+#: unite_compress/templates/pages/good-practices.html:70
 msgid "Compression"
 msgstr "Niveau de compression"
 
-#: unite_compress/templates/pages/good-practices.html:82
+#: unite_compress/templates/pages/good-practices.html:71
 msgid ""
 "Compression is a critical component of low-bandwidth content development. "
 "All files that are transmitted over the internet should be compressed to "
@@ -774,11 +847,11 @@ msgstr ""
 "sur Internet, rendant le contenu plus accessible aux utilisateurs ayant une "
 "faible connexion Internet."
 
-#: unite_compress/templates/pages/good-practices.html:85
+#: unite_compress/templates/pages/good-practices.html:74
 msgid "Use ad blockers"
 msgstr "Utiliser des bloqueurs de publicité"
 
-#: unite_compress/templates/pages/good-practices.html:86
+#: unite_compress/templates/pages/good-practices.html:75
 msgid ""
 "Ads can be a major source of bandwidth usage, particularly if they include "
 "high-resolution images or videos. Installing an ad blocker can help reduce "
@@ -789,11 +862,11 @@ msgstr ""
 "de publicités peut aider à réduire la quantité de bande passante utilisée, "
 "ce qui accélère le temps de chargement des pages."
 
-#: unite_compress/templates/pages/good-practices.html:89
+#: unite_compress/templates/pages/good-practices.html:78
 msgid "Limit video quality"
 msgstr "Limiter la qualité vidéo"
 
-#: unite_compress/templates/pages/good-practices.html:90
+#: unite_compress/templates/pages/good-practices.html:79
 msgid ""
 "If you're streaming videos, consider reducing the video quality to a lower "
 "resolution. This can help reduce the amount of bandwidth used by the video, "
@@ -804,66 +877,57 @@ msgstr ""
 "bande passante utilisée par la vidéo sans trop sacrifier en terme de qualité "
 "vidéo."
 
-#: unite_compress/templates/pages/good-practices.html:97
-#: unite_compress/templates/pages/good-practices.html:226
-msgid " Best Image format"
-msgstr " Meilleur format d'image"
-
-#: unite_compress/templates/pages/good-practices.html:100
-#: unite_compress/templates/pages/good-practices.html:177
+#: unite_compress/templates/pages/good-practices.html:93
+#: unite_compress/templates/pages/good-practices.html:185
 msgid "Summary:"
 msgstr "Résumé :"
 
-#: unite_compress/templates/pages/good-practices.html:103
+#: unite_compress/templates/pages/good-practices.html:96
 msgid "Description"
 msgstr "Description :"
 
-#: unite_compress/templates/pages/good-practices.html:104
+#: unite_compress/templates/pages/good-practices.html:97
 msgid "Best for"
 msgstr "Meilleur pour"
 
-#: unite_compress/templates/pages/good-practices.html:105
+#: unite_compress/templates/pages/good-practices.html:98
 msgid "Size"
 msgstr "Taille"
 
-#: unite_compress/templates/pages/good-practices.html:106
+#: unite_compress/templates/pages/good-practices.html:99
 msgid "Example"
 msgstr "Exemple"
 
-#: unite_compress/templates/pages/good-practices.html:110
+#: unite_compress/templates/pages/good-practices.html:103
 msgid "Logos and icons"
 msgstr "Logos et icônes"
 
-#: unite_compress/templates/pages/good-practices.html:111
+#: unite_compress/templates/pages/good-practices.html:104
 msgid "Very Light"
 msgstr "Très léger"
 
-#: unite_compress/templates/pages/good-practices.html:116
+#: unite_compress/templates/pages/good-practices.html:109
 msgid "photographic images"
 msgstr "images photographiques"
 
-#: unite_compress/templates/pages/good-practices.html:117
-#: unite_compress/templates/pages/good-practices.html:129
+#: unite_compress/templates/pages/good-practices.html:110
+#: unite_compress/templates/pages/good-practices.html:122
 msgid "Medium Light"
 msgstr "Moyen"
 
-#: unite_compress/templates/pages/good-practices.html:122
+#: unite_compress/templates/pages/good-practices.html:115
 msgid "images that require transparency"
 msgstr "images nécessitant de la transparence"
 
-#: unite_compress/templates/pages/good-practices.html:128
+#: unite_compress/templates/pages/good-practices.html:121
 msgid "Simple short animation"
 msgstr "Courte animation simple"
 
-#: unite_compress/templates/pages/good-practices.html:138
-msgid " Different Image format"
-msgstr " Format d'image différent"
-
-#: unite_compress/templates/pages/good-practices.html:142
+#: unite_compress/templates/pages/good-practices.html:140
 msgid "Different Image format"
 msgstr " Format d'image différent"
 
-#: unite_compress/templates/pages/good-practices.html:146
+#: unite_compress/templates/pages/good-practices.html:144
 msgid ""
 "is a lossy compression format that is widely used for photographic images. "
 "It achieves high compression ratios by removing some of the image data, "
@@ -879,7 +943,7 @@ msgstr ""
 "de fichiers sans dégrader significativement la qualité d'image, ce qui en "
 "fait un choix populaire pour le web et les applications mobiles."
 
-#: unite_compress/templates/pages/good-practices.html:149
+#: unite_compress/templates/pages/good-practices.html:147
 #, python-format
 msgid ""
 "is a relatively new image format developed by Google that uses both lossy "
@@ -897,7 +961,7 @@ msgstr ""
 "développement Web en raison de sa petite taille de fichier et de ses temps "
 "de chargement rapides. (source : externe) personne qui marche"
 
-#: unite_compress/templates/pages/good-practices.html:151
+#: unite_compress/templates/pages/good-practices.html:149
 msgid ""
 "is a lossless compression format that is commonly used for graphics and "
 "other types of images that require transparency. PNG images can be "
@@ -912,7 +976,7 @@ msgstr ""
 "toujours être compressées pour devenir des fichiers de petites tailles, et "
 "on les utilisepour les graphiques qui nécessitent de la transparence."
 
-#: unite_compress/templates/pages/good-practices.html:154
+#: unite_compress/templates/pages/good-practices.html:152
 msgid ""
 "is a vector graphics format that uses mathematical equations to create "
 "images, rather than pixels. This makes SVG files extremely small in size, "
@@ -927,18 +991,13 @@ msgstr ""
 "conception simple et nécessitant une haute résolution, comme les logos et "
 "les icônes."
 
-#: unite_compress/templates/pages/good-practices.html:161
-msgid "EXAF Optimisation Tool"
-msgstr "Outil d'optimisation EXAF"
-
-#: unite_compress/templates/pages/good-practices.html:164
-#: unite_compress/templates/pages/good-practices.html:229
-#: unite_compress/templates/pages/good-practices.html:230
-#: unite_compress/templates/pages/good-practices.html:282
+#: unite_compress/templates/pages/good-practices.html:168
+#: unite_compress/templates/pages/good-practices.html:241
+#: unite_compress/templates/pages/good-practices.html:297
 msgid "Summary"
 msgstr "Résumé"
 
-#: unite_compress/templates/pages/good-practices.html:165
+#: unite_compress/templates/pages/good-practices.html:169
 msgid ""
 "In summary, data compression is an effective optimisation tool to reduce "
 "data size. By using compression algorithms, data can be encoded in a more "
@@ -950,15 +1009,11 @@ msgstr ""
 "compression, les données peuvent être un moyen efficace, conduisant à des "
 "besoins de stockage réduits et une vitesse de transmission plus rapide."
 
-#: unite_compress/templates/pages/good-practices.html:167
+#: unite_compress/templates/pages/good-practices.html:171
 msgid "visit the tool page"
 msgstr "visitez la page de l'outil"
 
-#: unite_compress/templates/pages/good-practices.html:173
-msgid " Best Video Format "
-msgstr " Meilleur format vidéo"
-
-#: unite_compress/templates/pages/good-practices.html:207
+#: unite_compress/templates/pages/good-practices.html:215
 msgid ""
 "is a widely-used video format that is compatible with most devices and web "
 "browsers. It is a compressed format that can be optimized for smaller file "
@@ -969,7 +1024,7 @@ msgstr ""
 "être optimisé pour des fichiers  de plus petite taille sans sacrifier la "
 "qualité vidéo."
 
-#: unite_compress/templates/pages/good-practices.html:210
+#: unite_compress/templates/pages/good-practices.html:218
 msgid ""
 "is not per se a format but we believe that it has some benefits in low-"
 "bandwidth environement. YouTube is a video-sharing platform where users can "
@@ -995,7 +1050,7 @@ msgstr ""
 "important pour les éducateurs, les entreprises et les particuliers qui "
 "souhaitent diffuser leur message auprès d'un large public."
 
-#: unite_compress/templates/pages/good-practices.html:214
+#: unite_compress/templates/pages/good-practices.html:222
 msgid ""
 "is an open-source video format developed by Google that is optimized for web "
 "use. It is a lightweight format that can be compressed to smaller file sizes "
@@ -1005,7 +1060,7 @@ msgstr ""
 "l'utilisation Web. Il s'agit d'un format léger qui peut être compressé en "
 "fichiers de plus petite taille, sans perte de qualité."
 
-#: unite_compress/templates/pages/good-practices.html:217
+#: unite_compress/templates/pages/good-practices.html:225
 msgid ""
 "is a video format developed by Apple for use on its QuickTime media player. "
 "It is a popular format for Mac users and is also compatible with Windows "
@@ -1031,7 +1086,7 @@ msgstr ""
 "de compresser vos fichiers MOV ou en utilisant un format différent qui est "
 "plus optimisé pour les fichiers de plus petite taille."
 
-#: unite_compress/templates/pages/good-practices.html:220
+#: unite_compress/templates/pages/good-practices.html:228
 msgid ""
 "is a popular video format that can be used for both high-quality and low-"
 "quality videos. It uses a simple compression algorithm that can reduce file "
@@ -1042,7 +1097,7 @@ msgstr ""
 "algorithme de compression simple qui peut réduire le fichier taille, mais il "
 "peut ne pas être aussi efficace que d'autres formats."
 
-#: unite_compress/templates/pages/good-practices.html:231
+#: unite_compress/templates/pages/good-practices.html:243
 msgid ""
 "All of these digital text formats - plain text (txt), PDF, ePub, and "
 "Markdown - are great options for different use cases, offering a variety of "
@@ -1053,11 +1108,11 @@ msgstr ""
 "offrant une variété d'avantages tels que l'accessibilité, la portabilité et "
 "la flexibilité."
 
-#: unite_compress/templates/pages/good-practices.html:265
+#: unite_compress/templates/pages/good-practices.html:277
 msgid "Plain text (.txt)"
 msgstr "Texte brut (.txt)"
 
-#: unite_compress/templates/pages/good-practices.html:266
+#: unite_compress/templates/pages/good-practices.html:278
 msgid ""
 "Plain text files are simple text files that contain only basic text "
 "characters. They are very lightweight and can be easily read and edited by "
@@ -1072,11 +1127,11 @@ msgstr ""
 "ouverts et lus sur presque tous les appareils, y compris ceux avec un accès "
 "Internet limité."
 
-#: unite_compress/templates/pages/good-practices.html:267
+#: unite_compress/templates/pages/good-practices.html:279
 msgid "Portable Document Format (.pdf)"
 msgstr "Format de document portable (.pdf)"
 
-#: unite_compress/templates/pages/good-practices.html:268
+#: unite_compress/templates/pages/good-practices.html:280
 msgid ""
 "PDF files are a popular digital document format that can be easily "
 "downloaded and opened on most devices. PDF files are compact and can be "
@@ -1091,11 +1146,11 @@ msgstr ""
 "peuvent également être facilement partagés et distribués par e-mail ou "
 "d'autres moyens numériques."
 
-#: unite_compress/templates/pages/good-practices.html:269
+#: unite_compress/templates/pages/good-practices.html:281
 msgid "Electronic Publication (.epub)"
 msgstr "Publication numérique (.epub)"
 
-#: unite_compress/templates/pages/good-practices.html:270
+#: unite_compress/templates/pages/good-practices.html:282
 msgid ""
 "Epub is an open standard format for digital books and documents. Epub files "
 "are lightweight and can be optimized for small file sizes without "
@@ -1108,11 +1163,11 @@ msgstr ""
 "contenu. Les fichiers Epub peuvent être ouverts et lus sur la plupart des "
 "appareils, y compris les liseuses et les tablettes"
 
-#: unite_compress/templates/pages/good-practices.html:271
+#: unite_compress/templates/pages/good-practices.html:283
 msgid "Markdown (.md)"
 msgstr "Markdown (.md)"
 
-#: unite_compress/templates/pages/good-practices.html:272
+#: unite_compress/templates/pages/good-practices.html:284
 msgid ""
 "Markdown is a lightweight markup language that is used to format text "
 "documents. Markdown files are simple text files that can be easily read and "
@@ -1126,15 +1181,11 @@ msgstr ""
 "d'autres formats, tels que HTML ou PDF, à l'aide de logiciels spécialisés ou "
 "de convertisseurs en ligne"
 
-#: unite_compress/templates/pages/good-practices.html:278
-msgid "Flipped Classroom"
-msgstr "Classe inversée"
-
-#: unite_compress/templates/pages/good-practices.html:279
+#: unite_compress/templates/pages/good-practices.html:294
 msgid " Introduction"
 msgstr "Présentation de la rubrique"
 
-#: unite_compress/templates/pages/good-practices.html:283
+#: unite_compress/templates/pages/good-practices.html:298
 msgid ""
 "A flipped classroom is a teaching model in which traditional classroom "
 "activities, such as lecturing and direct instruction, are moved outside of "
@@ -1157,36 +1208,51 @@ msgstr ""
 "le contenu à leur rythme en dehors des cours, libérant du temps de classe "
 "pour plusd'activités interactives et collaboratives."
 
-#: unite_compress/templates/pages/good-practices.html:285
+#: unite_compress/templates/pages/good-practices.html:300
 msgid "Ressources"
 msgstr "Ressources"
 
-#: unite_compress/templates/pages/good-practices.html:289
+#: unite_compress/templates/pages/good-practices.html:304
 msgid "Flipped Classroom Field Guide"
 msgstr "Guide de terrain de la classe inversée"
 
-#: unite_compress/templates/pages/good-practices.html:292
+#: unite_compress/templates/pages/good-practices.html:307
 msgid " Example of Flipped Classroom"
 msgstr "Exemple de classe inversée"
 
-#: unite_compress/templates/pages/good-practices.html:295
+#: unite_compress/templates/pages/good-practices.html:310
 msgid "Template to create a Flipped Classroom"
 msgstr "Modèle pour créer une classe inversée"
 
-#: unite_compress/templates/pages/good-practices.html:299
+#: unite_compress/templates/pages/good-practices.html:314
 msgid "Testimony (internet connection)"
 msgstr "Témoignage (connexion internet)"
 
-#: unite_compress/templates/pages/good-practices.html:308
-#: unite_compress/templates/pages/good-practices.html:460
-msgid "Close"
-msgstr "Fermer"
+#: unite_compress/templates/pages/good-practices.html:322
+#: unite_compress/templates/pages/good-practices.html:501
+msgid "Go up"
+msgstr ""
 
-#: unite_compress/templates/pages/good-practices.html:315
+#: unite_compress/templates/pages/good-practices.html:329
 msgid "Tutorial 2: Moodle and MoodleBox Tutorial"
 msgstr "Tutoriel 2 : Moodle et MoodleBox"
 
-#: unite_compress/templates/pages/good-practices.html:320
+#: unite_compress/templates/pages/good-practices.html:332
+#: unite_compress/templates/pages/good-practices.html:360
+msgid "Preparation"
+msgstr "Préparation"
+
+#: unite_compress/templates/pages/good-practices.html:335
+#: unite_compress/templates/pages/good-practices.html:432
+msgid "Essential configuration"
+msgstr "Configuration essentielle"
+
+#: unite_compress/templates/pages/good-practices.html:338
+#: unite_compress/templates/pages/good-practices.html:473
+msgid "How to create a course"
+msgstr "Comment créer un cours"
+
+#: unite_compress/templates/pages/good-practices.html:358
 msgid ""
 "This tutorial aims to help you during the installation and configuration of "
 "your Raspbery Pi as well as to teach you the bases for creating a Moodle "
@@ -1196,170 +1262,162 @@ msgstr ""
 "configuration de votre Raspbery Pi ainsi que de vous donner les bases pour "
 "créer un cours Moodle à l'intérieur de la MoodleBox"
 
-#: unite_compress/templates/pages/good-practices.html:322
-msgid "Preparation"
-msgstr "Préparation"
-
-#: unite_compress/templates/pages/good-practices.html:324
+#: unite_compress/templates/pages/good-practices.html:362
 msgid " How to create a Raspberry Pi Imager"
 msgstr "Comment créer un imager Raspberry Pi"
 
-#: unite_compress/templates/pages/good-practices.html:326
+#: unite_compress/templates/pages/good-practices.html:364
 msgid "Install a RasberryPi imager"
 msgstr "Installer un imager RaspberryPi"
 
-#: unite_compress/templates/pages/good-practices.html:334
+#: unite_compress/templates/pages/good-practices.html:372
 msgid "Intall MoodleBox on SD"
 msgstr "Installer MoodleBox sur SD"
 
-#: unite_compress/templates/pages/good-practices.html:342
+#: unite_compress/templates/pages/good-practices.html:380
 msgid "Insert SD on RasberryPi"
 msgstr "Insérer SD sur Raspberry Pi"
 
-#: unite_compress/templates/pages/good-practices.html:349
+#: unite_compress/templates/pages/good-practices.html:387
 msgid "Connect to MoodleBox wireless network"
 msgstr "Connectez-vous au réseau sans fil MoodleBox"
 
-#: unite_compress/templates/pages/good-practices.html:351
+#: unite_compress/templates/pages/good-practices.html:389
 msgid "Connect to MoodleBox"
 msgstr "Se connecter à Moodle Box"
 
-#: unite_compress/templates/pages/good-practices.html:378
-#: unite_compress/templates/pages/good-practices.html:401
+#: unite_compress/templates/pages/good-practices.html:416
+#: unite_compress/templates/pages/good-practices.html:442
 msgid "How to create an account"
 msgstr "Comment créer un cours"
 
-#: unite_compress/templates/pages/good-practices.html:380
+#: unite_compress/templates/pages/good-practices.html:418
 msgid "Sign Up in MoodleBox"
 msgstr "S'inscrire sur MoodleBox"
 
-#: unite_compress/templates/pages/good-practices.html:391
-msgid "Essential configuration"
-msgstr "Configuration essentielle"
-
-#: unite_compress/templates/pages/good-practices.html:393
+#: unite_compress/templates/pages/good-practices.html:434
 msgid "Change language package"
 msgstr "Changer de pack de langue"
 
-#: unite_compress/templates/pages/good-practices.html:410
+#: unite_compress/templates/pages/good-practices.html:451
 msgid "How to add admin user"
 msgstr "Comment ajouter un administrateur"
 
-#: unite_compress/templates/pages/good-practices.html:419
+#: unite_compress/templates/pages/good-practices.html:460
 msgid "How to allow Students on the platform"
 msgstr "Comment donner accès à la plateforme aux apprenants"
 
-#: unite_compress/templates/pages/good-practices.html:429
-msgid "How to create a course"
-msgstr "Comment créer un cours"
-
-#: unite_compress/templates/pages/good-practices.html:431
+#: unite_compress/templates/pages/good-practices.html:475
 msgid "How to create a new course"
 msgstr "Comment créer un nouveau cours"
 
-#: unite_compress/templates/pages/good-practices.html:439
+#: unite_compress/templates/pages/good-practices.html:483
 msgid "How to add, edit and delet topics"
 msgstr "Comment ajouter, modifier et supprimer des sujets"
 
-#: unite_compress/templates/pages/good-practices.html:447
+#: unite_compress/templates/pages/good-practices.html:491
 msgid "How to allow students to self register on a course"
 msgstr "Comment permettre aux apprenants de s'inscrire eux-mêmes à un cours"
 
-#: unite_compress/templates/pages/home.html:11
+#: unite_compress/templates/pages/home.html:13
 msgid "Welcome to our file compression and course management system!"
 msgstr ""
 "Nous vous souhaitons la bienvenue dans notre système de gestion de cours et "
 "de compression de fichiers ! "
 
-#: unite_compress/templates/pages/home.html:12
+#: unite_compress/templates/pages/home.html:14
 msgid "Here you can compress your files and organize them into courses."
 msgstr "Vous pouvez compresser ici vos fichiers et les organiser en cours."
 
-#: unite_compress/templates/pages/home.html:16
+#: unite_compress/templates/pages/home.html:18
+#: unite_compress/templates/pages/home.html:34
 msgid "Upload a file"
-msgstr "Télécharger un fichier"
+msgstr "Téléverser un fichier"
 
-#: unite_compress/templates/pages/home.html:17
+#: unite_compress/templates/pages/home.html:19
+#, fuzzy
+#| msgid "How to create a course"
 msgid "Create a course"
-msgstr "Créer un cours"
+msgstr "Comment créer un cours"
 
-#: unite_compress/templates/pages/home.html:22
+#: unite_compress/templates/pages/home.html:25
 msgid "How it works"
 msgstr "Comment ça marche"
 
-#: unite_compress/templates/pages/home.html:24
+#: unite_compress/templates/pages/home.html:28
 msgid "Create a Folder: Go to the"
-msgstr "Pour créer un dossier, rendez-vous sur la page"
+msgstr "Sur la page"
 
-#: unite_compress/templates/pages/home.html:24
+#: unite_compress/templates/pages/home.html:28
 msgid "page and enter a name and a description for your folder."
-msgstr "et saisissez un nom et une description pour ce dossier"
+msgstr ""
+"appuyez sur le bouton 'Créer un nouveau dossier' pour stocker vos fichiers "
+"de cours"
 
-#: unite_compress/templates/pages/home.html:25
+#: unite_compress/templates/pages/home.html:33
 msgid "Upload a file: Go to the"
-msgstr "Pour télécharger un fichier, rendez-vous sur la page "
+msgstr "Sur la page "
 
-#: unite_compress/templates/pages/home.html:25
+#: unite_compress/templates/pages/home.html:33
 msgid " Upload File"
 msgstr "Téléverser un fichier"
 
-#: unite_compress/templates/pages/home.html:25
+#: unite_compress/templates/pages/home.html:33
 msgid ""
 " page and select the file you want to upload. You can choose to add it to an "
 "existing folder or create a new one."
 msgstr ""
-"et sélectionner le fichier que vous souhaitez télécharger. Vous pouvez "
-"choisir de l'ajouter à un dossier existant ou d'en créer un nouveau."
+"cliquez sur Téléverser un fichier pour ajouter le fichier que vous voulez "
+"compresser. Vous pouvez choisir de l'ajouter à un dossier existant ou d'en "
+"créer un nouveau."
 
-#: unite_compress/templates/pages/home.html:26
+#: unite_compress/templates/pages/home.html:38
 msgid ""
 "Compress the file: Go to the file detail page by clicking on its name in the "
-msgstr "Pour compresser le fichier, accédez à la page de "
+msgstr "Surla page de "
 
-#: unite_compress/templates/pages/home.html:26
+#: unite_compress/templates/pages/home.html:38
 msgid "file list"
-msgstr "liste de fichiers"
+msgstr "Mes Fichier"
 
-#: unite_compress/templates/pages/home.html:26
+#: unite_compress/templates/pages/home.html:38
 msgid ""
 "and click on the convert button.  You can choose to compress the file with "
 "the default 'medium' compression level or click on the 'Advanced options' "
 "button to choose from three different compression levels."
 msgstr ""
-" en cliquant sur son nom dans la liste des fichiers, puis cliquez sur le "
-"bouton 'Convertir'. Vous pouvez choisir le niveau de compression, 'moyen' "
-"par défaut, ou cliquez sur le degré de compression 'élevé'. "
+"cliquez sur le fichier à compresser, puis puis sur le bouton 'Convertir'. "
+"Vous pouvez choisir le niveau de compression, 'moyen' (par défaut) ou "
+"'élevé' "
 
-#: unite_compress/templates/pages/home.html:29
-msgid "The platform supports the following mime types :"
-msgstr "Les formats suivants sont pris en charge par la plateforme :"
+#: unite_compress/templates/pages/home.html:39
+#, fuzzy
+#| msgid "file list"
+msgid "File list"
+msgstr "Mes Fichier"
 
-#: unite_compress/templates/pages/home.html:31
-msgid "application / pdf"
-msgstr "application /pdf"
+#: unite_compress/templates/pages/home.html:43
+msgid ""
+"In order to create and deliver an optimized course in low connectivity "
+"contexts, you will find many tips in the page : "
+msgstr ""
+"Afin de créer et dispenser un cours optimisé dans des contextes de faible "
+"connectivité, vous trouverez de nombreux conseils dans la page"
 
-#: unite_compress/templates/pages/home.html:32
-msgid "image"
-msgstr "image"
-
-#: unite_compress/templates/pages/home.html:33
-msgid "video"
-msgstr "vidéo"
-
-#: unite_compress/templates/pages/home.html:37
+#: unite_compress/templates/pages/home.html:53
 msgid "Files"
 msgstr "Fichiers"
 
-#: unite_compress/templates/pages/home.html:38
+#: unite_compress/templates/pages/home.html:54
 msgid "To see a list of all your files, go to"
 msgstr "Pour afficher la liste de tous vos fichiers, rendez-vous sur la page"
 
-#: unite_compress/templates/pages/home.html:41
-msgid "To see a list of all your Folders, go to the"
+#: unite_compress/templates/pages/home.html:56
+msgid "To see a list of all your Folders, go to the "
 msgstr "Pour afficher la liste de tous vos dossiers, rendez-vous sur la page"
 
-#: unite_compress/templates/pages/home.html:41
-msgid "page"
+#: unite_compress/templates/pages/home.html:56
+msgid " page"
 msgstr " "
 
 #: unite_compress/templates/users/user_detail.html:24
@@ -1398,15 +1456,25 @@ msgstr "Nom de l'utilisateur"
 msgid "Information successfully updated"
 msgstr "Information mise à jour avec succès"
 
+#~ msgid "Home"
+#~ msgstr "Accueil"
+
+#~ msgid "Create a folder"
+#~ msgstr "Créer un dossier"
+
+#~ msgid "Github repo"
+#~ msgstr "Github: Référentiel du projet"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "page"
+#~ msgstr " "
+
 # msgid "Tools to reduce data"
 # msgstr "Outils pour réduire les données"
 #~ msgid "Different Image Format"
 #~ msgstr "Format d'image différent"
-
-#, fuzzy
-#~| msgid "page"
-#~ msgid " page"
-#~ msgstr " "
 
 #, fuzzy
 #~ msgid "My Folders "
