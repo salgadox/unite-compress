@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}Unite Compress{% endblock title %}</title>
+    <title>{% block title %}e-learning 4 all{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="File compression for e-learning">
     <meta name="author" content="Ximena Salgado">
@@ -53,6 +53,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'about' %}">{% translate "About" %}</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link navbar-brand" href="https://www.youtube.com/playlist?list=PLPB2paFvF2lNUG_rfpS9ABF36e3WsC3a2" target="_blank"> youtube <span class="visually-hidden">(current)</span></a>
               </li>
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
